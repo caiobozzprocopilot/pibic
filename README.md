@@ -1,150 +1,96 @@
-"""Correlação por instância entre métricas automáticas e plausibilidade humana (OE1).
+# PIBIC 2026–2027 — Métricas automáticas para explicações de discurso de ódio
 
-Desenho (decisão D3): só os itens ofensivos (n = 720); Kendall τ-b e Spearman ρ;
-IC 95% por bootstrap percentil **agrupado por post** (o mesmo post aparece para até
-4 modelos, então os itens não são independentes); B = 2000.
+**Pergunta de pesquisa:** em que medida as métricas automáticas de similaridade textual (n-gramas e embeddings) concordam com o julgamento humano de plausibilidade de explicações em linguagem natural (ELNs) sobre discurso ofensivo, e onde e por que divergem?
 
-Também calcula:
-- Δτ pareado entre métricas (mesmas reamostragens) -> diferença significativa?
-- τ por modelo gerador (com IC);
-- τ sem as cópias exatas (gerada = referência);
-- lista de divergências (métrica alta e humano 0; métrica 0 e humano 1).
+Estudante: Caio Lamoglia · PUCPR · PIBIC 2026–2027
 
-Entrada : results/metricas_por_item.csv (+ colunas de embeddings, se existirem)
-          results/metricas_multiref.csv (opcional; OE2)
-Saída   : results/correlacoes.csv, correlacoes_por_modelo.csv, delta_tau.csv,
-          divergencias_rougeL.csv
+## Dados
 
-Uso:  python src/correlacoes.py
-"""
-from __future__ import annotations
+Usamos a avaliação humana do **FEB** (Marasović et al., 2022) na tarefa **SBIC** (Sap et al., 2020): explicações geradas por 4 modelos (GPT-3, T5-3B, T5-large, T5-base), cada uma julgada por 3 anotadores quanto à plausibilidade.
 
-import itertools
+| | |
+|---|---|
+| Julgamentos | 4.320 |
+| Itens (explicação gerada + referência) | 1.440 (4 modelos × 360) |
+| Posts distintos | 563 |
+| Itens ofensivos (recorte da análise) | 720 |
+| Ofensivos com plausibilidade 0 | 254 (dp = 0,34) |
+| Cópias exatas (gerada = referência) | 16 (plaus. média 0,85) |
 
-import numpy as np
-import pandas as pd
-from scipy.stats import kendalltau, spearmanr
+Nos 720 itens não ofensivos a gerada é idêntica à referência ("this post does not imply anything offensive") em 100% dos casos, por isso ficam de fora.
 
-from config import B_BOOTSTRAP, METRICAS_CSV, RESULTADOS, SEMENTE
+## Como reproduzir
 
-BASE = ["bleu", "rouge1", "rouge2", "rougeL", "meteor", "comprimento"]
-EMBEDDINGS = ["bertscore", "moverscore"]  # colunas adicionadas por metricas_embeddings.py
-MULTIREF = [f"{m}_multiref" for m in ["bleu", "rouge1", "rouge2", "rougeL", "meteor"]]  # referencias_multiplas.py
-VARIANTES = ["completo", "semprefixo"]
+```bash
+git clone https://github.com/caiobozzprocopilot/pibic.git && cd pibic
+git clone --depth 1 https://github.com/allenai/feb.git data/raw/feb
+pip install -r requirements.txt
+python -m nltk.downloader wordnet omw-1.4
 
+python src/carregar_feb.py        # -> data/processed/feb_sbic_itens.csv
+python src/metricas_lexicais.py   # -> results/metricas_por_item.csv
+python src/correlacoes.py         # -> results/correlacoes*.csv, delta_tau.csv, divergencias_rougeL.csv
+```
 
-def tau(x, y) -> float:
-    return kendalltau(x, y, variant="b").statistic
+**BERTScore, MoverScore e múltiplas referências** precisam de GPU e de acesso ao HuggingFace e ao site do SBIC: abra [`notebooks/colab_embeddings.ipynb`](notebooks/colab_embeddings.ipynb) no Google Colab. O `correlacoes.py` incorpora as novas colunas automaticamente.
 
+## Estrutura
 
-def indices_bootstrap(grupos: np.ndarray, B: int, rng: np.random.Generator) -> list[np.ndarray]:
-    """Reamostra posts com reposição e devolve os índices dos itens de cada réplica."""
-    unicos = np.unique(grupos)
-    por_grupo = {g: np.flatnonzero(grupos == g) for g in unicos}
-    out = []
-    for _ in range(B):
-        sorteio = rng.choice(unicos, size=len(unicos), replace=True)
-        out.append(np.concatenate([por_grupo[g] for g in sorteio]))
-    return out
+```
+src/
+  config.py                 caminhos, escala de plausibilidade, semente, B do bootstrap
+  carregar_feb.py           CSVs brutos do MTurk -> 1 linha por item
+  metricas_lexicais.py      BLEU, ROUGE-1/2/L, METEOR, comprimento (texto completo e sem prefixo)
+  metricas_embeddings.py    BERTScore e MoverScore (Colab)
+  referencias_multiplas.py  OE2: todas as implicações do SBIC como referências (Colab/local)
+  correlacoes.py            τ-b, ρ, IC bootstrap agrupado por post, Δτ pareado, por modelo, divergências
+notebooks/
+  colab_embeddings.ipynb    roteiro completo para o Colab
+data/processed/             tabela de itens (gerada pelos scripts)
+results/                    saídas versionadas
+docs/metodologia.md         decisões metodológicas e convenções
+```
 
+## Resultados preliminares (OE1, n-gramas)
 
-def ic(valores: np.ndarray) -> tuple[float, float]:
-    v = valores[~np.isnan(valores)]
-    return float(np.percentile(v, 2.5)), float(np.percentile(v, 97.5))
+Correlação por instância nos 720 itens ofensivos. Kendall τ-b, IC 95% por bootstrap percentil agrupado por post (B = 2000, semente 20262027).
 
+| Métrica | τ (completo) | IC 95% | τ (sem prefixo) | IC 95% | ρ Spearman (sem prefixo) |
+|---|---|---|---|---|---|
+| BLEU | 0,159 | [0,094; 0,223] | 0,183 | [0,121; 0,242] | 0,238 |
+| ROUGE-1 | 0,175 | [0,110; 0,239] | 0,189 | [0,125; 0,253] | 0,243 |
+| ROUGE-2 | 0,160 | [0,096; 0,225] | 0,136 | [0,067; 0,205] | 0,161 |
+| ROUGE-L | 0,173 | [0,109; 0,237] | 0,189 | [0,124; 0,250] | 0,242 |
+| METEOR | 0,167 | [0,103; 0,231] | 0,190 | [0,127; 0,250] | 0,248 |
+| Comprimento (linha de base) | −0,003 | [−0,067; 0,061] | 0,016 | [−0,048; 0,081] | 0,021 |
 
-def tabela(df: pd.DataFrame, colunas: list[str], reamostras) -> pd.DataFrame:
-    y = df.plausibilidade.to_numpy()
-    linhas, taus_boot = [], {}
-    for c in colunas:
-        x = df[c].to_numpy()
-        boot = np.array([tau(x[i], y[i]) for i in reamostras])
-        taus_boot[c] = boot
-        lo, hi = ic(boot)
-        linhas.append(
-            {
-                "metrica": c,
-                "n": len(df),
-                "tau_b": tau(x, y),
-                "ic95_inf": lo,
-                "ic95_sup": hi,
-                "spearman": spearmanr(x, y).statistic,
-            }
-        )
-    return pd.DataFrame(linhas), taus_boot
+- Todas as métricas de n-gramas têm correlação **fraca** (τ < 0,2), porém acima de zero e da linha de base de comprimento.
+- Sem o prefixo "this post implies that", **311 dos 720 itens (43%) têm ROUGE-L = 0**: a métrica não consegue ordenar quase metade dos itens (plaus. média 0,24; 7 deles com nota máxima dos humanos).
+- Entre as métricas, a única diferença significativa (Δτ pareado) é o **ROUGE-2 sem prefixo, abaixo** de ROUGE-1, ROUGE-L e METEOR (Δτ ≈ −0,05).
+- Sem as 16 cópias exatas, τ cai para ~0,13–0,16: parte da correlação vem de poucos casos triviais.
 
+**Por modelo (τ sem prefixo, n = 180 cada):**
 
-def delta_tau(df: pd.DataFrame, taus_boot: dict[str, np.ndarray]) -> pd.DataFrame:
-    y = df.plausibilidade.to_numpy()
-    linhas = []
-    for a, b in itertools.combinations([c for c in taus_boot if not c.startswith("comprimento")], 2):
-        d = taus_boot[a] - taus_boot[b]
-        lo, hi = ic(d)
-        linhas.append(
-            {
-                "metrica_a": a,
-                "metrica_b": b,
-                "delta_tau": tau(df[a], y) - tau(df[b], y),
-                "ic95_inf": lo,
-                "ic95_sup": hi,
-                "significativo": not (lo <= 0 <= hi),
-            }
-        )
-    return pd.DataFrame(linhas)
+| Métrica | GPT-3 | T5-3B | T5-large | T5-base |
+|---|---|---|---|---|
+| BLEU | 0,320 | 0,159 | 0,204 | 0,053 |
+| ROUGE-L | 0,331 | 0,171 | 0,223 | 0,032 |
+| METEOR | 0,286 | 0,208 | 0,195 | 0,064 |
 
+A concordância depende muito do gerador: moderada no GPT-3, nula no T5-base (IC inclui zero). ICs completos em `results/correlacoes_por_modelo.csv`.
 
-def main() -> None:
-    rng = np.random.default_rng(SEMENTE)
-    df = pd.read_csv(METRICAS_CSV)
-    multiref = RESULTADOS / "metricas_multiref.csv"
-    if multiref.exists():  # OE2: entra automaticamente quando o arquivo existir
-        df = df.merge(pd.read_csv(multiref), on=["modelo", "ques_id"], how="left")
-    of = df[df.ofensivo].reset_index(drop=True)
+**Prévia da tipologia de divergência (SP3):** os casos com métrica alta e humano 0 seguem o padrão "acerta o grupo-alvo, erra o estereótipo" (ex.: ref. *black folks are violent* × gerada *black folks are stupid*, ROUGE-L 0,75). Lista em `results/divergencias_rougeL.csv`.
 
-    colunas = [
-        f"{m}_{v}" for v in VARIANTES for m in BASE + EMBEDDINGS + MULTIREF if f"{m}_{v}" in of.columns
-    ]
-    reamostras = indices_bootstrap(of.post_id.to_numpy(), B_BOOTSTRAP, rng)
+## Pendências
 
-    geral, boot = tabela(of, colunas, reamostras)
-    geral.to_csv(RESULTADOS / "correlacoes.csv", index=False)
-    delta_tau(of, boot).to_csv(RESULTADOS / "delta_tau.csv", index=False)
+- [ ] Rodar BERTScore e MoverScore no Colab
+- [ ] Baixar o SBIC v2 e rodar múltiplas referências (OE2)
+- [ ] Tipologia de divergência: anotar ~100 casos (SP3)
+- [ ] Relatório parcial (meta interna: 23/01/2027)
 
-    # sem cópias exatas
-    sem = of[~of.copia_exata].reset_index(drop=True)
-    r_sem = indices_bootstrap(sem.post_id.to_numpy(), B_BOOTSTRAP, rng)
-    t_sem, _ = tabela(sem, colunas, r_sem)
-    t_sem.to_csv(RESULTADOS / "correlacoes_sem_copias.csv", index=False)
+## Referências
 
-    # por modelo
-    por_modelo = []
-    for modelo, g in of.groupby("modelo"):
-        g = g.reset_index(drop=True)
-        r = indices_bootstrap(g.post_id.to_numpy(), B_BOOTSTRAP, rng)
-        t, _ = tabela(g, colunas, r)
-        por_modelo.append(t.assign(modelo=modelo))
-    pd.concat(por_modelo).to_csv(RESULTADOS / "correlacoes_por_modelo.csv", index=False)
-
-    # divergências (prévia da SP3)
-    cols = ["modelo", "post", "referencia", "gerada", "plausibilidade", "notas", "rougeL_semprefixo"]
-    alta_metrica = of[of.plausibilidade == 0].sort_values("rougeL_semprefixo", ascending=False).head(50)
-    alta_humano = of[(of.plausibilidade == 1) & (of.rougeL_semprefixo == 0)]
-    pd.concat(
-        [alta_metrica[cols].assign(tipo="metrica_alta_humano_0"),
-         alta_humano[cols].assign(tipo="metrica_0_humano_1")]
-    ).to_csv(RESULTADOS / "divergencias_rougeL.csv", index=False)
-
-    pd.set_option("display.float_format", "{:.3f}".format)
-    print(f"n = {len(of)} itens ofensivos, {of.post_id.nunique()} posts, B = {B_BOOTSTRAP}\n")
-    print(geral.to_string(index=False))
-    print(f"\nSem as {of.copia_exata.sum()} cópias exatas:")
-    print(t_sem[["metrica", "tau_b"]].to_string(index=False))
-    print("\nτ por modelo (sem prefixo):")
-    pm = pd.concat(por_modelo)
-    pm = pm[pm.metrica.str.endswith("semprefixo")]
-    print(pm.pivot(index="metrica", columns="modelo", values="tau_b").to_string())
-    print(f"\n-> {RESULTADOS}")
-
-
-if __name__ == "__main__":
-    main()
+- MARASOVIĆ, A. et al. Few-shot self-rationalization with natural language prompts. *Findings of NAACL*, 2022. Repositório: https://github.com/allenai/feb
+- SAP, M. et al. Social bias frames: reasoning about social and power implications of language. *ACL*, 2020.
+- ZHANG, T. et al. BERTScore: evaluating text generation with BERT. *ICLR*, 2020.
+- ZHAO, W. et al. MoverScore: text generation evaluating with contextualized embeddings and earth mover distance. *EMNLP*, 2019.

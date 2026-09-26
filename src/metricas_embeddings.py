@@ -1,35 +1,65 @@
-"""BERTScore e MoverScore por instância nos itens ofensivos do FEB/SBIC.
+"""BERTScore e MoverScore por item (OE1). **Rodar no Google Colab com GPU.**
 
-Precisa de acesso ao HuggingFace (rode no Colab ou na máquina do grupo):
-    pip install bert-score moverscore pyemd pandas
-    python src/carregar_feb.py && python src/metricas_embeddings.py
-Saída: data/feb_sbic_metricas_embeddings.csv (mesmo formato de metricas_lexicais.csv)
-Depois: python src/correlacoes.py data/feb_sbic_metricas_lexicais.csv data/feb_sbic_metricas_embeddings.csv
+Lê results/metricas_por_item.csv, adiciona as colunas
+    bertscore_{completo,semprefixo}, moverscore_{completo,semprefixo}
+e grava de volta no mesmo arquivo. Depois, rode `python src/correlacoes.py`.
+
+Configuração:
+- BERTScore: roberta-large (padrão do bert-score para inglês), F1, rescale_with_baseline=True
+  (o reescalonamento é monotônico: não muda τ nem ρ, só deixa os valores legíveis).
+- MoverScore: implementação v2 (distilbert-base-uncased), unigramas, IDF calculado
+  no próprio conjunto (referências e geradas separadamente), sem stopwords.
+
+Uso (Colab):
+    pip install -r requirements-colab.txt
+    python src/metricas_embeddings.py [--so-bertscore]
 """
-import pandas as pd
-from bert_score import score as bertscore
-from metricas_lexicais import tira_prefixo
+from __future__ import annotations
 
-def moverscore(ger, ref):
-    try:
-        from moverscore_v2 import get_idf_dict, word_mover_score
-    except ImportError:
-        print("moverscore não instalado; pulando"); return None
-    idf_h, idf_r = get_idf_dict(ger), get_idf_dict(ref)
-    return word_mover_score(ref, ger, idf_r, idf_h, stop_words=[], n_gram=1, remove_subwords=True)
+import argparse
+import os
+
+import pandas as pd
+
+from config import METRICAS_CSV
+from metricas_lexicais import limpar
+
+
+def bertscore(ger: list[str], ref: list[str]) -> list[float]:
+    from bert_score import score
+
+    _, _, f1 = score(ger, ref, lang="en", rescale_with_baseline=True, batch_size=64, verbose=True)
+    return f1.tolist()
+
+
+def moverscore(ger: list[str], ref: list[str]) -> list[float]:
+    os.environ.setdefault("MOVERSCORE_MODEL", "distilbert-base-uncased")
+    from moverscore_v2 import get_idf_dict, word_mover_score
+
+    idf_ref = get_idf_dict(ref)
+    idf_ger = get_idf_dict(ger)
+    return word_mover_score(
+        ref, ger, idf_ref, idf_ger, stop_words=[], n_gram=1, remove_subwords=True, batch_size=48
+    )
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--so-bertscore", action="store_true", help="pula o MoverScore")
+    args = ap.parse_args()
+
+    df = pd.read_csv(METRICAS_CSV)
+    for variante, tirar in [("completo", False), ("semprefixo", True)]:
+        ger = [limpar(t, tirar) or "." for t in df.gerada]  # string vazia quebra os tokenizadores
+        ref = [limpar(t, tirar) or "." for t in df.referencia]
+        print(f"BERTScore ({variante})...")
+        df[f"bertscore_{variante}"] = bertscore(ger, ref)
+        if not args.so_bertscore:
+            print(f"MoverScore ({variante})...")
+            df[f"moverscore_{variante}"] = moverscore(ger, ref)
+        df.to_csv(METRICAS_CSV, index=False)  # grava a cada variante (Colab pode cair)
+    print(f"-> {METRICAS_CSV}")
+
 
 if __name__ == "__main__":
-    itens = pd.read_csv("data/feb_sbic_itens.csv")
-    of = itens[itens.ofensivo].reset_index(drop=True)
-    saida = []
-    for var, f in [("completo", str), ("sem_prefixo", tira_prefixo)]:
-        ger = [f(t) for t in of.gerada]; ref = [f(t) for t in of.referencia]
-        # roberta-large, camada padrão; rescale_with_baseline só muda escala, não a ordem
-        _, _, F = bertscore(ger, ref, lang="en", rescale_with_baseline=False, verbose=True)
-        d = of[["modelo", "ques_id"]].assign(variante=var, bertscore=F.numpy())
-        ms = moverscore(ger, ref)
-        if ms is not None:
-            d["moverscore"] = ms
-        saida.append(d)
-    pd.concat(saida).to_csv("data/feb_sbic_metricas_embeddings.csv", index=False)
-    print("ok")
+    main()
