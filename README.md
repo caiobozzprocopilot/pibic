@@ -81,10 +81,28 @@ A concordância depende muito do gerador: moderada no GPT-3, nula no T5-base (IC
 
 **Prévia da tipologia de divergência (SP3):** os casos com métrica alta e humano 0 seguem o padrão "acerta o grupo-alvo, erra o estereótipo" (ex.: ref. *black folks are violent* × gerada *black folks are stupid*, ROUGE-L 0,75). Lista em `results/divergencias_rougeL.csv`.
 
+## Resultados preliminares (OE2, múltiplas referências)
+
+Cada post do SBIC tem várias implicações escritas por anotadores diferentes; o FEB usa só uma. Juntando todas (mediana de 5 referências por item, de 1 a 21), recalculamos as métricas sem prefixo contra o conjunto (BLEU multi-referência; ROUGE e METEOR pelo máximo).
+
+| Métrica | τ referência única | τ múltiplas refs | IC 95% (múltiplas) | Δτ (IC 95%) |
+|---|---|---|---|---|
+| BLEU | 0,183 | 0,201 | [0,140; 0,263] | +0,017 [−0,018; 0,059], n.s. |
+| ROUGE-1 | 0,189 | 0,233 | [0,173; 0,298] | +0,044 [0,009; 0,085] |
+| ROUGE-2 | 0,136 | 0,237 | [0,172; 0,305] | +0,100 [0,052; 0,151] |
+| ROUGE-L | 0,189 | 0,228 | [0,168; 0,292] | +0,039 [0,004; 0,078] |
+| METEOR | 0,190 | 0,235 | [0,177; 0,298] | +0,045 [0,013; 0,080] |
+
+- Com múltiplas referências, a correlação **sobe em todas as métricas**, e a alta é significativa em todas exceto o BLEU. O maior ganho é do ROUGE-2, que deixa de ser a pior métrica.
+- Os itens com ROUGE-L = 0 caem de 311 para 231. Parte do "zero" era falta de referência, não explicação ruim.
+- **Controle:** posts com mais referências ganham sobreposição só por ter mais chances (τ entre nº de refs e ROUGE-L multi = 0,44). Controlando o nº de referências (τ parcial), o ganho se mantém: ROUGE-L 0,172 → 0,210; METEOR 0,172 → 0,218.
+- Mesmo assim, a correlação continua **fraca** (τ < 0,25): mais referências ajudam, mas não resolvem.
+- Por modelo, o ganho aparece nos T5 (ex.: ROUGE-L no T5-3B 0,171 → 0,262); no GPT-3 o τ cai um pouco (0,331 → 0,293).
+
 ## Pendências
 
-- [ ] Rodar BERTScore e MoverScore no Colab
-- [ ] Baixar o SBIC v2 e rodar múltiplas referências (OE2)
+- [ ] Rodar BERTScore e MoverScore no Colab (1ª tentativa não gerou as colunas)
+- [x] Baixar o SBIC v2 e rodar múltiplas referências (OE2)
 - [ ] Tipologia de divergência: anotar ~100 casos (SP3)
 - [ ] Relatório parcial (meta interna: 23/01/2027)
 

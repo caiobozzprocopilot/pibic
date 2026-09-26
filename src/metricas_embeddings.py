@@ -11,8 +11,8 @@ Configuração:
   no próprio conjunto (referências e geradas separadamente), sem stopwords.
 
 Uso (Colab):
-    pip install -r requirements-colab.txt
-    python src/metricas_embeddings.py [--so-bertscore]
+    pip install -r requirements-colab.txt   (+ pip install pyemd moverscore para o MoverScore)
+    python src/metricas_embeddings.py [--so-bertscore | --so-moverscore]
 """
 from __future__ import annotations
 
@@ -46,14 +46,16 @@ def moverscore(ger: list[str], ref: list[str]) -> list[float]:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--so-bertscore", action="store_true", help="pula o MoverScore")
+    ap.add_argument("--so-moverscore", action="store_true", help="pula o BERTScore (já calculado)")
     args = ap.parse_args()
 
     df = pd.read_csv(METRICAS_CSV)
     for variante, tirar in [("completo", False), ("semprefixo", True)]:
         ger = [limpar(t, tirar) or "." for t in df.gerada]  # string vazia quebra os tokenizadores
         ref = [limpar(t, tirar) or "." for t in df.referencia]
-        print(f"BERTScore ({variante})...")
-        df[f"bertscore_{variante}"] = bertscore(ger, ref)
+        if not args.so_moverscore:
+            print(f"BERTScore ({variante})...")
+            df[f"bertscore_{variante}"] = bertscore(ger, ref)
         if not args.so_bertscore:
             print(f"MoverScore ({variante})...")
             df[f"moverscore_{variante}"] = moverscore(ger, ref)

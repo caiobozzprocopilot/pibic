@@ -1,6 +1,5 @@
-# Métricas de embeddings (rodar no Google Colab com GPU)
+# Métricas de embeddings (Google Colab). O MoverScore é instalado à parte no notebook,
+# porque o pyemd costuma falhar na compilação e derrubava a instalação inteira.
 bert-score>=0.3.13
-moverscore==1.0.3   # alternativa: implementação v2 incluída em src/metricas_embeddings.py
-pyemd
 transformers>=4.30
 torch
