@@ -1,0 +1,721 @@
+modelo,ques_id,referencia,gerada,plaus_gerada,rougeL,diverg
+GPT-3,142,this post is a personal attack,this post implies that the Syrian government is killing their own people,1.0,0.0,-0.75
+GPT-3,11,this post is a personal attack,this post implies that children can be used for sexual abuse,1.0,0.0,-0.75
+T5-3B,111,this post is a personal attack,this post implies that women can be treated as objects,1.0,0.0,-0.75
+T5-large,59,this post is a personal attack,this post implies that humans are not attractive,1.0,0.0,-0.75
+T5-3B,125,this post implies that violence against woman is funny,this post implies that women are often abused,1.0,0.0,-0.75
+T5-3B,11,this post is a personal attack,this post implies that minors are being used for sexual abuse,1.0,0.0,-0.75
+T5-3B,119,this post implies that jews caused the holocaust,this post implies that jewish folks are troublemakers,1.0,0.0,-0.75
+GPT-3,125,this post is a personal attack,this post implies that the british government is too lenient on terrorists,1.0,0.0,-0.75
+GPT-3,291,this post trivializes harm to victims,this post implies that violence is a normal occurrence in Morocco,0.8888888888888888,0.0,-0.6881944444444444
+GPT-3,249,this post implies that democrats don't have the nation's best interest in mind.,this post implies that politicians are rapists,0.8888888888888888,0.0,-0.6881944444444444
+GPT-3,341,this post is a personal attack,this post implies that mentally ill people are not to be taken seriously.,0.8888888888888888,0.0,-0.6881944444444444
+T5-3B,178,this post is a personal attack,this post implies that women are objects,0.8888888888888888,0.0,-0.6881944444444444
+T5-3B,214,this post implies that islam is violent,this post implies that muslims are bad,0.8888888888888888,0.0,-0.6881944444444444
+GPT-3,353,this post is a personal attack,this post implies that white people are superior,0.8888888888888888,0.0,-0.6881944444444444
+T5-large,304,this post is a personal attack,this post implies that using racial slurs is okay,0.8888888888888888,0.0,-0.6881944444444444
+T5-3B,291,this post trivializes harm to victims,this post implies that morroco is a bad country,0.8888888888888888,0.0,-0.6881944444444444
+T5-base,269,this post implies that nobdy cares if they drown,this post implies that mexicans can’t swim,0.7777777777777777,0.0,-0.6319444444444444
+GPT-3,274,this post implies that he accuses of sexual assault,this post implies that gay men are pedophiles,0.7777777777777777,0.0,-0.6319444444444444
+GPT-3,311,this post implies that black folks are stupid.,this post is a personal attack,0.7777777777777777,0.0,-0.6319444444444444
+T5-base,225,this post is a personal attack,this post implies that women are inferior,0.7777777777777777,0.0,-0.6319444444444444
+T5-large,11,this post is a personal attack,this post implies that minors can be physically abused,0.7777777777777777,0.0,-0.6319444444444444
+GPT-3,358,this post is a personal attack,this post implies that women are sexual objects,0.7777777777777777,0.0,-0.6319444444444444
+T5-base,130,this post implies that fat folks don't get love,this post implies that women are more attractive than men,0.7777777777777777,0.0,-0.6319444444444444
+T5-large,311,this post implies that not having neccesities,this post implies that homeless people are fighting each other,0.7777777777777777,0.0,-0.6319444444444444
+T5-base,112,this post implies that priests molest children,this post implies that catholics are pedophiles,0.7777777777777777,0.0,-0.6319444444444444
+T5-large,299,this post implies that jewish people can be referred to with swear words,this post implies that jews are inferior,0.7777777777777777,0.0,-0.6319444444444444
+GPT-3,10,this post is a personal attack,this post implies that sexually active people are not as intelligent as those who are not sexually active,0.7777777777777777,0.0,-0.6319444444444444
+T5-large,107,this post is a personal attack,this post trivializes harm to victims,0.7777777777777777,0.0,-0.6319444444444444
+GPT-3,22,this post is a personal attack,this post implies that women are promiscuous,0.7777777777777777,0.0,-0.6319444444444444
+T5-large,99,this post is a personal attack,this post implies that women are sexual objects,0.6666666666666666,0.0,-0.5659722222222222
+GPT-3,209,this post is a personal attack,this post implies that normies are stupid,0.6666666666666666,0.0,-0.5659722222222222
+T5-large,142,this post is a personal attack,this post trivializes harm to syrian civilians,0.6666666666666666,0.0,-0.5659722222222222
+T5-3B,315,this post implies that jewish folks are a target of extermination,this post implies that black people were killed,0.6666666666666666,0.0,-0.5659722222222222
+GPT-3,225,this post is a personal attack,this post implies that women are lesser humans,0.6666666666666666,0.0,-0.5659722222222222
+T5-3B,149,this post implies that poor folks are dumb,this post implies that rednecks celebrate halloween,0.6666666666666666,0.0,-0.5659722222222222
+T5-3B,142,this post is a personal attack,this post implies that people don't respect time,0.6666666666666666,0.0,-0.5659722222222222
+T5-base,141,this post is a personal attack,this post implies that people don't understand the concept of time,0.6666666666666666,0.0,-0.5659722222222222
+GPT-3,345,this post is a personal attack,this post implies that people with disabilities are dumb,0.6666666666666666,0.0,-0.5659722222222222
+GPT-3,328,this post implies that disrespects black people,this post implies that women are promiscuous,0.6666666666666666,0.0,-0.5659722222222222
+GPT-3,269,this post implies that priests rape children,this post trivializes harm to victims,0.6666666666666666,0.0,-0.5659722222222222
+T5-large,190,this post implies that mentally disabled folks deserve to be killed,this post implies that autistic kids are stupid,0.6666666666666666,0.0,-0.5659722222222222
+GPT-3,179,this post is a personal attack,this post implies that women are objects,0.6666666666666666,0.0,-0.5659722222222222
+GPT-3,82,this post is a personal attack,this post implies that black folks are misogynistic,0.6666666666666666,0.0,-0.5659722222222222
+T5-3B,357,this post is a personal attack,this post implies that women are sexual objects,0.6666666666666666,0.0,-0.5659722222222222
+T5-large,173,this post implies that liberals only care about minorities,this post implies that jews and nonwhites are traitors,0.6666666666666666,0.0,-0.5659722222222222
+GPT-3,190,this post is a personal attack,this post implies that men are privileged,0.6666666666666666,0.0,-0.5659722222222222
+T5-base,267,this post implies that women need to listen to men,"this post implies that women who don't ""fall in line"" should get beaten",1.0,0.125,-0.525
+T5-3B,267,this post implies that women need to listen to men,"this post implies that women who don't ""fall in line"" should get beaten",1.0,0.125,-0.525
+T5-3B,297,this post is a personal attack,this post implies that women aren't responsible,0.5555555555555555,0.0,-0.5
+GPT-3,226,this post smells like curry,this post implies that indian men are bad.,0.5555555555555555,0.0,-0.5
+T5-base,59,this post makes light of slavery,this post implies that slaves should get sone money for their hard work,0.5555555555555555,0.0,-0.5
+T5-base,166,this post is a personal attack,this post implies that black folks are inferior,0.5555555555555555,0.0,-0.5
+GPT-3,219,this post is a personal attack,this post implies that women are only good for sex,0.5555555555555555,0.0,-0.5
+GPT-3,208,this post implies that black people should die,this post implies that the KKK is just as bad as KFC,0.5555555555555555,0.0,-0.5
+T5-large,100,this post implies that women exist only to be mothers,this post implies that females are not productive,0.5555555555555555,0.0,-0.5
+T5-base,87,this post implies that immature,this post implies that niggas are not worth their while,0.5555555555555555,0.0,-0.5
+GPT-3,185,this post implies that referring to all those that died in the bombings,this post implies that Japanese people are not intelligent,0.5555555555555555,0.0,-0.5
+T5-3B,190,this post implies that not worthy of living,this post implies that autistic people are stupid,0.5555555555555555,0.0,-0.5
+GPT-3,251,this post is a personal attack,this post implies that women are shallow,0.5555555555555555,0.0,-0.5
+GPT-3,227,this post implies that chinese folks run sweatshops.,this post implies that the one-child policy is racist.,0.5555555555555555,0.0,-0.5
+GPT-3,293,this post is a personal attack,this post implies that incels are violent,0.5555555555555555,0.0,-0.5
+GPT-3,305,this post is a personal attack,this post implies that pedophiles are violent,0.5555555555555555,0.0,-0.5
+T5-large,27,this post is a personal attack,this post implies that women harass men,0.5555555555555555,0.0,-0.5
+T5-3B,81,this post implies that they have sex with animals.,this post implies that muhammad is a bad father,0.5555555555555555,0.0,-0.5
+GPT-3,71,this post is a personal attack,this post implies that women are promiscuous,0.5555555555555555,0.0,-0.5
+GPT-3,117,this post implies that making a joke about the holocaust.,this post implies that jewish folks are bad,0.5555555555555555,0.0,-0.5
+T5-base,189,this post implies that mentally disabled folks deserve to be killed,this post implies that autistic/downsyndrome kids are stupid,0.5555555555555555,0.0,-0.5
+T5-3B,237,this post was killed by hitler,this post implies that jewish people were all burned,0.5555555555555555,0.0,-0.5
+GPT-3,171,this post implies that concentration camps,this post implies that jews are not human,0.5555555555555555,0.0,-0.5
+T5-3B,281,this post implies that jokes about their parking spaces,this post implies that handicapped people are stupid,0.5555555555555555,0.0,-0.5
+T5-base,135,this post implies that women are sex objects for men to use,this post implies that women should be thrown away,1.0,0.1538461538461538,-0.4902777777777778
+GPT-3,81,this post implies that they let people watch them have sex.,this post implies that Muhammad had sex with a horse,1.0,0.1538461538461538,-0.4902777777777778
+GPT-3,359,this post implies that disabled people can't do martial arts,this post implies that disabled folks are not as good as able-bodied folks,0.8888888888888888,0.1176470588235294,-0.4673611111111111
+T5-3B,215,this post implies that women are refereed to as a derogatory word,this post is a personal attack,1.0,0.1818181818181818,-0.45138888888888895
+GPT-3,267,this post implies that women deserve to be beaten,this post trivializes harm to victims,1.0,0.1818181818181818,-0.45138888888888895
+T5-3B,143,this post is a personal attack,this post trivializes harm to victims,0.4444444444444444,0.0,-0.4354166666666667
+T5-base,291,this post trivializes harm to victims,this post implies that scandinavian girls lost their heads for it.,0.4444444444444444,0.0,-0.4354166666666667
+GPT-3,255,this post implies that commits murder,this post trivializes harm to victims,0.4444444444444444,0.0,-0.4354166666666667
+T5-base,231,this post implies that lesbian women are annoying,this post trivializes the issue,0.4444444444444444,0.0,-0.4354166666666667
+T5-base,263,this post implies that not trustworthy,this post implies that black people are bad,0.4444444444444444,0.0,-0.4354166666666667
+T5-base,52,this post implies that jewish people were held in concentration camps.,this post implies that gas who is offensive,0.4444444444444444,0.0,-0.4354166666666667
+T5-large,209,this post implies that criminals,this post implies that we don't need to sell arms to the saudis anymore,0.4444444444444444,0.0,-0.4354166666666667
+T5-large,208,this post is a personal attack,this post implies that normies are stupid,0.4444444444444444,0.0,-0.4354166666666667
+T5-base,82,this post is a personal attack,this post implies that women are all bitches,0.4444444444444444,0.0,-0.4354166666666667
+T5-large,268,this post implies that middle eastern folks are all suicide bombers,this post implies that muslim people like to bomb things,0.4444444444444444,0.0,-0.4354166666666667
+T5-3B,323,this post implies that it pokes fun of jews who were incinerated by the nazis,this post implies that jewish people are dead,0.4444444444444444,0.0,-0.4354166666666667
+T5-large,292,this post implies that poor people live in the street,this post implies that hoboes are bad at baseball,0.4444444444444444,0.0,-0.4354166666666667
+T5-3B,112,this post implies that jewish folks deserved the holocaust,this post implies that ash is a racial epithet,0.4444444444444444,0.0,-0.4354166666666667
+GPT-3,329,this post is a personal attack,this post implies that people who are not white are not welcome,0.4444444444444444,0.0,-0.4354166666666667
+GPT-3,237,this post implies that jewish folks was killed in the holocaust,this post implies that Hitler and Himler were friends,0.4444444444444444,0.0,-0.4354166666666667
+T5-base,101,this post is a personal attack,this post implies that white people are inferior,0.4444444444444444,0.0,-0.4354166666666667
+GPT-3,153,this post trivializes harm to victims,this post implies that they are used for sex,0.4444444444444444,0.0,-0.4354166666666667
+T5-large,111,this post is a personal attack,this post trivializes harm to victims,0.4444444444444444,0.0,-0.4354166666666667
+T5-large,147,this post is a personal attack,this post implies that pedophiles always come in last,0.4444444444444444,0.0,-0.4354166666666667
+T5-large,131,this post implies that fat people are screwed,this post implies that morbidly obese women have higher sexual and romantic value than average,0.4444444444444444,0.0,-0.4354166666666667
+T5-base,333,this post implies that black folks break into houses,this post implies that black people are all thieves,1.0,0.2,-0.41666666666666663
+T5-large,202,this post implies that black people are slaves,this post implies that black folks should not be paid,1.0,0.2,-0.41666666666666663
+T5-large,41,this post implies that we should go back to a time when killing blacks was no big deal.,this post implies that black people are inferior,0.7777777777777777,0.1111111111111111,-0.41388888888888886
+T5-base,65,this post implies that women belong in the kitchen,this post implies that nazis are the same as women.,0.8888888888888888,0.1818181818181818,-0.3895833333333334
+GPT-3,27,this post implies that young children are innocent,this post implies that they are attracted to children,1.0,0.2222222222222222,-0.37222222222222223
+T5-3B,58,this post implies that black people should be dead,this post implies that black folks are inferior,1.0,0.2222222222222222,-0.37222222222222223
+GPT-3,333,this post implies that black folks break into houses,this post implies that black people are sneaky.,1.0,0.2222222222222222,-0.37222222222222223
+GPT-3,112,this post implies that children should be afraid of priests,this post implies that catholic priests are pedophiles,0.8888888888888888,0.2,-0.35486111111111107
+T5-base,257,this post implies that black people do not like whites,this post implies that blacks are the minority,0.8888888888888888,0.2,-0.35486111111111107
+T5-3B,100,this post implies that women exist only to be mothers,this post implies that women are not productive,0.8888888888888888,0.2,-0.35486111111111107
+GPT-3,99,this post implies that women exist only to be mothers,this post implies that women are not needed in society,0.7777777777777777,0.1666666666666666,-0.35416666666666663
+T5-large,137,this post implies that group's deity stereotyped as promoting terrorism,this post implies that muslims commit acts of terrorism,0.7777777777777777,0.1666666666666666,-0.35416666666666663
+GPT-3,250,"this post implies that jews being put in an""oven"" is amusing.",this post implies that jews are not liked,0.7777777777777777,0.1666666666666666,-0.35416666666666663
+GPT-3,3,this post is a personal attack,this post implies that dark jokes are bad,0.3333333333333333,0.0,-0.34930555555555554
+T5-base,167,this post implies that native americans are poor and unhappy,this post implies that jack daniels kills indians,0.3333333333333333,0.0,-0.34930555555555554
+T5-3B,203,this post is a personal attack,this post implies that women are inferior,0.3333333333333333,0.0,-0.34930555555555554
+T5-large,148,this post implies that southern people in america are incestual,this post implies that rednecks pump kin',0.3333333333333333,0.0,-0.34930555555555554
+T5-base,293,this post implies that poor people live in the street,this post implies that hoboes are bad at baseball,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,233,this post implies that mocks anorexia,this post implies that women are anorexic,0.3333333333333333,0.0,-0.34930555555555554
+T5-base,351,this post implies that women are inferior,this post implies that post-processing is unreachable,0.3333333333333333,0.0,-0.34930555555555554
+T5-base,359,this post implies that degrades women by calling them names,this post implies that black folks are niggers,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,304,this post is a personal attack,this post implies that black people are stupid,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,238,this post implies that not worthy of being alive,this post is a personal attack,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,323,this post is a personal attack,this post implies that normies are stupid,0.3333333333333333,0.0,-0.34930555555555554
+T5-large,117,this post implies that died in the holocaust.,this post implies that jewish people are a race,0.3333333333333333,0.0,-0.34930555555555554
+T5-large,203,this post is a personal attack,this post implies that women should not have rights,0.3333333333333333,0.0,-0.34930555555555554
+T5-3B,292,this post is a personal attack,this post implies that women are ugly,0.3333333333333333,0.0,-0.34930555555555554
+T5-base,21,this post is a personal attack,this post implies that women fixate on sex,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,201,this post faked the holocaust,this post implies that jewish folks are evil,0.3333333333333333,0.0,-0.34930555555555554
+T5-base,107,this post is a personal attack,this post trivializes harm to victims,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,177,this post is a personal attack,this post implies that people will be forced to lie to avoid going bankrupt,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,155,this post trivializes harm to victims,this post implies that masturbation is wrong,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,197,this post is a personal attack,this post implies that women are whores,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,58,this post implies that black folks can't follow directions,this post is a personal attack,0.3333333333333333,0.0,-0.34930555555555554
+T5-3B,339,this post implies that blacks love basketball,this post implies that nba allstar weekend is an unofficial negro holiday,0.3333333333333333,0.0,-0.34930555555555554
+T5-large,227,this post implies that need money,this post implies that asian workers are exploited,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,106,this post is a personal attack,this post implies that fathers are not good fathers,0.3333333333333333,0.0,-0.34930555555555554
+T5-large,297,this post implies that catholics are pedophiles,this post implies that young people get zits,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,321,this post is a personal attack,this post implies that christians are hypocrites,0.3333333333333333,0.0,-0.34930555555555554
+T5-3B,71,this post is a personal attack,this post implies that women are poor,0.3333333333333333,0.0,-0.34930555555555554
+GPT-3,87,this post implies that no manners,this post implies that black folks are less than human,0.3333333333333333,0.0,-0.34930555555555554
+T5-3B,359,this post implies that people of color are inferior to whites,this post implies that the klan is the greatest thing to happen to this country,0.6666666666666666,0.1111111111111111,-0.34791666666666665
+T5-large,45,this post implies that black folks are poor,this post implies that black people have been standing around doing nothing for years,0.6666666666666666,0.1428571428571428,-0.32430555555555557
+T5-3B,160,this post implies that mexican folks are promiscuous,this post implies that mexicans aren't wise,1.0,0.25,-0.3145833333333333
+T5-large,353,this post implies that christians are rapists,this post implies that little boys are fucked by priests,0.8888888888888888,0.2222222222222222,-0.3104166666666667
+GPT-3,316,this post implies that black people were slaves.,this post implies that black folks are screaming while going off a cliff,0.6666666666666666,0.1538461538461538,-0.30625
+T5-large,286,this post implies that jews deserve to be killed,this post implies that jews cannot make it out of the oven,0.6666666666666666,0.1538461538461538,-0.30625
+GPT-3,221,this post implies that black men abandon their children,this post implies that black folks are not wanted,0.7777777777777777,0.2,-0.29861111111111105
+T5-large,309,this post implies that jews stick together just like a mafia.,this post implies that jews are evil,0.7777777777777777,0.2,-0.29861111111111105
+T5-large,316,this post implies that black people were slaves.,this post implies that black folks aren't as good as whites,0.6666666666666666,0.1666666666666666,-0.2881944444444444
+T5-3B,101,this post implies that black folks deserve to die,this post implies that black people should be killed more often in the winter,0.5555555555555555,0.1333333333333333,-0.26944444444444443
+T5-3B,196,this post implies that lesbians are not girly,this post implies that women are too pretty to be gay,0.6666666666666666,0.1818181818181818,-0.26736111111111116
+GPT-3,245,this post implies that middle easterns are savage,this post implies that peace in the middle east is impossible.,0.6666666666666666,0.1818181818181818,-0.26736111111111116
+GPT-3,273,this post implies that protesting against black history month,this post implies that black folks should not be celebrated,0.6666666666666666,0.1818181818181818,-0.26736111111111116
+T5-base,105,this post is calling ethnic groups based on a object,this post implies that black guys are inferior to other groups,0.5555555555555555,0.1428571428571428,-0.25833333333333336
+T5-large,291,this post trivializes harm to victims,this post implies that morrocans are violent rapists.,0.2222222222222222,0.0,-0.2548611111111111
+GPT-3,17,this post trivializes harm to victims,this post implies that women are not different from each other.,0.2222222222222222,0.0,-0.2548611111111111
+GPT-3,23,this post implies that jews stick together just like a mafia.,this post implies that jewish folks are inferior,0.2222222222222222,0.0,-0.2548611111111111
+T5-3B,346,this post implies that only want boys,this post implies that women are always the enemy,0.2222222222222222,0.0,-0.2548611111111111
+T5-large,233,this post implies that mocks anorexia,this post implies that girls are anorexic,0.2222222222222222,0.0,-0.2548611111111111
+GPT-3,130,this post implies that not worthy of being alive,this post is a personal attack,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,221,this post refers to suicode bombings,this post implies that muslims are dead,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,304,this post is a personal attack,this post implies that nigga isn't stupid,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,281,this post implies that jokes about their parking spaces,this post implies that we are all equal,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,251,this post is a personal attack,this post implies that women are inferior,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,113,this post implies that jewish folks deserved to die in the holocaust,this post implies that jews are ash.,0.2222222222222222,0.0,-0.2548611111111111
+T5-3B,118,this post is a personal attack,this post implies that women are stupid,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,142,this post is a personal attack,this post implies that syrians are enslaving other arabs,0.2222222222222222,0.0,-0.2548611111111111
+T5-large,65,this post is a personal attack,this post implies that children behave like that during sex,0.2222222222222222,0.0,-0.2548611111111111
+T5-large,46,this post implies that lesbians are not girly,this post implies that women can't be trusted,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,358,this post implies that people of color deserve violence,this post implies that this post is a personal attack,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,237,this post implies that not worthy of being alive,this post is a personal attack,0.2222222222222222,0.0,-0.2548611111111111
+T5-large,113,this post implies that jewish folks deserved the holocaust,this post implies that ash is a pokemon trainer,0.2222222222222222,0.0,-0.2548611111111111
+T5-3B,304,this post is a personal attack,this post implies that dummys are dummies,0.2222222222222222,0.0,-0.2548611111111111
+T5-3B,185,this post implies that referring to ww2,this post implies that japanese people are inherently violent.,0.2222222222222222,0.0,-0.2548611111111111
+T5-3B,167,this post is a personal attack,this post implies that black folks deserve to die,0.2222222222222222,0.0,-0.2548611111111111
+T5-3B,191,this post trivializes harm to victims,this post implies that dead bodies are easy,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,63,this post implies that women are just to be used,this post implies that black folks have at least 3 ugly bitches number in their phone.,0.2222222222222222,0.0,-0.2548611111111111
+T5-3B,232,this post is a personal attack,this post implies that black folks are stupid,0.2222222222222222,0.0,-0.2548611111111111
+T5-large,358,this post implies that people of color deserve violence,this post implies that the klan is a terrorist organization,0.2222222222222222,0.0,-0.2548611111111111
+T5-3B,238,this post implies that not worthy of being alive,this post is a personal attack,0.2222222222222222,0.0,-0.2548611111111111
+T5-base,131,this post implies that women don't have feelings,this post implies that women cannot be lonely,0.7777777777777777,0.2222222222222222,-0.25416666666666665
+T5-3B,220,this post implies that jews don't like to work,this post implies that jews are lazy,0.7777777777777777,0.2222222222222222,-0.25416666666666665
+T5-large,281,this post implies that being gay is bad,this post implies that gay men are inferior,0.8888888888888888,0.25,-0.25277777777777777
+T5-3B,53,this post implies that black people were called niggers,this post implies that niggers are racist,0.8888888888888888,0.25,-0.25277777777777777
+T5-3B,257,this post implies that women are only waiting for their opportunity to have sex with many partners.,this post implies that women are sluts,0.8888888888888888,0.25,-0.25277777777777777
+GPT-3,298,this post implies that catholics are pedophiles,this post implies that priests are sexually abusive,1.0,0.2857142857142857,-0.24791666666666667
+GPT-3,335,this post implies that priests touch little boys,this post implies that priests are pedophiles,1.0,0.2857142857142857,-0.24791666666666667
+GPT-3,346,this post implies that asian folks don't like girls,this post implies that chinese folks are misogynistic,0.6666666666666666,0.2,-0.23263888888888884
+GPT-3,203,this post implies that it's better to live in the past than with colored folks,this post implies that white people are the minority,0.4444444444444444,0.1176470588235294,-0.21458333333333335
+T5-large,310,this post implies that black folks can't do anything right.,this post implies that black people are weak,0.5555555555555555,0.1818181818181818,-0.20138888888888895
+GPT-3,352,this post implies that priests rape boys,this post implies that priests are pedophiles,1.0,0.3333333333333333,-0.1993055555555555
+T5-large,39,this post implies that liberals are traitors,this post implies that white people are self hating,0.7777777777777777,0.25,-0.19652777777777775
+T5-3B,159,this post implies that jews are pedos,this post implies that jewish folks are bad people.,0.7777777777777777,0.25,-0.19652777777777775
+T5-large,225,this post smells bad,this post implies that indian men are bad,0.7777777777777777,0.25,-0.19652777777777775
+GPT-3,322,this post implies that they are lesser humans,this post implies that disabled people are weak,0.7777777777777777,0.25,-0.19652777777777775
+GPT-3,214,this post implies that islam is bad for people,this post implies that muslims are bad,0.7777777777777777,0.25,-0.19652777777777775
+GPT-3,257,this post implies that women are only waiting for their opportunity to have sex with many partners.,this post implies that women are promiscuous,0.7777777777777777,0.25,-0.19652777777777775
+T5-large,340,this post implies that black folks do not act as proper as white folks,this post implies that black girls are different.,0.4444444444444444,0.1428571428571428,-0.19375000000000003
+T5-base,89,this post implies that women shouldn't be allowed to participate in politics.,this post implies that women should never have one,0.4444444444444444,0.1428571428571428,-0.19375000000000003
+T5-base,196,this post implies that women are shallow,this post implies that women don't like violent guys,0.6666666666666666,0.2222222222222222,-0.18819444444444444
+GPT-3,280,this post implies that physically disabled folks are incompetent,this post implies that handicapped people are lazy,0.6666666666666666,0.2222222222222222,-0.18819444444444444
+T5-3B,35,this post implies that men objectify women,this post implies that women are objects to be used,0.6666666666666666,0.2222222222222222,-0.18819444444444444
+T5-3B,341,this post implies that black folks do not act as proper as white folks,this post implies that black people aren't supposed to act black,0.6666666666666666,0.2222222222222222,-0.18819444444444444
+T5-large,172,this post implies that black people were regularly lynched,this post implies that black folks are niggers.,0.6666666666666666,0.2222222222222222,-0.18819444444444444
+T5-3B,299,this post implies that black people act like mtv portrayals,this post implies that blacks are bad,0.6666666666666666,0.2222222222222222,-0.18819444444444444
+GPT-3,286,this post implies that jews were killed in the holocaust.,this post implies that jews are garbage,0.6666666666666666,0.2222222222222222,-0.18819444444444444
+T5-3B,262,this post is a personal attack,this post implies that sramirez is a faggot,0.8888888888888888,0.2857142857142857,-0.18611111111111112
+T5-3B,130,this post is retarded,this post implies that being retarded is a bad thing.,0.8888888888888888,0.2857142857142857,-0.18611111111111112
+GPT-3,53,this post implies that women are stupid,this post implies that black folks are dirty,0.8888888888888888,0.2857142857142857,-0.18611111111111112
+GPT-3,195,this post implies that women ignore good guys,this post implies that women are stupid,0.8888888888888888,0.2857142857142857,-0.18611111111111112
+GPT-3,100,this post implies that white people keep other races down,this post implies that white people are more important,1.0,0.3636363636363636,-0.1743055555555556
+GPT-3,57,this post implies that black folks are racist against white people,this post implies that black people are violent,1.0,0.3636363636363636,-0.1743055555555556
+T5-large,82,this post is a personal attack,this post implies that black women are all bitches,0.1111111111111111,0.0,-0.1736111111111111
+T5-large,52,this post is a personal attack,this post implies that sex is wrong,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,136,this post is a personal attack,this post implies that babies are not as good as adults,0.1111111111111111,0.0,-0.1736111111111111
+T5-base,227,this post is a personal attack,this post implies that minors,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,106,this post implies that harm to the victims,this post implies that children are not equal,0.1111111111111111,0.0,-0.1736111111111111
+T5-large,22,this post is a personal attack,this post implies that niggas are inferior,0.1111111111111111,0.0,-0.1736111111111111
+T5-base,340,"this post implies that trans women, trans men are all are obese",this post implies that tumblr is a health hazard,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,70,this post is a personal attack,this post implies that gay men are polluting the gene pool,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,321,this post is a personal attack,this post implies that people are sexually immoral,0.1111111111111111,0.0,-0.1736111111111111
+T5-base,292,this post is a personal attack,this post implies that incels are just objects,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,93,this post is a personal attack,this post implies that black folks are bad.,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,225,this post smells bad,this post implies that indians are worthless,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,245,this post implies that middle easterns do not believe in peace,this post implies that alcohol is bad for you,0.1111111111111111,0.0,-0.1736111111111111
+T5-base,11,this post is a personal attack,this post implies that minors are being held hostage,0.1111111111111111,0.0,-0.1736111111111111
+GPT-3,147,this post is a personal attack,this post implies that pedophiles are slow,0.1111111111111111,0.0,-0.1736111111111111
+T5-large,191,this post trivializes harm to victims,this post implies that dead people are the most annoying thing after sex,0.1111111111111111,0.0,-0.1736111111111111
+T5-large,171,this post implies that jewish people are victims.,this post implies that faggot is a person of color,0.1111111111111111,0.0,-0.1736111111111111
+T5-large,87,this post implies that no manners,this post implies that black men are lesser people,0.1111111111111111,0.0,-0.1736111111111111
+GPT-3,4,this post is a personal attack,this post implies that black folks are less than human,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,293,this post implies that poor people live in the street,this post implies that hoboes are bad at baseball,0.1111111111111111,0.0,-0.1736111111111111
+GPT-3,191,this post implies that ethiopians go hungry,this post implies that black folks are stupid,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,129,this post implies that having african hair is ugly,this post implies that dominicans are bad,0.1111111111111111,0.0,-0.1736111111111111
+T5-base,129,this post implies that having african hair is ugly,this post implies that dominicans are not formally recognized as such,0.1111111111111111,0.0,-0.1736111111111111
+T5-base,245,this post implies that women aren't equal to men,this post implies that doggy is cancer-related,0.1111111111111111,0.0,-0.1736111111111111
+T5-base,119,this post is a personal attack,this post implies that black people do things wrong,0.1111111111111111,0.0,-0.1736111111111111
+GPT-3,213,this post is a personal attack,this post implies that people with mental illness are dangerous,0.1111111111111111,0.0,-0.1736111111111111
+T5-3B,105,this post uses racial names to make a joke,this post implies that black folks are unwanted,0.1111111111111111,0.0,-0.1736111111111111
+T5-base,357,this post implies that physically disabled folks can't do anything fully,this post implies that martial arts are judo,0.1111111111111111,0.0,-0.1736111111111111
+GPT-3,292,this post is a personal attack,this post implies that women are objects,0.1111111111111111,0.0,-0.1736111111111111
+T5-large,256,this post implies that women are only waiting for their opportunity to have sex with many partners.,when ultra conservative women gain freedom they will open their pussy up to anyone within 100 yards.,0.5555555555555555,0.2,-0.16666666666666663
+GPT-3,95,this post implies that black people don't like dogs,this post implies that black folks are scared of white people,0.8888888888888888,0.3076923076923076,-0.15694444444444444
+GPT-3,310,this post implies that women should not do certain jobs,this post implies that women are not funny,1.0,0.4,-0.1527777777777778
+T5-3B,333,this post implies that black folks break into houses,this post implies that black folks are all thieves,1.0,0.4000000000000001,-0.1381944444444445
+T5-base,287,this post implies that black folks should be whipped,this post implies that black people are better whipped.,1.0,0.4000000000000001,-0.1381944444444445
+T5-3B,207,this post implies that pakastani are gross,this post implies that pakis are inferior,0.8888888888888888,0.3333333333333333,-0.13749999999999996
+T5-3B,316,this post implies that black people are sub-human,this post implies that black folks are going to be killed,0.8888888888888888,0.3333333333333333,-0.13749999999999996
+GPT-3,243,this post implies that muslim folks have bad rules,this post implies that muslims are not worthy of life,0.4444444444444444,0.1818181818181818,-0.13680555555555562
+T5-base,41,this post implies that we should go back to a time when killing blacks was no big deal.,this post implies that black people and apples look great hanging from a tree,0.3333333333333333,0.0833333333333333,-0.1333333333333333
+GPT-3,89,this post implies that trans women are disgusting.,this post implies that women are not worth being on the same plane as a man,0.6666666666666666,0.25,-0.13055555555555554
+T5-large,261,this post implies that muslims blow up police stations,this post implies that muslims are bad,0.6666666666666666,0.25,-0.13055555555555554
+T5-3B,261,this post implies that muslims blow up police stations,this post implies that muslims are bad,0.6666666666666666,0.25,-0.13055555555555554
+GPT-3,207,this post implies that pakastani are gross,this post implies that pakistanis are dirty and smelly.,0.6666666666666666,0.25,-0.13055555555555554
+T5-large,105,this post uses racial names to make a joke,this post implies that black folks are inferior to other groups,0.3333333333333333,0.125,-0.12430555555555556
+GPT-3,239,this post implies that black people are ugly,this post implies that black girls are not refined,1.0,0.4444444444444445,-0.11736111111111114
+GPT-3,105,this post is calling ethnic groups based on a object,this post implies that black people are inferior to other groups,0.3333333333333333,0.1428571428571428,-0.1076388888888889
+T5-large,17,this post implies that cops can't be trusted.,this post implies that half-breed cops are trying to rape white women.,0.3333333333333333,0.1428571428571428,-0.1076388888888889
+T5-3B,89,this post implies that women shouldn't have political opinions,this post implies that women are not worth having an opinion,1.0,0.4615384615384615,-0.10347222222222219
+T5-base,76,this post implies that blacks cant support their families,this post implies that black folks are not equal,0.4444444444444444,0.2,-0.1020833333333333
+T5-large,40,this post is a personal attack,this post implies that thealewolf deserved to be called a wanker,0.4444444444444444,0.2,-0.1020833333333333
+GPT-3,107,this post trivializes pain of jewish,this post implies that jewish people are bad,0.4444444444444444,0.2,-0.1020833333333333
+T5-base,220,this post implies that blacks don't like to work,this post implies that jews and niggers are too fucking lazy to work,0.6666666666666666,0.2666666666666666,-0.09305555555555556
+GPT-3,113,this post implies that black people are on government assistance,this post implies that black folks are lazy,0.8888888888888888,0.4,-0.09097222222222223
+GPT-3,317,this post implies that black fathers abandon their kids,this post implies that black folks are not as good as whites,0.3333333333333333,0.1538461538461538,-0.08958333333333335
+GPT-3,202,this post implies that black folks are slaves,this post implies that black people are not deserving of gold medals,0.7777777777777777,0.3333333333333333,-0.08124999999999993
+T5-3B,45,this post implies that black folks are poor,this post implies that black people are lazy,1.0,0.5,-0.07916666666666672
+T5-large,239,this post implies that black people are ugly,this post implies that black girls are crude,1.0,0.5,-0.07916666666666672
+T5-base,23,this post implies that mexicans are fast,this post implies that mexicans are all illegal immigrants,1.0,0.5,-0.07916666666666672
+T5-base,161,this post implies that black men don't care about women,this post implies that black people are hoe shite,0.3333333333333333,0.1666666666666666,-0.07152777777777775
+T5-base,273,this post implies that supporting not celebrating black history month,this post implies that black people are less than normal,0.3333333333333333,0.1666666666666666,-0.07152777777777775
+T5-3B,33,this post implies that women are subhuman,this post implies that women are objects to be used,0.8888888888888888,0.4444444444444444,-0.0708333333333333
+T5-base,335,this post implies that priests rape boys,this post implies that priests are all evil,0.6666666666666666,0.2857142857142857,-0.06388888888888888
+T5-3B,10,this post is a personal attack,this post implies that tesla died a virgin,0.6666666666666666,0.2857142857142857,-0.06388888888888888
+T5-base,10,this post is a personal attack,this post implies that tesla died a virgin,0.6666666666666666,0.2857142857142857,-0.06388888888888888
+GPT-3,167,this post implies that native americans are alcoholics,this post implies that indians are inferior,0.6666666666666666,0.2857142857142857,-0.06388888888888888
+GPT-3,34,this post implies that women are supposed to do household chores.,this post implies that women are not as capable as men,0.6666666666666666,0.2857142857142857,-0.06388888888888888
+GPT-3,88,this post implies that indian giver is a bad term,this post implies that indians are thieves,0.4444444444444444,0.2222222222222222,-0.057638888888888906
+GPT-3,64,this post implies that post calls women names,this post implies that women are inferior to men.,0.4444444444444444,0.2222222222222222,-0.057638888888888906
+T5-base,159,this post implies that jews are pedos,this post implies that jewish folks are easy to spot,0.4444444444444444,0.2222222222222222,-0.057638888888888906
+T5-large,274,this post is a personal attack,this post implies that israhell is a god-created reality,0.4444444444444444,0.2222222222222222,-0.057638888888888906
+GPT-3,46,this post implies that lesbians are not pretty,this post implies that gay folks are not attractive,0.8888888888888888,0.4444444444444445,-0.05555555555555558
+GPT-3,173,this post implies that black folks are still seen as slaves,this post implies that black folks are niggers,1.0,0.5454545454545454,-0.05555555555555558
+T5-large,333,this post implies that black folks are criminals,this post implies that black people are all thieves,0.8888888888888888,0.4444444444444445,-0.05555555555555558
+GPT-3,131,this post implies that black people are ugly,this post implies that black girls are not refined,0.8888888888888888,0.4444444444444445,-0.05555555555555558
+T5-3B,64,this post implies that post calls women names,this post implies that women are only good for doing housework.,0.3333333333333333,0.1818181818181818,-0.050694444444444486
+GPT-3,129,this post implies that jewish folks was killed by hitler,this post implies that Hitler and Himler were friends,0.3333333333333333,0.1818181818181818,-0.050694444444444486
+GPT-3,309,this post implies that jewish people are criminals,this post implies that jews are criminals,1.0,0.5714285714285715,-0.043055555555555514
+T5-3B,57,this post implies that blacks are savages,this post implies that black folks are violent,1.0,0.5714285714285715,-0.043055555555555514
+GPT-3,135,this post implies that women are not honest,this post implies that women are untrustworthy,1.0,0.5714285714285715,-0.043055555555555514
+GPT-3,261,this post implies that muslims are suicide bombers,this post implies that muslims are terrorists,1.0,0.5714285714285715,-0.043055555555555514
+T5-base,268,this post implies that mormons are a cult,this post implies that lds are cult,1.0,0.5714285714285715,-0.043055555555555514
+GPT-3,196,this post implies that lesbians are not girly,this post implies that gay folks are not as good as straight folks.,0.6666666666666666,0.3076923076923076,-0.03472222222222221
+T5-3B,256,this post implies that women are inferior,this post implies that women are still the property of men,0.7777777777777777,0.4,-0.03472222222222221
+T5-large,267,this post implies that women need to listen to men,this post implies that women who aren't worthy of protection arent worthy,0.2222222222222222,0.1333333333333333,-0.024305555555555525
+T5-large,255,this post implies that women are inferior,this post implies that women are not equal citizens,0.8888888888888888,0.5,-0.01736111111111116
+T5-3B,268,this post implies that muslims blow people up with bombs,this post implies that muslim people like to bomb things,0.8888888888888888,0.5,-0.01736111111111116
+GPT-3,154,this post implies that catholic folks are trash,this post implies that catholics are bad people,0.8888888888888888,0.5,-0.01736111111111116
+T5-3B,131,this post implies that fat people are screwed,this post implies that women are more attractive than men,0.3333333333333333,0.2,-0.015972222222222165
+T5-base,298,this post implies that christian folks are pedophiles,this post implies that women are just used for sex,0.3333333333333333,0.2,-0.015972222222222165
+GPT-3,51,this post implies that jews are dead,this post implies that jewish folks are all comfortable around ovens,0.3333333333333333,0.2,-0.015972222222222165
+T5-large,141,this post implies that shame women about shaving,this post implies that women shouldn't shame other women for not shaving.,0.7777777777777778,0.4615384615384615,-0.01388888888888884
+T5-3B,201,this post implies that jewish people brainwash their kids into believing the holocaust happened,this post implies that jewish folks are evil,0.2222222222222222,0.1428571428571428,-0.013194444444444453
+GPT-3,303,this post implies that women are hoes,this post implies that women are immoral,1.0,0.6666666666666666,-0.009027777777777746
+GPT-3,77,this post implies that african folks provoke racism,this post implies that white folks are racist.,0.4444444444444444,0.25,0.0
+T5-3B,46,this post implies that lesbians are not girly,this post implies that gay people are offensive,0.4444444444444444,0.25,0.0
+T5-3B,244,this post implies that black folks are hypersexual,this post implies that women are not worthy,0.4444444444444444,0.25,0.0
+T5-3B,311,this post implies that black folks can't swim,this post implies that black folks are unfit,0.7777777777777777,0.4444444444444445,0.000694444444444442
+GPT-3,39,this post implies that saying liberals hate white people,this post implies that white people are traitors,0.7777777777777777,0.4444444444444445,0.000694444444444442
+T5-large,53,this post implies that black people are stupid,this post implies that niggas are dirty,0.5555555555555555,0.2857142857142857,0.002083333333333326
+T5-large,88,this post implies that indians take back stuff,this post implies that indians are robbers,0.5555555555555555,0.2857142857142857,0.002083333333333326
+GPT-3,76,this post implies that blacks cant hold jobs,this post implies that black folks are not as strong as white folks,0.2222222222222222,0.1538461538461538,0.004861111111111094
+T5-large,201,this post implies that jewish people fake how they feel about the holocaust,this post implies that jewish folks are evil,0.2222222222222222,0.1538461538461538,0.004861111111111094
+T5-base,339,this post implies that black folks all act the same,this post implies that black people aren't really that bad,0.2222222222222222,0.1538461538461538,0.004861111111111094
+GPT-3,45,this post implies that blacks are lazy,this post implies that black folks are lazy,1.0,0.8571428571428571,0.009027777777777746
+GPT-3,215,this post implies that blacks can't read,this post implies that black people can't read,1.0,0.888888888888889,0.011805555555555514
+GPT-3,256,this post implies that women are subhuman,this post implies that women are not equal,0.8888888888888888,0.5714285714285715,0.018750000000000044
+T5-base,315,this post implies that jewish folks are a target of extermination,this post implies that black jews are race-related,0.2222222222222222,0.1666666666666666,0.022916666666666696
+T5-base,201,this post implies that black folks are slaves,this post implies that black people should not be paid for gold.,0.2222222222222222,0.1666666666666666,0.022916666666666696
+GPT-3,28,this post is a personal attack,this post is a personal attack,1.0,1.0,0.023611111111111138
+T5-3B,213,this post is a personal attack,this post is a personal attack,1.0,1.0,0.023611111111111138
+GPT-3,93,this post is a personal attack,this post is a personal attack,1.0,1.0,0.023611111111111138
+GPT-3,137,this post implies that women are disposable,this post implies that women are disposable,1.0,1.0,0.023611111111111138
+GPT-3,41,this post is a personal attack,this post is a personal attack,1.0,1.0,0.023611111111111138
+GPT-3,94,this post is a personal attack,this post is a personal attack,1.0,1.0,0.023611111111111138
+T5-3B,202,this post implies that black people are slaves,this post implies that black people are slaves,1.0,1.0,0.023611111111111138
+GPT-3,262,this post is a personal attack,this post is a personal attack,1.0,1.0,0.023611111111111138
+T5-large,323,this post implies that sexually active women are whores.,this post implies that men are the same,0.3333333333333333,0.2222222222222222,0.028472222222222232
+T5-base,249,this post implies that democrats are harmful.,this post implies that dem politicians are a rapey weapon,0.3333333333333333,0.2222222222222222,0.028472222222222232
+T5-3B,17,this post implies that black people have ashy skin,this post implies that jewish people are useless,0.3333333333333333,0.2222222222222222,0.028472222222222232
+T5-large,339,this post implies that women look down on people,this post implies that women have high standards,0.3333333333333333,0.2222222222222222,0.028472222222222232
+T5-3B,251,this post implies that muslim folks are all muslims are violent,this post implies that muslims are hateful,0.6666666666666666,0.4,0.03125
+T5-3B,358,this post implies that disabled people are inferior,this post implies that disabled people cannot do martial arts,0.6666666666666666,0.4,0.03125
+GPT-3,287,this post implies that black people are best as slaves.,this post implies that black people are whipped.,0.8888888888888888,0.6,0.03472222222222221
+T5-3B,177,this post implies that women are objects of sexual attention,this post implies that black women are objects,0.8888888888888888,0.6,0.03472222222222221
+T5-3B,273,this post implies that supporting not celebrating black history month,this post implies that black folks shouldn't be in the history books,0.4444444444444444,0.2666666666666666,0.03749999999999998
+T5-3B,286,this post implies that jews were killed in the holocaust.,this post implies that jews can't make it out of the oven,0.4444444444444444,0.2666666666666666,0.03749999999999998
+GPT-3,279,this post implies that black folks are slaves,this post implies that black people are inferior,0.7777777777777777,0.5,0.03888888888888886
+T5-3B,285,this post implies that black people are unpleasant.,this post implies that blacks are inherently bad,0.7777777777777777,0.5,0.03888888888888886
+T5-large,327,this post is a personal attack,this post implies that women are f*cking jerks,0.0,0.0,0.03888888888888889
+T5-3B,347,this post makes light of shootings,this post implies that gun ranges are expensive,0.0,0.0,0.03888888888888889
+T5-3B,353,this post implies that priests rape boys,this post implies that women are inferior,0.0,0.0,0.03888888888888889
+T5-3B,327,this post is a personal attack,this post implies that jesus is dead,0.0,0.0,0.03888888888888889
+T5-3B,329,this post is a personal attack,this post implies that japanese people are fat,0.0,0.0,0.03888888888888889
+T5-base,15,this post is a personal attack,this post implies that women are useless,0.0,0.0,0.03888888888888889
+T5-base,53,this post is a personal attack,this post implies that sex is offensive,0.0,0.0,0.03888888888888889
+T5-3B,305,this post is a personal attack,this post implies that pedophiles are liars,0.0,0.0,0.03888888888888889
+T5-large,178,this post is a personal attack,this post implies that penis stays warm,0.0,0.0,0.03888888888888889
+T5-large,149,this post implies that women are stupid.,this post implies that woman should be treated as slaves,0.0,0.0,0.03888888888888889
+T5-base,40,this post is a personal attack,this post implies that men are meant to subservient,0.0,0.0,0.03888888888888889
+GPT-3,172,this post uses name fag as insult,this post implies that jewish folks are racist,0.0,0.0,0.03888888888888889
+T5-large,160,this post implies that mexican folks are promiscuous,this post implies that jesus was born in mexico,0.0,0.0,0.03888888888888889
+T5-large,159,this post implies that jews should be gassed,this post implies that jewish folks are less important,0.0,0.0,0.03888888888888889
+T5-large,155,this post trivializes harm to victims,this post implies that women are necrophilia,0.0,0.0,0.03888888888888889
+T5-large,153,this post trivializes harm to victims,this post implies that black people look like babies,0.0,0.0,0.03888888888888889
+T5-large,262,this post is a personal attack,this post implies that they are not real,0.0,0.0,0.03888888888888889
+GPT-3,143,this post implies that black folks are framed by cops,this post is a personal attack,0.0,0.0,0.03888888888888889
+GPT-3,166,this post is a personal attack,this post implies that black folks are animals,0.0,0.0,0.03888888888888889
+T5-large,119,this post is a personal attack,this post implies that women are bad drivers,0.0,0.0,0.03888888888888889
+T5-large,124,this post implies that jewish folks deserve to be burned,this post implies that jews are all evil,0.0,0.0,0.03888888888888889
+T5-large,106,this post implies that harm to the victims,this post implies that children are lazy,0.0,0.0,0.03888888888888889
+T5-large,130,this post implies that mentally disabled folks are worse than other people.,this post implies that being retarded is a virtue,0.0,0.0,0.03888888888888889
+T5-base,94,this post is a personal attack,this post implies that fucking putos are porn stars,0.0,0.0,0.03888888888888889
+T5-3B,275,this post is a personal attack,this post implies that muslims should be nuked,0.0,0.0,0.03888888888888889
+T5-3B,255,this post implies that asians only drive mitsubishi cards.,this post implies that japan is a country,0.0,0.0,0.03888888888888889
+T5-base,118,this post is a personal attack,this post implies that women are bad actors,0.0,0.0,0.03888888888888889
+T5-base,111,this post is a personal attack,this post implies that girls throats are like babies,0.0,0.0,0.03888888888888889
+T5-3B,274,this post calls the homo,this post implies that women should be nude,0.0,0.0,0.03888888888888889
+T5-base,3,this post is a personal attack,this post implies that people are stupid,0.0,0.0,0.03888888888888889
+T5-base,27,this post is a personal attack,this post implies that women are less than men,0.0,0.0,0.03888888888888889
+T5-large,250,"this post implies that jews being put in an""oven"" is amusing.",this post implies that jewish folks don't like pizza,0.0,0.0,0.03888888888888889
+T5-large,93,this post is a personal attack,this post implies that nigga is transgender,0.0,0.0,0.03888888888888889
+T5-large,112,this post implies that priests molest children,this post implies that black folks can be treated as equals,0.0,0.0,0.03888888888888889
+T5-large,129,this post implies that having dark skin is ugly,this post implies that people with brown hair are less intelligent,0.0,0.0,0.03888888888888889
+GPT-3,232,this post is a personal attack,this post implies that black folks are criminals,0.0,0.0,0.03888888888888889
+T5-large,143,this post is a personal attack,this post implies that syrians are bannon's enemies,0.0,0.0,0.03888888888888889
+T5-large,118,this post is a personal attack,this post implies that memes are dead,0.0,0.0,0.03888888888888889
+GPT-3,297,this post is a personal attack,this post implies that women are not as good as men,0.0,0.0,0.03888888888888889
+GPT-3,327,this post is a personal attack,this post implies that the poster is not happy with the poster's life,0.0,0.0,0.03888888888888889
+T5-base,153,this post trivializes harm to victims,this post implies that women are weak.,0.0,0.0,0.03888888888888889
+T5-base,149,this post implies that poor folks commit incest,this post implies that rednecks are fun,0.0,0.0,0.03888888888888889
+T5-base,148,this post is a personal attack,this post implies that pedophiles are stupid,0.0,0.0,0.03888888888888889
+T5-base,147,this post is a personal attack,this post implies that black people are stupid,0.0,0.0,0.03888888888888889
+T5-base,143,this post implies that blacks are criminal,this post is a personal attack,0.0,0.0,0.03888888888888889
+T5-base,171,"this post implies that ""not enough"" holocaust reference",this post implies that black people were in a concentration camp,0.0,0.0,0.03888888888888889
+T5-3B,22,this post is a personal attack,this post implies that niggas are all that they are cracked up to be,0.0,0.0,0.03888888888888889
+T5-3B,28,this post implies that blacks are called the n word,this post implies that racial profiling is a crime,0.0,0.0,0.03888888888888889
+T5-3B,209,this post is a personal attack,this post implies that black people are stupid,0.0,0.0,0.03888888888888889
+T5-3B,189,this post is a personal attack,this post implies that men are less than women,0.0,0.0,0.03888888888888889
+T5-3B,171,"this post implies that ""not enough"" holocaust reference",this post implies that jewish people are touchy,0.0,0.0,0.03888888888888889
+T5-3B,166,this post is a personal attack,this post implies that black folks deserve violence/to be killed,0.0,0.0,0.03888888888888889
+T5-large,35,this post implies that men objectify women,this post implies that pretty girls are not suitable for male judges,0.0,0.0,0.03888888888888889
+T5-base,183,this post implies that black people destroy things,this post implies that niggers and tornadoes are not tornadoes,0.0,0.0,0.03888888888888889
+T5-base,179,this post is a personal attack,this post implies that women are fat,0.0,0.0,0.03888888888888889
+T5-3B,179,this post implies that children are targets of pedos,this post implies that kids under 12 get acne,0.0,0.0,0.03888888888888889
+T5-base,81,this post implies that they have sex with animals.,this post implies that women are bad citizens.,0.0,0.0,0.03888888888888889
+T5-3B,226,this post is a personal attack,this post implies that minors,0.0,0.0,0.03888888888888889
+T5-base,75,this post is a personal attack,this post implies that nfl players are unimportant,0.0,0.0,0.03888888888888889
+T5-base,71,this post is a personal attack,this post implies that women are promiscuous,0.0,0.0,0.03888888888888889
+T5-large,166,this post is a personal attack,this post implies that black folks are slaves,0.0,0.0,0.03888888888888889
+T5-large,189,this post is a personal attack,this post implies that bisexual people aren't smart as men,0.0,0.0,0.03888888888888889
+T5-large,185,this post implies that referring to all those that died in the bombings,this post implies that japanese people are hot,0.0,0.0,0.03888888888888889
+T5-large,213,this post implies that islam is bad for people,this post implies that muslims are sexist,0.0,0.0,0.03888888888888889
+T5-base,125,this post implies that not worthy of being alive,this post implies that gays are offensive,0.0,0.0,0.03888888888888889
+T5-base,136,this post is a personal attack,this post implies that women aren't worth loving,0.0,0.0,0.03888888888888889
+T5-base,137,this post is a personal attack,this post implies that women aren't as good as men,0.0,0.0,0.03888888888888889
+T5-3B,153,this post trivializes harm to victims,this post implies that women are used for sex,0.0,0.0,0.03888888888888889
+T5-3B,137,this post is a personal attack,this post implies that men are incompetent,0.0,0.0,0.03888888888888889
+T5-3B,147,this post is a personal attack,this post implies that black folks don't belong in society,0.0,0.0,0.03888888888888889
+T5-3B,148,this post is a personal attack,this post implies that homosexuals are stupid,0.0,0.0,0.03888888888888889
+T5-base,160,this post implies that mexican folks are promiscuous,this post implies that jesus was born in mexico,0.0,0.0,0.03888888888888889
+T5-base,165,this post is a personal attack,this post implies that women are meat grinders,0.0,0.0,0.03888888888888889
+T5-3B,3,this post is a personal attack,this post implies that black people are in bad parts of the city,0.0,0.0,0.03888888888888889
+T5-base,185,this post implies that referring to ww2,this post implies that women are “married”,0.0,0.0,0.03888888888888889
+GPT-3,347,this post implies that pedophilia joke,this post implies that women are objects,0.0,0.0,0.03888888888888889
+T5-3B,4,this post is a personal attack,this post implies that black folks are in bad parts of the city,0.0,0.0,0.03888888888888889
+T5-3B,29,this post implies that degrades women by calling them names,this post is a personal attack,0.0,0.0,0.03888888888888889
+T5-3B,15,this post is a personal attack,this post implies that mathematicians are bad,0.0,0.0,0.03888888888888889
+T5-large,238,this post implies that not worthy of being alive,this post implies that gay people are all whites should have been dead,0.0,0.0,0.03888888888888889
+T5-large,347,this post makes light of shootings,this post implies that gun ranges are closing down,0.0,0.0,0.03888888888888889
+T5-large,345,this post is a personal attack,this post implies that gay is an insult,0.0,0.0,0.03888888888888889
+GPT-3,9,this post implies that jews move fast for deals,this post trivializes harm to victims,0.0,0.0,0.03888888888888889
+T5-large,357,this post is a personal attack,this post implies that girls are always growing,0.0,0.0,0.03888888888888889
+T5-large,359,this post is a personal attack,this post implies that women are crooks,0.0,0.0,0.03888888888888889
+T5-3B,345,this post is a personal attack,this post implies that dogs are negroes,0.0,0.0,0.03888888888888889
+GPT-3,40,this post is a personal attack,this post implies that fathers are irresponsible,0.0,0.0,0.03888888888888889
+GPT-3,29,this post implies that black people should be kept as slaves,this post is a personal attack,0.0,0.0,0.03888888888888889
+GPT-3,118,this post is a personal attack,this post implies that black people are dead.,0.0,0.0,0.03888888888888889
+T5-large,329,this post implies that disrespects black people,this post implies that nigga is a woman,0.0,0.0,0.03888888888888889
+T5-3B,51,this post is a personal attack,this post implies that kids shouldn't be allowed to watch violent cartoons,0.0,0.0,0.03888888888888889
+T5-large,21,this post implies that black people love basketball,this post trivializes the importance of winning,0.0,0.0,0.03888888888888889
+T5-large,293,this post is a personal attack,this post implies that incapable,0.0,0.0,0.03888888888888889
+T5-large,305,this post is a personal attack,this post implies that men should always submit sexually to their peers.,0.0,0.0,0.03888888888888889
+T5-large,328,this post is a personal attack,this post implies that women with fucked up necks are not human,0.0,0.0,0.03888888888888889
+T5-large,322,this post implies that it pokes fun of jews who were incinerated by the nazis,this post implies that jewish people are lazy,0.0,0.0,0.03888888888888889
+T5-base,255,this post isn't safe,this post implies that people are judgemental.,0.0,0.0,0.03888888888888889
+T5-3B,94,this post is a personal attack,this post implies that gay men are putos,0.0,0.0,0.03888888888888889
+T5-3B,87,this post implies that no manners,this post implies that nigerian women are not worth being on the same plane as a man,0.0,0.0,0.03888888888888889
+T5-base,256,this post is a personal attack,this post implies that dogs are not good friends,0.0,0.0,0.03888888888888889
+T5-3B,82,this post is a personal attack,this post implies that black folks are second class citizens,0.0,0.0,0.03888888888888889
+T5-3B,77,this post trivializes harm to victims.,this post is a personal attack,0.0,0.0,0.03888888888888889
+T5-3B,76,this post implies that african folks are inferior,this post is a personal attack,0.0,0.0,0.03888888888888889
+T5-3B,99,this post is a personal attack,"this post implies that women are ""blondes""",0.0,0.0,0.03888888888888889
+T5-3B,65,this post is a personal attack,this post implies that children should be beaten,0.0,0.0,0.03888888888888889
+T5-3B,59,this post implies that black people don't deserve reparations,this post implies that slaves are bad,0.0,0.0,0.03888888888888889
+T5-base,345,this post is a personal attack,this post implies that dogs are evil,0.0,0.0,0.03888888888888889
+T5-base,347,this post makes light of shootings,this post implies that schools are way cheaper,0.0,0.0,0.03888888888888889
+T5-large,70,this post is a personal attack,this post implies that women are being abused,0.0,0.0,0.03888888888888889
+T5-base,322,this post implies that it pokes fun of jews who were incinerated by the nazis,this post implies that jewish people are animals,0.0,0.0,0.03888888888888889
+T5-large,81,this post implies that they have sex with animals.,this post implies that women are weak,0.0,0.0,0.03888888888888889
+T5-large,75,this post is a personal attack,this post implies that black folks are unsportsmanlike,0.0,0.0,0.03888888888888889
+T5-base,305,this post is a personal attack,this post implies that pedophiles are violent,0.0,0.0,0.03888888888888889
+T5-base,297,this post is a personal attack,this post implies that young people are too hard,0.0,0.0,0.03888888888888889
+T5-base,275,this post is a personal attack,this post implies that pro israhellians should be paid,0.0,0.0,0.03888888888888889
+T5-base,274,this post calls the homo,this post implies that homosexuals are not allowed,0.0,0.0,0.03888888888888889
+T5-large,3,this post is a personal attack,this post implies that black people are evil,0.0,0.0,0.03888888888888889
+T5-large,4,this post is a personal attack,this post implies that black folks are in bad parts of the city,0.0,0.0,0.03888888888888889
+T5-base,190,this post trivializes harm to victims,this post implies that dead bodies are the most annoying thing after sex,0.0,0.0,0.03888888888888889
+T5-base,202,this post is a personal attack,this post implies that jam and jelly are the same,0.0,0.0,0.03888888888888889
+T5-base,213,this post implies that blacks can't read,this post is a personal attack,0.0,0.0,0.03888888888888889
+T5-base,214,this post implies that overweight people are unhealthy,this post implies that lean eating is bad,0.0,0.0,0.03888888888888889
+T5-base,215,this post is a personal attack,this post implies that women are fucking morons,0.0,0.0,0.03888888888888889
+T5-base,232,this post is a personal attack,this post implies that assassins are liars,0.0,0.0,0.03888888888888889
+T5-base,226,this post smells like curry,this post implies that indians are ugly,0.0,0.0,0.03888888888888889
+T5-base,239,this post implies that terrorism,this post implies that muslims are everywhere,0.0,0.0,0.03888888888888889
+T5-3B,107,this post is a personal attack,this post implies that people are picky eaters,0.0,0.0,0.03888888888888889
+T5-3B,124,this post implies that jewish folks deserve to be burned,this post implies that jews are all jews,0.0,0.0,0.03888888888888889
+T5-large,257,this post is a personal attack,this post implies that dogs are bitches,0.0,0.0,0.03888888888888889
+GPT-3,111,this post is a personal attack,this post implies that rape victims are not innocent,0.0,0.0,0.03888888888888889
+GPT-3,136,this post is a personal attack,this post implies that women are incompetent,0.0,0.0,0.03888888888888889
+T5-large,221,this post implies that terrorism,this post implies that muslims go to hell,0.0,0.0,0.03888888888888889
+GPT-3,83,this post implies that black folks are chocolate,this post is a personal attack,0.0,0.0,0.03888888888888889
+GPT-3,124,this post implies that jews should be burned,this post is a personal attack,0.0,0.0,0.03888888888888889
+GPT-3,119,this post is a personal attack,this post implies that black folks are hoes,0.0,0.0,0.03888888888888889
+GPT-3,70,this post is a personal attack,this post implies that people with disabilities are not human.,0.0,0.0,0.03888888888888889
+GPT-3,75,this post is a personal attack,this post implies that black folks are not equal,0.0,0.0,0.03888888888888889
+GPT-3,52,this post implies that jewish people were held in concentration camps.,this post implies that jews are evil,0.0,0.0,0.03888888888888889
+T5-large,341,this post is a personal attack,this post implies that gay men are deviants.,0.0,0.0,0.03888888888888889
+T5-base,83,"this post implies that black folks are the ""n word""",this post implies that black nog is bad food,0.2222222222222222,0.1818181818181818,0.043749999999999956
+T5-large,251,this post implies that muslim folks are all muslims are violent,this post implies that britons are in danger,0.2222222222222222,0.1818181818181818,0.043749999999999956
+T5-3B,309,this post implies that jews are like criminals,this post implies that jews are a criminal gang,0.8888888888888888,0.6666666666666665,0.0444444444444444
+T5-large,123,this post implies that black folks should be whipped,this post implies that black people are better whipped,0.6666666666666666,0.4000000000000001,0.04583333333333328
+GPT-3,285,this post implies that liberals are annoying.,this post implies that blacks are bad,0.5555555555555555,0.3333333333333333,0.050694444444444486
+T5-base,299,this post implies that black folks are all black people like rap,this post implies that black people are inferior.,0.5555555555555555,0.3333333333333333,0.050694444444444486
+T5-base,261,this post implies that muslims abuse girls,this post implies that muslims are evil,0.5555555555555555,0.3333333333333333,0.050694444444444486
+T5-3B,322,this post implies that physically disabled folks are a burden to society,this post implies that disabled people are helpless,0.5555555555555555,0.3333333333333333,0.050694444444444486
+T5-large,279,this post implies that black folks wear chains to remind them of the slave days,this post implies that black people are poor,0.1111111111111111,0.1333333333333333,0.056944444444444464
+T5-3B,195,this post implies that women want bad partners,this post implies that women are liars.,0.4444444444444444,0.2857142857142857,0.06666666666666665
+T5-3B,172,this post implies that jews are gay,this post implies that jewish folks are touchy,0.4444444444444444,0.2857142857142857,0.06666666666666665
+T5-base,70,this post implies that black people have less rights,this post implies that black people have no rights,0.8888888888888888,0.8000000000000002,0.0673611111111111
+T5-base,233,this post implies that anorexic people never eat,this post implies that women are not allowed to eat or use onion rings,0.1111111111111111,0.1428571428571428,0.06805555555555554
+T5-large,177,this post implies that women are sexualized,this post implies that black women are objects,0.7777777777777777,0.5714285714285715,0.07500000000000007
+T5-large,321,this post is a personal attack,this post implies that having sex before marriage is a sin,0.2222222222222222,0.2,0.07847222222222228
+T5-large,101,this post implies that racial minorities are disadvantaged.,this post implies that people in real life are bad,0.2222222222222222,0.2,0.07847222222222228
+T5-large,64,this post implies that post calls women names,this post implies that women are capable of doing both,0.2222222222222222,0.2,0.07847222222222228
+T5-large,167,this post implies that women should be more appreciative of men,this post implies that women are sexist,0.2222222222222222,0.2,0.07847222222222228
+T5-3B,165,this post implies that women are dumb,this post implies that women are dumb,0.8888888888888888,1.0,0.0854166666666667
+GPT-3,33,this post implies that women are objects,this post implies that women are objects,0.8888888888888888,1.0,0.0854166666666667
+T5-base,285,this post implies that liberals are annoying.,this post implies that blacks are living in america,0.3333333333333333,0.25,0.08611111111111114
+T5-3B,39,this post implies that liberals are traitors,this post implies that white people are inherently evil,0.3333333333333333,0.25,0.08611111111111114
+T5-large,197,this post implies that women are hypocritical,this post implies that violent guys are mentally unstable,0.3333333333333333,0.25,0.08611111111111114
+T5-3B,27,this post implies that black slaves were submissive,this post implies that black folks are undesirable,0.3333333333333333,0.25,0.08611111111111114
+GPT-3,161,this post implies that black men use women,this post implies that black people are whores,0.3333333333333333,0.25,0.08611111111111114
+GPT-3,15,this post is a personal attack,this post implies that 69 is a dirty number,0.3333333333333333,0.25,0.08611111111111114
+T5-base,208,this post implies that black folks are animals,this post implies that fry animals are food.,0.3333333333333333,0.25,0.08611111111111114
+GPT-3,69,this post implies that gay men are not worth respect,this post implies that gay men are promiscuous,0.7777777777777777,0.6,0.09097222222222223
+T5-3B,123,this post implies that black people are inferior,this post implies that black people are better whipped,0.7777777777777777,0.6666666666666665,0.10069444444444442
+T5-3B,317,this post implies that black people are lesser,this post implies that black folks aren't as good as whites,0.1111111111111111,0.1666666666666666,0.10416666666666669
+T5-large,220,this post implies that jews are lazy,this post implies that jews and niggers are too fucking lazy to work,0.6666666666666666,0.5,0.10486111111111107
+GPT-3,59,this post implies that black people are worthless,this post implies that black folks are inferior,0.6666666666666666,0.5,0.10486111111111107
+GPT-3,315,this post implies that black people are inferior,this post implies that black people are not as good as jews,0.6666666666666666,0.5,0.10486111111111107
+T5-base,39,this post implies that liberals are traitors,this post implies that white liberals are self hating,0.6666666666666666,0.5,0.10486111111111107
+GPT-3,268,this post implies that mormons wear veils,this post implies that mormons are evil,0.4444444444444444,0.3333333333333333,0.11527777777777781
+T5-large,298,this post implies that black folks are inferior,this post implies that black people are inferior.,0.7777777777777777,0.75,0.11805555555555558
+T5-base,203,this post implies that children with cancer will die,this post implies that children are leukaemia victims,0.2222222222222222,0.2222222222222222,0.12291666666666667
+T5-base,95,this post implies that black people don't like dogs,this post implies that blacks are inferior,0.2222222222222222,0.2222222222222222,0.12291666666666667
+T5-base,191,this post implies that black folks are inferior,this post implies that women are less than men,0.2222222222222222,0.2222222222222222,0.12291666666666667
+T5-base,117,this post implies that jewish folks were the subject of extermination,this post implies that jewish people are evil,0.1111111111111111,0.1818181818181818,0.12499999999999994
+T5-3B,219,this post implies that black men abandon their children,this post implies that black folks are second class citizens,0.1111111111111111,0.1818181818181818,0.12499999999999994
+T5-large,237,this post was killed by hitler,this post implies that jewish people were all killed,0.1111111111111111,0.1818181818181818,0.12499999999999994
+T5-3B,173,this post implies that black folks are still seen as slaves,this post implies that black folks are niggers.,0.6666666666666666,0.5454545454545454,0.1284722222222222
+GPT-3,340,this post implies that black folks do not act as proper as white folks,this post implies that black people are not acting like themselves.,0.4444444444444444,0.3529411764705882,0.13124999999999998
+T5-large,23,this post implies that jewish people are criminals,this post implies that jews are a criminal syndicate,0.5555555555555555,0.4444444444444445,0.13263888888888886
+T5-large,351,this post implies that black men are bad fathers,this post implies that black folks are stupid,0.5555555555555555,0.4444444444444445,0.13263888888888886
+GPT-3,65,this post implies that black people should be slaves,this post implies that black folks are slaves,0.5555555555555555,0.4444444444444445,0.13263888888888886
+T5-large,29,this post implies that black folks can be mocked,this post implies that black folks are less than white,0.4444444444444444,0.3636363636363636,0.14027777777777772
+T5-base,5,this post implies that no one cares about black people.,this post implies that black people are inherently bad,0.4444444444444444,0.3636363636363636,0.14027777777777772
+GPT-3,160,this post implies that mexican folks are promiscuous,this post implies that mexicans are bad,0.6666666666666666,0.5714285714285715,0.14097222222222228
+GPT-3,16,this post implies that jews are slaves,this post implies that jewish people are slaves.,0.6666666666666666,0.5714285714285715,0.14097222222222228
+GPT-3,165,this post implies that women are dumb,this post implies that women are dumb,0.7777777777777777,1.0,0.14166666666666672
+T5-3B,280,this post implies that women are sex objects,this post implies that women are sex objects,0.7777777777777777,1.0,0.14166666666666672
+T5-large,280,this post implies that women are sex objects,this post implies that women are sex objects,0.7777777777777777,1.0,0.14166666666666672
+T5-base,195,this post implies that lesbians are not girly,this post implies that women are ugly,0.3333333333333333,0.2857142857142857,0.1527777777777778
+T5-large,10,this post is a personal attack,this post implies that tesla died a virgin,0.3333333333333333,0.2857142857142857,0.1527777777777778
+T5-base,88,this post implies that indians take back stuff,this post implies that indians are liars,0.3333333333333333,0.2857142857142857,0.1527777777777778
+T5-base,352,this post implies that priests rape boys,this post implies that little boys fuck me,0.3333333333333333,0.2857142857142857,0.1527777777777778
+GPT-3,63,this post implies that women are just to be used,this post implies that black people are ugly,0.1111111111111111,0.2,0.15972222222222227
+T5-large,33,this post implies that women are subhuman,this post implies that women should not be treated like objects,0.1111111111111111,0.2,0.15972222222222227
+T5-3B,310,this post implies that women should not do certain jobs,this post implies that women are all shite,0.1111111111111111,0.2,0.15972222222222227
+T5-large,16,this post implies that those with autism are less deserving,this post implies that autistic people are evil,0.1111111111111111,0.2,0.15972222222222227
+GPT-3,178,this post implies that women are objects of sexual attention,this post implies that black women are attractive,0.4444444444444444,0.4,0.16180555555555554
+T5-large,243,this post implies that muslim folks are primitive,this post implies that muslims are not worthy of life,0.4444444444444444,0.4,0.16180555555555554
+GPT-3,299,this post implies that black people act like mtv portrayals,this post implies that black people are inferior,0.4444444444444444,0.4,0.16180555555555554
+T5-3B,208,this post implies that black folks are animals,this post implies that black people are inferior,0.5555555555555555,0.5,0.17083333333333328
+GPT-3,123,this post implies that black people are inferior,this post implies that black folks are whipped,0.5555555555555555,0.5,0.17083333333333328
+GPT-3,275,this post is a personal attack,this post implies that israel is a terrorist state,0.2222222222222222,0.25,0.18055555555555558
+T5-large,161,this post implies that black men use women,this post implies that black people are bad,0.2222222222222222,0.25,0.18055555555555558
+T5-3B,52,this post implies that black people are stupid,this post implies that nigerian women are dirty,0.2222222222222222,0.25,0.18055555555555558
+GPT-3,183,this post implies that black people destroy things,this post implies that black folks are violent,0.2222222222222222,0.25,0.18055555555555558
+T5-3B,233,this post implies that anorexic people are very skinny,this post implies that women are dumb.,0.2222222222222222,0.25,0.18055555555555558
+T5-large,249,this post implies that liberals are rapists,this post implies that dems are a rapey weapon,0.2222222222222222,0.25,0.18055555555555558
+T5-large,219,this post implies that black men abandon their children,this post implies that blacks are inferior.,0.2222222222222222,0.25,0.18055555555555558
+GPT-3,334,this post implies that black folks should be called the n-word,this post implies that black folks are all thieves,0.3333333333333333,0.3076923076923077,0.18541666666666667
+GPT-3,35,this post implies that muslim folks are gullible,this post implies that muslims are not good people,0.4444444444444444,0.4444444444444445,0.1972222222222222
+T5-3B,95,this post implies that black folks fear white people.,this post implies that blacks are under whites,0.4444444444444444,0.4444444444444445,0.1972222222222222
+T5-base,243,this post implies that muslims are terrorists,this post implies that muslims are not allowed to use their cell phones.,0.3333333333333333,0.3333333333333333,0.20138888888888895
+T5-3B,239,this post implies that black people are ugly,this post implies that black women are all blacks should be ashamed,0.3333333333333333,0.3333333333333333,0.20138888888888895
+T5-large,207,this post implies that pakistani are dirty,this post implies that pakis are violent,0.3333333333333333,0.3333333333333333,0.20138888888888895
+T5-large,125,this post implies that women get punished,this post implies that women are submissive,0.3333333333333333,0.3333333333333333,0.20138888888888895
+T5-base,77,this post implies that african folks provoke racism,this post implies that black folks are not equal,0.1111111111111111,0.2222222222222222,0.20416666666666666
+GPT-3,47,"this post implies that no stereotype, they are just being used a punchline.",this post implies that white people are more likely to commit a crime,0.1111111111111111,0.2222222222222222,0.20416666666666666
+T5-large,165,this post implies that women are dumb,this post implies that women are dumb,0.6666666666666666,1.0,0.20763888888888893
+T5-large,89,this post implies that women shouldn't have political opinions,this post implies that women should never have one,0.3333333333333333,0.3636363636363636,0.22638888888888886
+T5-large,287,this post implies that black people are inferior,this post implies that black people are better whipped,0.5555555555555555,0.6666666666666665,0.23263888888888884
+T5-3B,287,this post implies that black people are inferior,this post implies that black people are better whipped.,0.5555555555555555,0.6666666666666665,0.23263888888888884
+GPT-3,351,this post implies that women are cunts,this post implies that women are not good drivers,0.4444444444444444,0.5,0.2354166666666666
+T5-large,77,this post implies that african folks are inferior,this post implies that black folks are unhuman,0.4444444444444444,0.5,0.2354166666666666
+T5-base,9,this post implies that jews are miserly,this post implies that jewish people are quick,0.2222222222222222,0.2857142857142857,0.24722222222222223
+GPT-3,244,this post implies that women are promiscuous,this post implies that black folks are unevolved,0.2222222222222222,0.2857142857142857,0.24722222222222223
+T5-base,46,this post implies that lesbians are not pretty,this post implies that women are ugly,0.2222222222222222,0.2857142857142857,0.24722222222222223
+T5-base,341,this post implies that black folks are criminals,this post implies that black men are good at basketball.,0.3333333333333333,0.4,0.24791666666666667
+T5-3B,231,this post implies that lesbians are lesser than straight people,this post implies that lesbians are just annoying.,0.3333333333333333,0.4,0.24791666666666667
+T5-large,71,this post implies that black people don't get as many rights as others,this post implies that black people have no rights,0.3333333333333333,0.4,0.24791666666666667
+T5-base,280,this post implies that women are sex objects,this post implies that women are just objects,0.5555555555555555,0.75,0.25
+T5-3B,41,this post implies that women ruin everything,this post implies that women are meant to subservient,0.1111111111111111,0.25,0.26180555555555557
+T5-3B,155,this post trivializes harm to victims,this post implies that you are trying to pass yourself off as a saint,0.0,0.125,0.26388888888888884
+T5-large,346,this post implies that asian folks don't like girls,this post implies that chinese folks are out to get their little brother,0.0,0.1333333333333333,0.2694444444444445
+T5-base,197,this post implies that women want to be respected but give none back,this post implies that women are just plain ugly,0.0,0.1428571428571428,0.28055555555555556
+T5-base,286,this post implies that jews are incapable,this post implies that jews can't eat food that is not in the oven,0.0,0.1428571428571428,0.28055555555555556
+T5-base,346,this post implies that chinese folks don't care about family,this post implies that chinese people are out to hurt others.,0.0,0.1428571428571428,0.28055555555555556
+T5-base,178,this post implies that children are sexual targets of priests,this post implies that catholic priests are not allowed to appoint people,0.0,0.1428571428571428,0.28055555555555556
+T5-large,135,this post implies that girls are hoes,this post implies that women are incompetent,0.2222222222222222,0.3333333333333333,0.2958333333333334
+T5-large,303,this post implies that women are always after other women's men,this post implies that women are sexually active,0.2222222222222222,0.3333333333333333,0.2958333333333334
+T5-base,57,this post implies that black folks are violent,this post implies that black folks are not human,0.4444444444444444,0.6666666666666665,0.29722222222222217
+T5-base,4,this post implies that people with aspergers are crazy,this post implies that aspergers is something that people don't know,0.0,0.1538461538461538,0.29861111111111105
+T5-3B,161,this post implies that black men don't care about women,this post implies that black people are bad at talking,0.0,0.1538461538461538,0.29861111111111105
+GPT-3,101,this post implies that black folks can't be seen at night,this post implies that black people are not intelligent,0.0,0.1538461538461538,0.29861111111111105
+T5-large,15,this post implies that black people have ashy skin,this post implies that jewish people working in the fields are terrible,0.0,0.1538461538461538,0.29861111111111105
+T5-base,47,"this post implies that no stereotype, they are just being used a punchline.",this post implies that black folks are incoherent,0.0,0.1538461538461538,0.29861111111111105
+T5-base,334,this post implies that black folks should be called the n-word,this post implies that black men are all thieves,0.0,0.1538461538461538,0.29861111111111105
+GPT-3,149,this post implies that women are egotistical.,this post implies that women are stupid,0.4444444444444444,0.6666666666666666,0.3055555555555556
+T5-large,28,this post implies that blacks lives are worth less than whites,this post implies that black folks make bad jokes,0.0,0.1666666666666666,0.31666666666666665
+T5-3B,63,this post implies that ugly women are worthless,this post implies that black folks are worth less than white folks,0.0,0.1666666666666666,0.31666666666666665
+T5-large,244,this post implies that middle easterns are savage,this post implies that minorities should be forced from the middle east,0.0,0.1666666666666666,0.31666666666666665
+GPT-3,5,this post implies that people with aspergers are crazy,this post implies that people with aspergers are weird,0.4444444444444444,0.8000000000000002,0.32013888888888886
+GPT-3,148,this post implies that poor folks are dumb,this post implies that black folks are stupid,0.3333333333333333,0.5,0.32152777777777775
+T5-3B,352,this post implies that women are cunts,this post implies that post calls women names,0.1111111111111111,0.2857142857142857,0.3284722222222222
+T5-base,303,this post implies that women are always after other women's men,this post implies that females are sexist,0.0,0.1818181818181818,0.3374999999999999
+T5-3B,197,this post is a personal attack,this post uses a slur against black folks,0.0,0.1818181818181818,0.3374999999999999
+GPT-3,231,this post implies that lesbians are annoying,this post implies that gay men are not as important as lesbians.,0.0,0.1818181818181818,0.3374999999999999
+GPT-3,141,this post is a personal attack,this post is a personal attack,0.4444444444444444,1.0,0.33819444444444446
+T5-base,123,this post implies that black folks are inferior,this post implies that black people are more like cream,0.2222222222222222,0.4,0.3423611111111111
+T5-large,263,this post implies that black people are dirty,this post implies that blacks are smiling,0.3333333333333333,0.5714285714285715,0.35763888888888895
+T5-3B,154,this post implies that catholics are hypocritical,this post implies that catholics in the us are dirty,0.2222222222222222,0.4444444444444444,0.36250000000000004
+T5-3B,117,this post implies that jewish folks have a troubled past,this post implies that jewish people are stupid,0.0,0.2,0.37222222222222223
+T5-base,279,this post implies that black folks wear chains like slaves,this post implies that black people are bad,0.0,0.2,0.37222222222222223
+T5-large,226,this post is a personal attack,this post implies that pornography is a form of sex abuse,0.0,0.2,0.37222222222222223
+T5-base,35,this post implies that men objectify women,this post implies that women should not be made fun of,0.0,0.2,0.37222222222222223
+T5-3B,298,this post implies that christian folks are pedophiles,this post implies that young folks can't handle responsibility,0.0,0.2,0.37222222222222223
+T5-base,100,this post implies that gay waiting for men in church,this post implies that gay people are discriminatory,0.0,0.2,0.37222222222222223
+T5-large,335,this post implies that children are sexual targets of priests,this post implies that priests are like acne,0.0,0.2,0.37222222222222223
+T5-large,285,this post implies that liberals are annoying.,this post implies that blacks are trying to move to britain,0.0,0.2,0.37222222222222223
+T5-large,76,this post implies that blacks cant hold a job,this post implies that black folks are not equal,0.0,0.2,0.37222222222222223
+T5-base,64,this post implies that black folks are all poor,this post implies that black folks are picking cotton.,0.3333333333333333,0.6,0.3736111111111111
+T5-3B,249,this post implies that liberals are destructive,this post implies that women are raped,0.1111111111111111,0.3333333333333333,0.3770833333333334
+T5-3B,303,this post implies that women are hoes,this post implies that women are inferior,0.3333333333333333,0.6666666666666666,0.3916666666666667
+T5-large,231,this post implies that lesbian women are annoying,this post implies that lesbians are annoying,0.3333333333333333,0.8571428571428571,0.4097222222222222
+T5-large,154,this post implies that catholic folks are trash,this post implies that catholics are trash,0.3333333333333333,0.8571428571428571,0.4097222222222222
+T5-large,5,this post implies that people with aspergers are crazy,this post implies that people are overeating,0.2222222222222222,0.5,0.4159722222222222
+T5-base,45,this post implies that black folks are poor,this post implies that black people are indecent,0.2222222222222222,0.5,0.4159722222222222
+T5-3B,351,this post implies that black women are promiscuous,this post implies that black folks are lazy,0.2222222222222222,0.5,0.4159722222222222
+T5-large,136,this post implies that women are disposable,this post implies that women and tissues are similar,0.2222222222222222,0.5,0.4159722222222222
+T5-3B,141,this post implies that shame women about shaving,this post implies that women don't shave,0.2222222222222222,0.5,0.4159722222222222
+T5-large,58,this post implies that black people should be dead,this post implies that black folks are prostitutes,0.0,0.2222222222222222,0.41666666666666663
+T5-base,310,this post implies that women should not do certain jobs,this post implies that women are ugly,0.0,0.2222222222222222,0.41666666666666663
+T5-base,17,this post implies that black people have ashy skin,this post implies that jewish people are horrible,0.0,0.2222222222222222,0.41666666666666663
+T5-base,106,this post implies that harm to the victims,this post implies that kids everywhere want to read,0.0,0.2222222222222222,0.41666666666666663
+T5-3B,34,this post implies that women should follow orders,this post implies that women are not strong enough,0.0,0.2222222222222222,0.41666666666666663
+T5-large,196,this post implies that lesbians are not girly,this post implies that gay folks are just mean,0.0,0.2222222222222222,0.41666666666666663
+T5-large,315,this post implies that black people stand in the back,this post implies that black people were exploited,0.1111111111111111,0.4,0.4236111111111111
+T5-large,232,this post is a personal attack,this post is a personal attack,0.3333333333333333,1.0,0.4243055555555556
+T5-base,22,this post implies that jews are evil,this post implies that jews are not worthy of life,0.1111111111111111,0.4444444444444444,0.44375000000000003
+T5-base,209,this post implies that saudi arabian folks are all terrorists,this post implies that saudis are incompetent,0.1111111111111111,0.4444444444444444,0.44375000000000003
+T5-large,269,this post implies that women are irrational,this post implies that women are as insane as men,0.1111111111111111,0.4444444444444444,0.44375000000000003
+T5-large,214,this post implies that muslim folks are gullible,this post implies that muslims are sexist,0.2222222222222222,0.5714285714285715,0.4520833333333334
+T5-large,57,this post implies that blacks are criminals,this post implies that black folks are inferior,0.2222222222222222,0.5714285714285715,0.4520833333333334
+T5-base,309,this post implies that jews are like criminals,this post implies that jews are lesser,0.2222222222222222,0.5714285714285715,0.4520833333333334
+T5-base,155,this post is a personal attack,this post implies that mf is a dirty man,0.0,0.25,0.47430555555555554
+T5-3B,135,this post implies that women cheat on their so,this post implies that women are incompetent,0.0,0.25,0.47430555555555554
+T5-large,63,this post implies that ugly women are worthless,this post implies that black folks are stupid,0.0,0.25,0.47430555555555554
+GPT-3,281,this post implies that being gay is bad,this post implies that gay people are criminals,0.0,0.25,0.47430555555555554
+T5-base,329,this post implies that black people are n*&gers.,this post implies that women are poor,0.0,0.25,0.47430555555555554
+T5-large,51,this post implies that jews are gassed,this post implies that jewish folks are all racist,0.0,0.25,0.47430555555555554
+T5-large,215,this post implies that fat people are unhealthy,this post implies that being fat is normal,0.0,0.25,0.47430555555555554
+T5-3B,75,this post implies that blacks cant hold a job,this post is a personal attack,0.0,0.25,0.47430555555555554
+T5-3B,335,this post implies that priests rape boys,this post implies that priests have to have acne,0.0,0.25,0.47430555555555554
+T5-3B,328,this post implies that woman are promiscuous,this post implies that black people are not human,0.0,0.25,0.47430555555555554
+T5-large,245,this post implies that muslims are terrorists,this post implies that muslims don't understand technology,0.0,0.25,0.47430555555555554
+GPT-3,189,this post implies that women aren't good actors,this post implies that women are inferior,0.0,0.25,0.47430555555555554
+T5-3B,340,this post implies that women look down on people,this post implies that women are lesser,0.0,0.25,0.47430555555555554
+GPT-3,159,this post implies that jews are greedy,this post implies that jewish folks are less important,0.0,0.25,0.47430555555555554
+GPT-3,357,this post is a personal attack,this post implies that puberty is a bad thing,0.0,0.25,0.47430555555555554
+T5-3B,243,this post implies that muslim folks are primitive,this post implies that muslims only value life,0.0,0.25,0.47430555555555554
+T5-3B,269,this post implies that people make excuses for women,this post implies that women are violent,0.0,0.25,0.47430555555555554
+T5-base,328,this post implies that woman are promiscuous,this post implies that black people are petty thieves,0.0,0.25,0.47430555555555554
+T5-3B,40,this post is a personal attack,this post implies that alex song was a racist,0.0,0.25,0.47430555555555554
+T5-3B,5,this post implies that people with aspergers are crazy,this post implies that aspergers are crazy,0.2222222222222222,0.7499999999999999,0.4902777777777778
+T5-base,124,this post implies that jews are slaughtered,this post implies that jews are pokemon trainers,0.1111111111111111,0.5714285714285715,0.5333333333333334
+GPT-3,21,this post implies that blacks are athletic,this post implies that black people are lazy,0.1111111111111111,0.5714285714285715,0.5333333333333334
+T5-base,99,this post implies that black folks deserve to be ran over,this post implies that black people run over in the winter,0.0,0.2857142857142857,0.5409722222222222
+GPT-3,220,this post implies that women are nasty,this post implies that black folks are dirty,0.0,0.2857142857142857,0.5409722222222222
+T5-large,34,this post implies that women should follow orders,this post implies that women are superheroes,0.0,0.2857142857142857,0.5409722222222222
+T5-base,172,this post implies that jews are gay,this post implies that jewish students are black,0.0,0.2857142857142857,0.5409722222222222
+T5-3B,88,this post implies that indians take back stuff,this post implies that indians are scum,0.0,0.2857142857142857,0.5409722222222222
+T5-base,327,this post is a personal attack,this post implies that jesus is a christian.,0.0,0.2857142857142857,0.5409722222222222
+T5-base,323,this post implies that women are irrational.,this post implies that men are sex slaves,0.0,0.2857142857142857,0.5409722222222222
+T5-base,321,this post is a personal attack,this post implies that jesus is a homosexual,0.0,0.2857142857142857,0.5409722222222222
+T5-base,207,this post implies that pakastani are gross,this post implies that paki kids are lazy,0.0,0.2857142857142857,0.5409722222222222
+T5-large,352,this post implies that women are cunts,this post implies that women dashboarding is acceptable,0.0,0.2857142857142857,0.5409722222222222
+T5-large,9,this post implies that jews are miserly,this post implies that jewish people are lazy,0.0,0.2857142857142857,0.5409722222222222
+T5-base,93,this post is a personal attack,this post implies that nigga is a bigot,0.0,0.2857142857142857,0.5409722222222222
+T5-3B,183,this post implies that black people destroy things,this post implies that blacks are terrorists,0.0,0.2857142857142857,0.5409722222222222
+T5-3B,21,this post implies that black people love basketball,this post implies that black people are all african americans are poor and starving.,0.0,0.2857142857142857,0.5409722222222222
+T5-large,183,this post implies that black people destroy things,this post implies that blacks are tornadoes,0.0,0.2857142857142857,0.5409722222222222
+T5-large,195,this post implies that women want bad partners,this post implies that women are misogynists,0.0,0.2857142857142857,0.5409722222222222
+T5-3B,221,this post implies that muslims are violent?,this post implies that muslims are useless,0.1111111111111111,0.6666666666666666,0.5673611111111112
+T5-large,83,this post implies that black peoples dark skin is unattractive.,this post implies that black nog is better than white nog,0.0,0.3076923076923076,0.5701388888888889
+T5-3B,334,this post implies that black folks should be called the n-word,this post implies that black folks are all cheaters,0.0,0.3076923076923077,0.5736111111111111
+GPT-3,263,this post implies that black folks are niggers,this post implies that black folks are happy,0.1111111111111111,0.75,0.5763888888888888
+T5-3B,16,this post implies that politicians are liars,this post implies that women are bad,0.0,0.3333333333333333,0.5895833333333333
+GPT-3,339,this post implies that black people love basketball,this post implies that black people are not allowed to have holidays.,0.0,0.3333333333333333,0.5895833333333333
+T5-large,334,this post implies that black people all work in fast food places.,this post implies that blacks are all thieves,0.0,0.3333333333333333,0.5895833333333333
+T5-3B,83,this post implies that black peoples dark skin is unattractive.,this post implies that black people are bad nog drinkers,0.0,0.3333333333333333,0.5895833333333333
+T5-base,16,this post implies that politicians are liars,this post implies that women are bad,0.0,0.3333333333333333,0.5895833333333333
+T5-base,69,this post implies that gay men are called fruits,this post implies that gay men are not necessarily the ones who are to be commended,0.0,0.3529411764705882,0.6055555555555555
+T5-3B,279,this post implies that black people aren't equal to whites,this post implies that black people are poor,0.0,0.3636363636363636,0.6145833333333333
+T5-3B,227,this post implies that asian folks can only have one child,this post implies that asian folks are worthless,0.0,0.3636363636363636,0.6145833333333333
+T5-base,219,this post implies that black people are poor fathers,this post implies that blacks are better off than whites,0.0,0.3636363636363636,0.6145833333333333
+T5-base,29,this post implies that black folks are all very dark skinned,this post implies that black berries are black,0.0,0.3636363636363636,0.6145833333333333
+T5-large,275,this post implies that black folks steal things,this post implies that black folks shouldn't get t.v.,0.0,0.3636363636363636,0.6145833333333333
+T5-large,179,this post implies that children are targets of pedos,this post implies that children under 12 are not human,0.0,0.3636363636363636,0.6145833333333333
+T5-base,317,this post implies that black people are lesser,this post implies that black people are black people trying to get points on the internet,0.0,0.375,0.6229166666666667
+T5-base,250,this post implies that jewish folks are less than human,this post implies that jewish folks eat pizza,0.0,0.4,0.6361111111111111
+T5-3B,250,this post implies that jewish folks are less than human,this post implies that jewish folks eat pizza,0.0,0.4,0.6361111111111111
+T5-3B,113,this post implies that black folks are poor,this post implies that black folks hide their food stamps,0.0,0.4,0.6361111111111111
+T5-base,177,this post implies that women are objects of sexual attention,this post implies that black women are ugly,0.0,0.4,0.6361111111111111
+T5-base,34,this post implies that women should follow orders,this post implies that women should not be made famous,0.0,0.4,0.6361111111111111
+T5-large,184,this post implies that black people are undeserving,this post implies that black folks are all criminals,0.0,0.4444444444444445,0.6715277777777777
+T5-base,238,this post implies that black people are ugly,this post implies that black women are much smarter,0.0,0.4444444444444445,0.6715277777777777
+T5-base,316,this post implies that black people are sub-human,this post implies that black folks are slaves,0.0,0.4444444444444445,0.6715277777777777
+T5-large,95,this post implies that black folks fear white people.,this post implies that black folks are dangerous,0.0,0.4444444444444445,0.6715277777777777
+T5-3B,184,this post implies that black people are undeserving,this post implies that black folks are all bad,0.0,0.4444444444444445,0.6715277777777777
+T5-base,184,this post implies that black people are undeserving,this post implies that black folks are all criminals,0.0,0.4444444444444445,0.6715277777777777
+T5-large,69,this post implies that gay men are called fruits,this post implies that gay men are all gays have been busted,0.0,0.4615384615384615,0.6854166666666667
+T5-base,244,this post implies that black people are property,this post implies that black folks are ugly,0.0,0.5,0.7097222222222221
+T5-3B,69,this post implies that gay men are called fruits,this post implies that gay men are all gays have aids,0.0,0.5,0.7097222222222221
+T5-base,262,this post implies that black people are dirty,this post implies that black folks are funny,0.0,0.5,0.7097222222222221
+T5-base,154,this post implies that catholics are hypocritical,this post implies that catholics in europe are trash,0.0,0.5,0.7097222222222221
+T5-base,173,this post implies that black folks are still seen as slaves,this post implies that black folks are ball-like,0.0,0.5,0.7097222222222221
+T5-large,94,this post is a personal attack,this post implies that puto is a real person,0.0,0.5,0.7097222222222221
+T5-base,28,this post implies that black people are objects,this post implies that black jokes are masterful,0.0,0.5,0.7097222222222221
+GPT-3,184,this post implies that black people are undeserving,this post implies that black folks are criminals,0.0,0.5,0.7097222222222221
+T5-base,33,this post implies that women are like objects,this post implies that women are not sexist,0.0,0.5,0.7097222222222221
+T5-base,58,this post implies that black people are inferior,this post implies that black folks are prostitutes,0.0,0.5,0.7097222222222221
+T5-3B,9,this post implies that jews are miserly,this post implies that jews are speeding bullets,0.0,0.5714285714285715,0.7458333333333333
+T5-base,51,this post is a personal attack,this post implies that incel redemption story is a personal attack,0.0,0.6,0.7618055555555555
+T5-large,273,this post implies that black people should be excluded,this post implies that blacks should be more tolerant,0.0,0.6,0.7618055555555555
+T5-base,311,this post implies that black folks can't swim,this post implies that black folks should just swim.,0.0,0.6,0.7618055555555555
+T5-3B,263,this post implies that black people are a waste,this post implies that black people are sniggers,0.0,0.6666666666666665,0.7715277777777777
+T5-large,317,this post implies that black folks are bad fathers,this post implies that black folks are exploited,0.0,0.6666666666666665,0.7715277777777777
+T5-base,353,this post implies that women are cowardly,this post implies that women are smarter,0.0,0.6666666666666666,0.7798611111111111
+T5-3B,47,this post implies that black folks are violent,this post implies that black folks are stupid,0.0,0.75,0.7888888888888889
+T5-large,47,this post implies that black folks are violent,this post implies that black folks are dumb,0.0,0.75,0.7888888888888889
+T5-3B,23,this post implies that jewish people are criminals,this post implies that jewish people are incompetent,0.0,0.75,0.7888888888888889
