@@ -45,7 +45,7 @@ src/
   referencias_multiplas.py  OE2: todas as implicações do SBIC como referências (Colab/local)
   correlacoes.py            τ-b, ρ, IC bootstrap agrupado por post, Δτ pareado, por modelo, divergências
   amostra_sp3.py            SP3: 100 divergências + categoria sugerida -> results/sp3_anotacao.xlsx
-  analise_sp3.py            SP3: distribuição e concordância (heurística × Claude × Caio, cego × não cego)
+  analise_sp3.py            SP3: distribuição por categoria e concordância heurística × anotação final
 notebooks/
   colab_embeddings.ipynb    roteiro completo para o Colab
 data/processed/             tabela de itens (gerada pelos scripts)
@@ -118,11 +118,11 @@ Cada post do SBIC tem várias implicações escritas por anotadores diferentes; 
 - Mesmo assim, a correlação continua **fraca** (τ < 0,25): mais referências ajudam, mas não resolvem.
 - Por modelo, o ganho aparece nos T5 (ex.: ROUGE-L no T5-3B 0,171 → 0,262); no GPT-3 o τ cai um pouco (0,331 → 0,293).
 
-## SP3 — segunda anotação (Claude, 27/09/2026)
+## SP3 — tipologia (anotação do Claude, 27/09/2026)
 
-O Claude anotou os 100 casos como **segundo anotador** (colunas R–T de `results/sp3_anotacao_cega.xlsx`; justificativa por item em `results/sp3_anotacao_claude.tsv`). A anotação final, humana, é a do Caio (coluna P), ainda pendente. Como o Claude escreveu a heurística, a anotação dele não é às cegas.
+**A anotação final foi feita pelo Claude (modelo de linguagem), sem validação humana**, por decisão do Caio (27/09/2026). Coluna P de `results/sp3_anotacao_cega_final.xlsx`, com justificativa por item na coluna Q e em `results/sp3_anotacao_claude.tsv`. O Claude escreveu a heurística e conhecia as sugestões ao anotar. No relatório, a tipologia deve ser descrita como anotação por LLM; a P9 foi descartada.
 
-| Direção | Categoria | Heurística | Claude |
+| Direção | Categoria | Heurística | Anotação final (Claude) |
 |---|---|---|---|
 | A | A1 Grupo certo, estereótipo errado | 26 | 14 |
 | A | A2 Sobreposição só de molde | 3 | 3 |
@@ -135,7 +135,7 @@ O Claude anotou os 100 casos como **segundo anotador** (colunas R–T de `result
 | B | B4 Alternativa não coberta | 6 | 7 |
 | B | B9 Outro | 0 | 2 |
 
-- Concordância heurística × Claude: 80% (κ = 0,76).
+- Concordância heurística × anotação final: 80% (κ = 0,76); direção A 74% (κ = 0,64), direção B 86% (κ = 0,78). A heurística erra sobretudo ao marcar A1 em casos de leitura literal (A9) e de sentido invertido (A3).
 - **Padrão emergente, "leitura literal":** em 18 dos 100 casos a gerada repete as palavras da piada sem extrair a implicação (ex.: *jews are speeding bullets*, *jewish folks eat pizza*). É a maior parte dos A9 e candidata a categoria nova (A5). Quase só nos T5: 17 dos 77 itens T5 da amostra, contra 1 dos 23 do GPT-3.
 - **B2 é robusto:** as referências genéricas explicam 28 dos 50 casos em que a métrica reprova o que os humanos aprovam (P10).
 
@@ -144,8 +144,7 @@ O Claude anotou os 100 casos como **segundo anotador** (colunas R–T de `result
 - [x] BERTScore (27/09, rodado localmente com a configuração do Colab)
 - [ ] MoverScore
 - [x] Baixar o SBIC v2 e rodar múltiplas referências (OE2)
-- [x] SP3: segunda anotação (Claude)
-- [ ] SP3: anotação do Caio na coluna P de `results/sp3_anotacao_cega.xlsx` (os 30 primeiros às cegas); depois `python src/analise_sp3.py`
+- [x] SP3: anotação dos 100 casos (Claude, sem validação humana)
 - [ ] Relatório parcial (meta interna: 23/01/2027)
 
 ## Referências

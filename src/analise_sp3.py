@@ -1,13 +1,16 @@
 """SP3 — consolida a anotação da tipologia e mede concordância.
 
-Lê results/sp3_anotacao_cega.xlsx (aba "Anotação"):
+Lê results/sp3_anotacao_cega_final.xlsx (aba "Anotação"):
 - M  "Sugerida"            -> heurística de src/amostra_sp3.py
-- P  "CATEGORIA FINAL"     -> anotação do Caio (humana; a que vale para o relatório)
-- R  "Categoria (Claude)"  -> segundo anotador (Claude), com justificativa em S
-- Q  "Observação" = "cego" -> item anotado pelo Caio sem ver M–O
+- P  "CATEGORIA FINAL"          -> anotação final, feita pelo Claude em 27/09/2026,
+                                  sem validação humana (decisão do Caio; P9 descartada)
+- Q  "Justificativa (Claude)"
+- R  "Leitura literal?"         -> padrão emergente (candidato à categoria A5)
+Se no futuro um humano anotar, acrescente a coluna "Categoria (humano)" e o script
+calcula a concordância com ela automaticamente.
 
 Calcula distribuição por categoria e concordância (% e kappa de Cohen) entre
-heurística, Claude e Caio, separando itens às cegas dos demais (P9).
+heurística e anotação final, por direção.
 
 Saída: results/sp3_resumo.csv, results/sp3_concordancia.csv
 Uso:   python src/analise_sp3.py
@@ -19,7 +22,7 @@ from openpyxl import load_workbook
 
 from config import RESULTADOS
 
-PLANILHA = RESULTADOS / "sp3_anotacao_cega.xlsx"
+PLANILHA = RESULTADOS / "sp3_anotacao_cega_final.xlsx"
 
 
 def kappa(a: pd.Series, b: pd.Series) -> float:
@@ -39,15 +42,16 @@ def ler() -> pd.DataFrame:
     df = pd.DataFrame(linhas[1:], columns=linhas[0])
     df = df[df["ID"].notna()].copy()
     df["direcao"] = df["ID"].str[0]
-    df["cego"] = df["Observação"].astype(str).str.lower().str.startswith("cego")
-    df = df.rename(columns={"Sugerida": "heuristica", "CATEGORIA FINAL": "caio",
-                            "Categoria (Claude)": "claude"})
+    df = df.rename(columns={"Sugerida": "heuristica", "CATEGORIA FINAL": "claude", "CATEGORIA FINAL (Claude)": "claude",
+                            "Categoria (humano)": "humano"})
+    if "humano" not in df:
+        df["humano"] = None
     return df
 
 
 def main() -> None:
     df = ler()
-    anotadores = [c for c in ["heuristica", "claude", "caio"] if df[c].notna().any()]
+    anotadores = [c for c in ["heuristica", "claude", "humano"] if df[c].notna().any()]
 
     # distribuição
     dist = pd.concat(
@@ -60,7 +64,8 @@ def main() -> None:
     linhas = []
     for i, a in enumerate(anotadores):
         for b in anotadores[i + 1:]:
-            for nome, sub in [("todos", df), ("cego", df[df.cego]), ("nao_cego", df[~df.cego])]:
+            for nome, sub in [("todos", df), ("direcao_A", df[df.direcao == "A"]),
+                              ("direcao_B", df[df.direcao == "B"])]:
                 s = sub[sub[a].notna() & sub[b].notna()]
                 linhas.append({"par": f"{a} x {b}", "subconjunto": nome, "n": len(s),
                                "concordancia": (s[a] == s[b]).mean() if len(s) else float("nan"),
@@ -73,8 +78,9 @@ def main() -> None:
     print(dist.to_string())
     print()
     print(conc.to_string(index=False))
-    if "caio" not in anotadores:
-        print("\nAviso: coluna CATEGORIA FINAL (Caio) ainda vazia.")
+    lit = (df["Leitura literal?"] == "sim").sum()
+    print(f"\nLeitura literal: {lit} de {len(df)} itens")
+    print("Aviso: anotação final feita pelo Claude, sem validação humana.")
 
 
 if __name__ == "__main__":
