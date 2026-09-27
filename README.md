@@ -82,6 +82,23 @@ A concordância depende muito do gerador: moderada no GPT-3, nula no T5-base (IC
 
 **Prévia da tipologia de divergência (SP3):** os casos com métrica alta e humano 0 seguem o padrão "acerta o grupo-alvo, erra o estereótipo" (ex.: ref. *black folks are violent* × gerada *black folks are stupid*, ROUGE-L 0,75). Lista em `results/divergencias_rougeL.csv`.
 
+## Resultados preliminares (OE1, BERTScore)
+
+roberta-large, F1, `rescale_with_baseline=True` (o reescalonamento não altera τ). Mesmos 720 itens e bootstrap.
+
+| Métrica | τ (completo) | τ (sem prefixo) | IC 95% (sem prefixo) | ρ (sem prefixo) |
+|---|---|---|---|---|
+| BERTScore | 0,199 | 0,201 | [0,142; 0,262] | 0,277 |
+| ROUGE-L (ref. única) | 0,173 | 0,189 | [0,124; 0,250] | 0,242 |
+| ROUGE-L (múltiplas refs) | — | 0,228 | [0,168; 0,292] | 0,299 |
+
+- **O BERTScore também fica na faixa fraca (τ ≈ 0,20).** No texto completo, supera BLEU e ROUGE-2 (Δτ ≈ +0,04, significativo); sem prefixo, só o ROUGE-2 (+0,065). **Não difere significativamente** de ROUGE-1, ROUGE-L e METEOR, nem das n-gramas com múltiplas referências.
+- **O prefixo não afeta o BERTScore** (0,199 × 0,201; Δτ = −0,002, n.s.): as embeddings já "descontam" o molde que infla as n-gramas.
+- **Onde as n-gramas zeram, o BERTScore também falha:** nos 311 itens com ROUGE-L = 0, τ = 0,05. Nos 409 com ROUGE-L > 0, τ = 0,18.
+- Correlação entre BERTScore e ROUGE-L sem prefixo: τ = 0,59. As duas famílias medem quase a mesma coisa.
+- Por modelo: GPT-3 0,284; T5-3B 0,197; T5-large 0,205; T5-base 0,083 (IC inclui zero). Sem as 16 cópias exatas: 0,172.
+- MoverScore ainda não calculado.
+
 ## Resultados preliminares (OE2, múltiplas referências)
 
 Cada post do SBIC tem várias implicações escritas por anotadores diferentes; o FEB usa só uma. Juntando todas (mediana de 5 referências por item, de 1 a 21), recalculamos as métricas sem prefixo contra o conjunto (BLEU multi-referência; ROUGE e METEOR pelo máximo).
@@ -102,9 +119,10 @@ Cada post do SBIC tem várias implicações escritas por anotadores diferentes; 
 
 ## Pendências
 
-- [ ] Rodar BERTScore e MoverScore no Colab (1ª tentativa não gerou as colunas)
+- [x] BERTScore (27/09, rodado localmente com a configuração do Colab)
+- [ ] MoverScore
 - [x] Baixar o SBIC v2 e rodar múltiplas referências (OE2)
-- [ ] Tipologia de divergência (SP3): anotar os 100 casos de `results/sp3_anotacao.xlsx`
+- [ ] Tipologia de divergência (SP3): anotar os 100 casos de `results/sp3_anotacao_cega.xlsx` (os 30 primeiros às cegas)
 - [ ] Relatório parcial (meta interna: 23/01/2027)
 
 ## Referências

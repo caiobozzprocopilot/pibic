@@ -19,7 +19,7 @@
 | PIBIC 2026–2027 — Passos 1 a 3 ….docx | FEB, pergunta, objetivos | Orientador |
 | claude/00_COORDENACAO.md | Este quadro | ambos |
 | claude/plano_mestre_ate_fevereiro.md | Cronograma até o relatório parcial | Coordenação |
-| claude/resultados_preliminares.md | Números do OE1, OE2 e prévia da SP3 | Coordenação |
+| claude/resultados_preliminares.md | Números do OE1 (n-gramas e BERTScore), OE2 e prévia da SP3 | Coordenação |
 | **github.com/caiobozzprocopilot/pibic** | Código, dados processados, resultados, notebook do Colab, planilha da SP3; `docs/` tem cópias destes três .md | Coordenação (Caio faz o push) |
 
 ## Decisões (vigentes até o Orientador dizer o contrário)
@@ -40,7 +40,7 @@
 | # | Pergunta | Resposta |
 |---|---|---|
 | P1 | Confirma a opção A (sem geração própria) para o relatório parcial? Se B ou C, quando entra? | |
-| P2 | A variante principal deve ser o texto sem prefixo? (Tirar o molde muda τ e expõe 43% de itens com ROUGE-L = 0) | |
+| P2 | A variante principal deve ser o texto sem prefixo? (Tirar o molde muda τ das n-gramas e expõe 43% de itens com ROUGE-L = 0; o BERTScore quase não muda: 0,199 × 0,201, argumento a favor de usar sem prefixo como principal) | |
 | P3 | Tratar as 16 cópias exatas (gerada = referência): manter, excluir ou relatar as duas versões? | |
 | P4 | Teste entre métricas: bootstrap pareado de Δτ (já feito) basta, ou quer também o teste de Williams/Steiger? | |
 | P5 | O Passo 4 (redesenho da Seção 4.3) pode ser dado como fechado com D3? | |
@@ -59,8 +59,8 @@
 | C3 | Nome completo e titulação do orientador (o plano atual assina "Emerson Cabrera Paraiso — Estudante", o que parece um erro) | |
 | C4 | Tem acesso ao Google Colab ou à GPU do grupo para rodar BERTScore/MoverScore? | Sim, Colab funcionando |
 | C5 | Estrutura do repositório | Resolvido (commit 6416a37) |
-| C6 | Rodar a célula do BERTScore no Colab (agora autossuficiente) e mandar o `resultados.zip` | Tentativa de 26/09 falhou: célula rodou antes da preparação |
-| C7 | Subir `atualizacao_27set.zip` (SP3 + notebook limpo + docs atualizados) e anotar os 100 itens de `results/sp3_anotacao.xlsx` | |
+| C6 | Calcular o BERTScore | Resolvido (commit 3aea59d, local no Windows). MoverScore pendente |
+| C7 | Anotar os 100 itens de **`results/sp3_anotacao_cega.xlsx`** (não a original): os 30 do topo (A-01..A-15, B-01..B-15 intercalados) sem reexibir as colunas M–O; depois reexibir e seguir | Planilha pronta (3aea59d); anotação pendente |
 
 ## Registro
 
@@ -70,3 +70,5 @@
 - **25/09/2026 — Coordenação (4ª rodada):** Caio rodou o Colab. **OE2 concluído:** múltiplas referências aumentam τ em todas as métricas (significativo exceto BLEU); ganho sobrevive ao controle do nº de referências; correlação segue fraca (τ < 0,25). ROUGE-L = 0 cai de 311 para 231. BERTScore não gerou colunas. Aberta P8. Repositório no commit 31a93c7.
 - **26/09/2026 — Coordenação (5ª rodada):** SP3 adiantada. `src/amostra_sp3.py` gera 100 divergências com categoria sugerida (A: 26 A1, 18 A4, 3 A2, 2 A3, 1 A9; B: 27 B2, 11 B1, 6 B3, 6 B4) e a planilha `sp3_anotacao.xlsx`. Achado P10: 28% dos itens ofensivos têm referência genérica. Abertas P9 e P10.
 - **27/09/2026 — Coordenação (6ª rodada):** conferido o repositório (commit 6ca9324, salvo pelo Colab). Faltava a atualização da SP3; o notebook tinha a célula autossuficiente do BERTScore, mas salvo com a saída do erro antigo. Preparado `atualizacao_27set.zip`: SP3, notebook limpo, README, requirements e cópias atualizadas dos três .md em `docs/`. BERTScore ainda pendente.
+- **27/09/2026 — Coordenação (7ª rodada):** repositório conferido no commit a3bf179, idêntico à versão da Coordenação. C7: push resolvido, anotação pendente. Combinado: os primeiros ~30 itens da SP3 serão anotados às cegas (sem as colunas M–O) para estimar o viés da sugestão automática (P9).
+- **27/09/2026 — Coordenação (8ª rodada):** conferido o commit 3aea59d. **BERTScore:** τ = 0,201 sem prefixo (0,199 completo), fraco como as n-gramas; supera só BLEU e ROUGE-2; não difere de ROUGE-1/L/METEOR nem das n-gramas com múltiplas refs. Nos 311 itens com ROUGE-L = 0, τ do BERTScore = 0,05: as embeddings também não ordenam esses casos. τ(BERTScore, ROUGE-L) = 0,59. Planilha às cegas validada (M–O ocultas, 30 itens intercalados, original intacta). README e docs atualizados (`atualizacao_bertscore.zip`).

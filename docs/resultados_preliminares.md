@@ -1,6 +1,6 @@
-# Resultados preliminares — OE1 (n-gramas), OE2 (múltiplas referências) e prévia da SP3
+# Resultados preliminares — OE1 (n-gramas e BERTScore), OE2 (múltiplas referências) e prévia da SP3
 
-> Cópia do documento `claude/resultados_preliminares.md` do projeto PIBIC no Claude (27/09/2026). A versão viva fica no projeto.
+> Cópia do documento `claude/resultados_preliminares.md` do projeto PIBIC no Claude (27/09/2026, após o BERTScore). A versão viva fica no projeto.
 
 **Versão de referência: este repositório** (reimplementação de 25/09/2026, substitui a primeira rodada). Reprodução:
 
@@ -47,6 +47,23 @@ Com e sem o molde "this post implies that". Sem o prefixo, **311 dos 720 itens (
 
 T5-base: IC inclui zero para todas as métricas.
 
+## OE1 — BERTScore (27/09/2026, commit 3aea59d)
+
+roberta-large, F1, `rescale_with_baseline=True` (o reescalonamento não altera τ). Mesmos 720 itens e bootstrap.
+
+| Métrica | τ (completo) | τ (sem prefixo) | IC 95% (sem prefixo) | ρ (sem prefixo) |
+|---|---|---|---|---|
+| BERTScore | 0,199 | 0,201 | [0,142; 0,262] | 0,277 |
+| ROUGE-L (ref. única) | 0,173 | 0,189 | [0,124; 0,250] | 0,242 |
+| ROUGE-L (múltiplas refs) | — | 0,228 | [0,168; 0,292] | 0,299 |
+
+- **O BERTScore também fica na faixa fraca (τ ≈ 0,20).** No texto completo, supera BLEU e ROUGE-2 (Δτ ≈ +0,04, significativo); sem prefixo, só o ROUGE-2 (+0,065). **Não difere significativamente** de ROUGE-1, ROUGE-L e METEOR, nem das n-gramas com múltiplas referências.
+- **O prefixo não afeta o BERTScore** (0,199 × 0,201; Δτ = −0,002, n.s.): as embeddings já "descontam" o molde que infla as n-gramas.
+- **Onde as n-gramas zeram, o BERTScore também falha:** nos 311 itens com ROUGE-L = 0, τ = 0,05. Nos 409 com ROUGE-L > 0, τ = 0,18.
+- Correlação entre BERTScore e ROUGE-L sem prefixo: τ = 0,59. As duas famílias medem quase a mesma coisa.
+- Por modelo: GPT-3 0,284; T5-3B 0,197; T5-large 0,205; T5-base 0,083 (IC inclui zero). Sem as 16 cópias exatas: 0,172.
+- MoverScore ainda não calculado.
+
 ## OE2 — Referência única × múltiplas referências (Colab, 25/09/2026)
 
 Todas as implicações (`targetStereotype`) do SBIC v2 para cada post, mais a do FEB. Mediana de 5 referências por item (1 a 21). Texto sem prefixo; BLEU multi-referência nativo, ROUGE/METEOR pelo máximo.
@@ -75,5 +92,6 @@ Amostra de 100 divergências em `results/sp3_anotacao.xlsx` (gerada por `src/amo
 
 ## Pendências técnicas
 
-- **BERTScore/MoverScore:** ainda não calculados. A célula do notebook agora é autossuficiente (prepara o ambiente sozinha).
+- **BERTScore:** calculado (commit 3aea59d, local no Windows, RTX 3060, bert-score 0.3.12). **MoverScore:** pendente.
+- SP3: anotar `results/sp3_anotacao_cega.xlsx` (A-01..A-15 e B-01..B-15 às cegas, colunas M–O ocultas).
 - Perguntas para o Orientador: P8 (controle do nº de refs), P9 (viés da sugestão automática), P10 (o que fazer com referências genéricas).
