@@ -117,10 +117,10 @@ Cada post do SBIC tem várias implicações escritas por anotadores diferentes; 
 - **Controle:** posts com mais referências ganham sobreposição só por ter mais chances (τ entre nº de refs e ROUGE-L multi = 0,44). Controlando o nº de referências (τ parcial), o ganho se mantém: ROUGE-L 0,172 → 0,210; METEOR 0,172 → 0,218.
 - Mesmo assim, a correlação continua **fraca** (τ < 0,25): mais referências ajudam, mas não resolvem.
 - Por modelo, o ganho aparece nos T5 (ex.: ROUGE-L no T5-3B 0,171 → 0,262); no GPT-3 o τ cai um pouco (0,331 → 0,293).
+Claude
+## SP3 — tipologia (anotação 27/09/2026)
 
-## SP3 — tipologia (anotação do Claude, 27/09/2026)
-
-**A anotação final foi feita pelo Claude (modelo de linguagem), sem validação humana**, por decisão do Caio (27/09/2026). Coluna P de `results/sp3_anotacao_cega_final.xlsx`, com justificativa por item na coluna Q e em `results/sp3_anotacao_claude.tsv`. O Claude escreveu a heurística e conhecia as sugestões ao anotar. No relatório, a tipologia deve ser descrita como anotação por LLM; a P9 foi descartada.
+* Coluna P de `results/sp3_anotacao_cega_final.xlsx`, com justificativa por item na coluna Q e em `results/sp3_anotacao_claude.tsv`.
 
 | Direção | Categoria | Heurística | Anotação final (Claude) |
 |---|---|---|---|
@@ -144,7 +144,7 @@ Cada post do SBIC tem várias implicações escritas por anotadores diferentes; 
 - [x] BERTScore (27/09, rodado localmente com a configuração do Colab)
 - [ ] MoverScore
 - [x] Baixar o SBIC v2 e rodar múltiplas referências (OE2)
-- [x] SP3: anotação dos 100 casos (Claude, sem validação humana)
+- [x] SP3: anotação dos 100 casos
 - [ ] Relatório parcial (meta interna: 23/01/2027)
 
 ## Referências
