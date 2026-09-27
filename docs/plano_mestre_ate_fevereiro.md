@@ -1,17 +1,21 @@
 # Plano mestre — até o relatório parcial
 
+> Cópia do documento `claude/plano_mestre_ate_fevereiro.md` do projeto PIBIC no Claude (27/09/2026). A versão viva fica no projeto.
+
 **Meta interna:** relatório parcial pronto em **23/01/2027**. O prazo oficial deve cair no início de fevereiro (no ciclo 2025–26 foi de 6 a 10/02), o que deixa duas semanas de folga.
 
-**Princípio:** o relatório parcial sai com resultados preliminares reais (OE1 com todas as métricas), e não só com metodologia planejada. Isso já está ao alcance: as métricas de n-gramas estão prontas.
+**Princípio:** o relatório parcial sai com resultados preliminares reais (OE1 com todas as métricas), e não só com metodologia planejada.
+
+**Situação em 27/09:** adiantados em relação ao plano. OE1 (n-gramas) e OE2 (múltiplas referências) prontos; SP3 com amostra e planilha prontas para anotação. Falta o BERTScore/MoverScore.
 
 ## Blocos
 
 | Semanas | Período | Frente | Entregas | Quem |
 |---|---|---|---|---|
-| 1 | 29/09 – 05/10 | Fechar desenho | Orientador responde P1–P7; Caio responde C1–C4; Passo 4 fechado | Orientador, Caio |
-| 2–3 | 06/10 – 19/10 | Embeddings e refs. múltiplas | BERTScore + MoverScore no Colab; SBIC com múltiplas implicações; tabela completa do OE1 | Caio (roda), Coordenação (código e análise) |
-| 4–5 | 20/10 – 02/11 | OE2 + ICs por modelo | Correlações com referência única vs. múltipla; testes n-gramas vs. embeddings | Coordenação |
-| 6–7 | 03/11 – 16/11 | SP3: tipologia | Categorias de divergência (grupo certo/estereótipo errado, referência genérica, paráfrase etc.); anotação de ~100 casos pelo Caio | Caio + Coordenação |
+| 1 | 29/09 – 05/10 | Fechar desenho | Orientador responde P1–P10; Caio responde C1–C3; Passo 4 fechado | Orientador, Caio |
+| 2–3 | 06/10 – 19/10 | Embeddings e refs. múltiplas | BERTScore + MoverScore no Colab; ~~SBIC com múltiplas implicações~~ (feito 25/09); tabela completa do OE1 | Caio (roda), Coordenação (código e análise) |
+| 4–5 | 20/10 – 02/11 | OE2 + ICs por modelo | ~~Correlações com referência única vs. múltipla~~ (feito 25/09); testes n-gramas vs. embeddings | Coordenação |
+| 6–7 | 03/11 – 16/11 | SP3: tipologia | Anotação dos 100 casos de `results/sp3_anotacao.xlsx` pelo Caio (amostra e livro de códigos prontos em 26/09) | Caio + Coordenação |
 | 3–8 | 13/10 – 23/11 | Leituras em paralelo | Fichas: Sap 2020, Marasović 2022, Zhang 2020 (BERTScore), Zhao 2019 (MoverScore), Gurrapu 2023, 1 de LLM-as-a-judge | Caio |
 | 8–9 | 17/11 – 30/11 | Redação 1 | Introdução, objetivos, fundamentação, metodologia | Coordenação redige, Orientador revisa |
 | 10–11 | 01/12 – 14/12 | Redação 2 | Resultados preliminares, discussão, próximas etapas, cronograma revisado | Coordenação redige, Orientador revisa |
@@ -30,7 +34,7 @@ Provisório: ajustar ao modelo oficial quando o Caio anexar (C1).
 4. Objetivos: geral e OE1–OE3 (doc "Passos 1 a 3")
 5. Fundamentação: discurso de ódio e SBIC; ELNs e FEB; métricas de n-gramas e de embeddings; avaliação humana de explicações
 6. Metodologia: dados do FEB, recorte dos 720 itens, métricas, variantes de texto, correlação por instância e bootstrap
-7. Resultados preliminares: tabela τ/ρ, análise por modelo, itens com ROUGE-L = 0, prévia da tipologia
+7. Resultados preliminares: tabela τ/ρ, análise por modelo, itens com ROUGE-L = 0, múltiplas referências, prévia da tipologia
 8. Atividades realizadas vs. previstas: honestidade sobre a mudança de escopo (geração → FEB)
 9. Próximas etapas e cronograma revisado (fev–ago/2027)
 10. Referências (ABNT)

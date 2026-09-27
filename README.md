@@ -44,6 +44,7 @@ src/
   metricas_embeddings.py    BERTScore e MoverScore (Colab)
   referencias_multiplas.py  OE2: todas as implicações do SBIC como referências (Colab/local)
   correlacoes.py            τ-b, ρ, IC bootstrap agrupado por post, Δτ pareado, por modelo, divergências
+  amostra_sp3.py            SP3: 100 divergências + categoria sugerida -> results/sp3_anotacao.xlsx
 notebooks/
   colab_embeddings.ipynb    roteiro completo para o Colab
 data/processed/             tabela de itens (gerada pelos scripts)
@@ -103,7 +104,7 @@ Cada post do SBIC tem várias implicações escritas por anotadores diferentes; 
 
 - [ ] Rodar BERTScore e MoverScore no Colab (1ª tentativa não gerou as colunas)
 - [x] Baixar o SBIC v2 e rodar múltiplas referências (OE2)
-- [ ] Tipologia de divergência: anotar ~100 casos (SP3)
+- [ ] Tipologia de divergência (SP3): anotar os 100 casos de `results/sp3_anotacao.xlsx`
 - [ ] Relatório parcial (meta interna: 23/01/2027)
 
 ## Referências

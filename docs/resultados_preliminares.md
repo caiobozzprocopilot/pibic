@@ -1,65 +1,79 @@
-# Resultados preliminares — OE1 (métricas de n-gramas)
+# Resultados preliminares — OE1 (n-gramas), OE2 (múltiplas referências) e prévia da SP3
 
-Rodada de 25/09/2026, conversa **Coordenação**. Código em `src/`, reprodutível com:
+> Cópia do documento `claude/resultados_preliminares.md` do projeto PIBIC no Claude (27/09/2026). A versão viva fica no projeto.
+
+**Versão de referência: este repositório** (reimplementação de 25/09/2026, substitui a primeira rodada). Reprodução:
 
 ```
-git clone https://github.com/allenai/feb.git
+git clone https://github.com/caiobozzprocopilot/pibic.git && cd pibic
+git clone --depth 1 https://github.com/allenai/feb.git data/raw/feb
+pip install -r requirements.txt
 python src/carregar_feb.py && python src/metricas_lexicais.py && python src/correlacoes.py
 ```
 
 ## Dados
 
-- 4.320 julgamentos → 1.440 itens (4 modelos × 360), 3 anotadores por item, 563 posts distintos. Confirma os números do Passo 1.
-- Análise restrita aos **720 itens ofensivos** (nos não ofensivos, gerada = referência em 100%).
-- Novo: **16 itens ofensivos** em que a explicação gerada é cópia exata da referência (plausibilidade média 0,85).
-- Convenção seguida (código do FEB): `Input.{k}_gt_idx = 0` → referência é a e1; `Input.gt_{k}` é o rótulo (0 = ofensivo). O comentário em compute_kappa.py troca os nomes das colunas; o código está certo.
+- 4.320 julgamentos → 1.440 itens (4 modelos × 360), 3 anotadores por item, 563 posts distintos. Confirma o Passo 1.
+- Análise restrita aos **720 itens ofensivos** (nos não ofensivos, gerada = referência em 100%). 254 com plausibilidade 0; dp 0,34.
+- **16 itens ofensivos** com cópia exata da referência (plausibilidade média 0,85).
+- Convenção (código do FEB): `Input.{k}_gt_idx = 0` → referência é a e1; `Input.gt_{k}` é o rótulo (0 = ofensivo). Os CSVs públicos não trazem WorkerId.
 
 ## Duas variantes de texto
 
-Quase todas as explicações começam com o molde "this post implies that". Esse trecho é idêntico entre gerada e referência e infla a sobreposição igualmente para todos os itens. Rodamos as métricas com o texto **completo** e **sem o prefixo**.
+Com e sem o molde "this post implies that". Sem o prefixo, **311 dos 720 itens (43%) têm ROUGE-L = 0** (plaus. média 0,24; 7 com nota máxima). ROUGE sem stemmer (padrão da biblioteca); com stemmer seriam 295.
 
-Após tirar o prefixo, **310 dos 720 itens (43%) têm ROUGE-L = 0**: as métricas de n-gramas não conseguem ordenar quase metade dos itens. Esses itens têm plausibilidade média 0,25, mas 8 deles receberam nota máxima dos humanos.
+## OE1 — Correlação por instância (n = 720, Kendall τ-b, IC 95% bootstrap agrupado por post, B = 2000)
 
-## Correlação por instância (n = 720, Kendall τ-b, IC 95% por bootstrap agrupado por post, B = 2000)
-
-| Métrica | τ (completo) | IC 95% | τ (sem prefixo) | IC 95% | ρ Spearman (sem prefixo) |
+| Métrica | τ (completo) | IC 95% | τ (sem prefixo) | IC 95% | ρ (sem prefixo) |
 |---|---|---|---|---|---|
-| BLEU | 0,155 | [0,089; 0,222] | 0,188 | [0,124; 0,252] | 0,242 |
-| ROUGE-1 | 0,179 | [0,116; 0,243] | 0,199 | [0,131; 0,263] | 0,254 |
-| ROUGE-2 | 0,162 | [0,096; 0,229] | 0,155 | [0,082; 0,223] | 0,182 |
-| ROUGE-L | 0,177 | [0,113; 0,241] | 0,199 | [0,132; 0,264] | 0,255 |
-| METEOR | 0,163 | [0,098; 0,225] | 0,194 | [0,129; 0,258] | 0,252 |
-| Comprimento (linha de base) | −0,003 | [−0,063; 0,062] | — | — | — |
+| BLEU | 0,159 | [0,094; 0,223] | 0,183 | [0,121; 0,242] | 0,238 |
+| ROUGE-1 | 0,175 | [0,110; 0,239] | 0,189 | [0,125; 0,253] | 0,243 |
+| ROUGE-2 | 0,160 | [0,096; 0,225] | 0,136 | [0,067; 0,205] | 0,161 |
+| ROUGE-L | 0,173 | [0,109; 0,237] | 0,189 | [0,124; 0,250] | 0,242 |
+| METEOR | 0,167 | [0,103; 0,231] | 0,190 | [0,127; 0,250] | 0,248 |
+| Comprimento | −0,003 | [−0,067; 0,061] | 0,016 | [−0,048; 0,081] | 0,021 |
 
-- Todas as métricas de n-gramas têm correlação **fraca** (τ < 0,2), mas acima de zero e acima da linha de base de comprimento.
-- As diferenças entre as métricas de n-gramas **não são significativas** (única exceção: ROUGE-1 > BLEU no texto completo, por margem mínima).
-- Excluindo as 16 cópias exatas, τ cai para cerca de 0,16. Parte da correlação vem de poucos casos triviais.
+- Correlação **fraca** (τ < 0,2) em todas, acima de zero e da linha de base.
+- Δτ pareado: única diferença significativa é **ROUGE-2 sem prefixo abaixo** de ROUGE-1, ROUGE-L e METEOR (Δτ ≈ −0,05).
+- Sem as 16 cópias exatas: τ ≈ 0,13–0,16.
 
-### Por modelo (τ, sem prefixo)
+### Por modelo (τ sem prefixo, n = 180; ICs em results/correlacoes_por_modelo.csv)
 
 | Métrica | GPT-3 | T5-3B | T5-large | T5-base |
 |---|---|---|---|---|
-| BLEU | 0,324 | 0,173 | 0,189 | 0,062 |
-| ROUGE-L | 0,326 | 0,216 | 0,186 | 0,056 |
-| METEOR | 0,310 | 0,226 | 0,168 | 0,066 |
+| BLEU | 0,320 | 0,159 | 0,204 | 0,053 |
+| ROUGE-L | 0,331 | 0,171 | 0,223 | 0,032 |
+| METEOR | 0,286 | 0,208 | 0,195 | 0,064 |
 
-A correlação depende muito do gerador: moderada para o GPT-3, quase nula para o T5-base. n = 180 por modelo, portanto ICs largos (a calcular no relatório).
+T5-base: IC inclui zero para todas as métricas.
 
-## Prévia da SP3 (tipologia de divergência)
+## OE2 — Referência única × múltiplas referências (Colab, 25/09/2026)
 
-Os casos de maior divergência (métrica alta, humano 0) são exatamente o padrão previsto em H3: **acerta o grupo-alvo, erra o estereótipo**.
+Todas as implicações (`targetStereotype`) do SBIC v2 para cada post, mais a do FEB. Mediana de 5 referências por item (1 a 21). Texto sem prefixo; BLEU multi-referência nativo, ROUGE/METEOR pelo máximo.
 
-| Referência | Gerada | Humano | ROUGE-L |
-|---|---|---|---|
-| black folks are violent | black folks are stupid | 0 | 0,75 |
-| jewish people are criminals | jewish people are incompetent | 0 | 0,75 |
-| women are cowardly | women are smarter | 0 | 0,67 |
-| black folks are bad fathers | black folks are exploited | 0 | 0,67 |
+| Métrica | τ única | τ múltiplas | IC 95% (múlt.) | Δτ [IC 95%] | τ parcial única → múlt. (controla nº de refs) |
+|---|---|---|---|---|---|
+| BLEU | 0,183 | 0,201 | [0,140; 0,263] | +0,017 [−0,018; 0,059] n.s. | 0,167 → 0,180 |
+| ROUGE-1 | 0,189 | 0,233 | [0,173; 0,298] | +0,044 [0,009; 0,085] | 0,173 → 0,216 |
+| ROUGE-2 | 0,136 | 0,237 | [0,172; 0,305] | +0,100 [0,052; 0,151] | 0,126 → 0,220 |
+| ROUGE-L | 0,189 | 0,228 | [0,168; 0,292] | +0,039 [0,004; 0,078] | 0,172 → 0,210 |
+| METEOR | 0,190 | 0,235 | [0,177; 0,298] | +0,045 [0,013; 0,080] | 0,172 → 0,218 |
 
-No sentido oposto, a referência "this post is a personal attack" leva a métrica zero em explicações que os humanos julgaram plenamente plausíveis. Lista completa em `results/divergencias_rougeL.csv`.
+- Múltiplas referências **aumentam τ em todas as métricas** (significativo exceto BLEU); ROUGE-2 deixa de ser a pior.
+- ROUGE-L = 0: de 311 para 231 itens (80 "resgatados", plaus. média 0,27).
+- Viés possível: mais referências = mais chances de sobreposição (τ nº refs × ROUGE-L multi = 0,44; nº refs × plaus. = 0,09). O ganho **sobrevive** ao controle por τ parcial.
+- Ainda **fraca** (τ < 0,25): mais referências ajudam, não resolvem.
+- Por modelo (ROUGE-L): GPT-3 0,331 → 0,293; T5-3B 0,171 → 0,262; T5-large 0,223 → 0,216; T5-base 0,032 → 0,094.
+
+## Prévia da SP3 (26/09/2026)
+
+Amostra de 100 divergências em `results/sp3_anotacao.xlsx` (gerada por `src/amostra_sp3.py`), com categoria sugerida por heurística e anotação final pendente.
+
+- **Direção A (métrica alta, humano baixo):** padrão dominante "acerta o grupo-alvo, erra o estereótipo" (sugerido em 26 de 50; ex.: *black folks are violent* × *black folks are stupid*, ROUGE-L 0,75). Em 18 de 50 os humanos também reprovaram a própria referência.
+- **Direção B (métrica baixa, humano alto):** dominada por **referências genéricas** (27 de 50), como "this post is a personal attack".
+- **Referências genéricas no conjunto todo:** 200 dos 720 itens ofensivos (28%), com ROUGE-L médio 0,09 contra 0,24 nos demais.
 
 ## Pendências técnicas
 
-- **BERTScore e MoverScore** não rodaram aqui: o ambiente não acessa o HuggingFace. Script pronto em `src/metricas_embeddings.py` para rodar no Colab.
-- **Múltiplas referências (OE2):** o site do SBIC também está bloqueado aqui. Script pronto em `src/referencias_multiplas.py`.
-- Adicionar ICs por modelo e teste de diferença entre métricas de embeddings e de n-gramas quando BERTScore estiver pronto.
+- **BERTScore/MoverScore:** ainda não calculados. A célula do notebook agora é autossuficiente (prepara o ambiente sozinha).
+- Perguntas para o Orientador: P8 (controle do nº de refs), P9 (viés da sugestão automática), P10 (o que fazer com referências genéricas).

@@ -5,3 +5,4 @@ scipy>=1.10
 nltk>=3.8
 rouge-score>=0.1.2
 sacrebleu>=2.3
+openpyxl>=3.1        # planilha de anotação da SP3
