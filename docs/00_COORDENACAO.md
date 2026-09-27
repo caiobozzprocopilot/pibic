@@ -33,6 +33,7 @@
 | D5 | Embeddings (BERTScore/MoverScore) e múltiplas referências rodam no Colab (ambiente da Coordenação não acessa HuggingFace nem o site do SBIC) | Adotada |
 | D6 | Números válidos do OE1 são os do repositório GitHub (reimplementação reprodutível); ROUGE sem stemmer | Adotada |
 | D7 | OE2: múltiplas referências = todas as `targetStereotype` do SBIC v2 + a do FEB; BLEU multi-ref nativo, ROUGE/METEOR pelo máximo; relatar também τ parcial controlando o nº de referências | Proposta — aguarda Orientador (P8) |
+| D9 | MoverScore fica para depois do relatório parcial (BERTScore já na faixa fraca; improvável que mude a conclusão) | Adotada |
 | D8 | SP3: amostra de 100 divergências (50 métrica alta/humano ≤ 1/3; 50 métrica baixa/humano ≥ 2/3; sem cópias exatas; ROUGE-L sem prefixo). Livro de códigos A1–A4/A9 e B1–B4/B9; categoria sugerida por heurística, decisão final do Caio | Proposta — aguarda Orientador (P9) |
 
 ## Perguntas abertas para o Orientador
@@ -48,6 +49,7 @@
 | P7 | LLM-as-a-judge (Passo 6): entra como leitura ou também como uma métrica a mais no experimento? | |
 | P8 | OE2: múltiplas refs sobem τ (ROUGE-L 0,189 → 0,228; ROUGE-2 0,136 → 0,237), mas o nº de refs varia de 1 a 21 e infla a sobreposição. O τ parcial controlando nº de refs basta, ou prefere limitar a k refs sorteadas por post? | |
 | P9 | SP3: o livro de códigos (D8) serve? A sugestão automática pode enviesar a anotação; aceitável para o parcial ou quer um segundo anotador / anotação cega em parte da amostra? | |
+| P11 | SP3: incluir a categoria emergente **A5 "Leitura literal"** (a gerada repete as palavras da piada sem extrair a implicação; 18 de 100 casos na anotação do Claude, quase todos T5)? E usar o Claude como segundo anotador para κ entre anotadores, declarando isso no relatório? | |
 | P10 | **Achado:** 200 dos 720 itens ofensivos (28%) têm referência genérica ("personal attack", "trivializes harm"), com ROUGE-L médio 0,09 contra 0,24 nos demais; é a causa de 27 dos 50 falsos negativos da amostra. Excluir esses itens, relatar à parte, ou tratar como achado central? | |
 
 ## Perguntas abertas para o Caio
@@ -59,8 +61,8 @@
 | C3 | Nome completo e titulação do orientador (o plano atual assina "Emerson Cabrera Paraiso — Estudante", o que parece um erro) | |
 | C4 | Tem acesso ao Google Colab ou à GPU do grupo para rodar BERTScore/MoverScore? | Sim, Colab funcionando |
 | C5 | Estrutura do repositório | Resolvido (commit 6416a37) |
-| C6 | Calcular o BERTScore | Resolvido (commit 3aea59d, local no Windows). MoverScore pendente |
-| C7 | Anotar os 100 itens de **`results/sp3_anotacao_cega.xlsx`** (não a original): os 30 do topo (A-01..A-15, B-01..B-15 intercalados) sem reexibir as colunas M–O; depois reexibir e seguir | Planilha pronta (3aea59d); anotação pendente |
+| C6 | Calcular o BERTScore | Resolvido (commit 3aea59d, local no Windows). MoverScore adiado (D9) |
+| C7 | Anotar os 100 itens na coluna P de **`results/sp3_anotacao_cega.xlsx`**: os 30 do topo sem reexibir M–O (e sem olhar as colunas roxas R–T, do Claude); depois o resto. Rodar `python src/analise_sp3.py` | Segunda anotação (Claude) pronta; anotação do Caio pendente (duas planilhas enviadas em branco em 27/09) |
 
 ## Registro
 
@@ -72,3 +74,5 @@
 - **27/09/2026 — Coordenação (6ª rodada):** conferido o repositório (commit 6ca9324, salvo pelo Colab). Faltava a atualização da SP3; o notebook tinha a célula autossuficiente do BERTScore, mas salvo com a saída do erro antigo. Preparado `atualizacao_27set.zip`: SP3, notebook limpo, README, requirements e cópias atualizadas dos três .md em `docs/`. BERTScore ainda pendente.
 - **27/09/2026 — Coordenação (7ª rodada):** repositório conferido no commit a3bf179, idêntico à versão da Coordenação. C7: push resolvido, anotação pendente. Combinado: os primeiros ~30 itens da SP3 serão anotados às cegas (sem as colunas M–O) para estimar o viés da sugestão automática (P9).
 - **27/09/2026 — Coordenação (8ª rodada):** conferido o commit 3aea59d. **BERTScore:** τ = 0,201 sem prefixo (0,199 completo), fraco como as n-gramas; supera só BLEU e ROUGE-2; não difere de ROUGE-1/L/METEOR nem das n-gramas com múltiplas refs. Nos 311 itens com ROUGE-L = 0, τ do BERTScore = 0,05: as embeddings também não ordenam esses casos. τ(BERTScore, ROUGE-L) = 0,59. Planilha às cegas validada (M–O ocultas, 30 itens intercalados, original intacta). README e docs atualizados (`atualizacao_bertscore.zip`).
+- **27/09/2026 — Coordenação (9ª rodada):** repositório conferido no commit a265b25, idêntico à versão da Coordenação. Decidido adiar o MoverScore (D9). Pendentes: anotação da SP3 (C7) e perguntas ao Orientador (P1, P2, P8–P10).
+- **27/09/2026 — Coordenação (10ª rodada):** a planilha da SP3 chegou duas vezes sem anotação (idêntica à do GitHub). A pedido do Caio, o Claude anotou os 100 casos como **segundo anotador** (colunas R–T, justificativa por item); a coluna P segue reservada à anotação humana. Heurística × Claude: 80% (κ = 0,76). Padrão emergente "leitura literal" (18/100; 17 dos 77 T5 × 1 dos 23 GPT-3). Criado `src/analise_sp3.py`. Aberta P11. Push pendente (sessão sem credencial; `atualizacao_sp3_claude.zip`).

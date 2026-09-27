@@ -1,0 +1,4 @@
+par,subconjunto,n,concordancia,kappa
+heuristica x claude,todos,100,0.8,0.7615357100274235
+heuristica x claude,cego,30,0.8,0.757412398921833
+heuristica x claude,nao_cego,70,0.8,0.7613248904042865

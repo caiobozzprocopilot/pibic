@@ -1,0 +1,101 @@
+id	cat	lit	just
+A-01	A1		Grupo certo (judeus); o post implica criminalidade, a gerada diz incompetência.
+A-02	A1		Grupo certo; o post implica violência (atirador), a gerada diz burrice.
+A-03	A1		Igual a A-02 (dumb em vez de stupid).
+A-04	A3	sim	A gerada lê o trocadilho ao pé da letra (smiling → happy): atributo positivo.
+A-05	A9		Gerada quase idêntica à referência; humanos deram nota baixa às duas (0,22 e 0,44). A métrica acerta a semelhança; a divergência parece vir da forma ("aspergers are crazy").
+A-06	A4		Referência também reprovada (0,00). A gerada ainda inverte o sentido (smarter).
+A-07	A1		Grupo certo; o post implica terrorismo/violência, a gerada diz inutilidade.
+A-08	A1		Grupo certo; estereótipo genérico ("inferior") no lugar do específico (promiscuidade).
+A-09	A4		Referência também reprovada (0,00); a gerada só repete o insulto do post.
+A-10	A3		Grupo certo, mas a gerada troca o estereótipo (pais ausentes) por vitimização (exploited).
+A-11	A2		A sobreposição vem só do molde "is a personal attack"; a gerada repete o post.
+A-12	A3		Grupo certo, mas a gerada distorce o sentido (should just swim).
+A-13	A4	sim	Referência fraca (0,33); a gerada só repete o texto do post (picking cotton).
+A-14	A9	sim	Leitura literal da piada (speeding bullets): não atribui estereótipo nenhum.
+A-15	A9	sim	Leitura literal (pokemon trainers); perde a alusão ao Holocausto.
+A-16	A1		Grupo certo; estereótipo vago ("lesser") no lugar de criminalidade.
+A-17	A4		Referência também fraca (0,33); gerada é quase paráfrase dela. Humanos rejeitam a leitura "católicos são lixo".
+A-18	A4		Referência também fraca (0,33); gerada é paráfrase dela.
+A-19	A1		Grupo certo; "criminals" no lugar de "undeserving".
+A-20	A1		Grupo certo; gerada introduz outro estereótipo (aids), com frase malformada.
+A-21	A9	sim	Leitura literal ("black jokes are masterful"); perde a alusão à escravidão (master).
+A-22	A3	sim	Lê a hashtag #NotSexist ao pé da letra: inverte o sentido.
+A-23	A1		Grupo certo; atribui "prostitutes" a partir das palavras da piada, não da implicação (desumanização).
+A-24	A4		Referência também fraca (0,22); gerada ainda inverte o que o post diz (Europa × EUA).
+A-25	A4	sim	Referência também fraca (0,22); gerada literal (ball-like).
+A-26	A4		Referência também reprovada (0,00); gerada diz outro estereótipo (ugly).
+A-27	A4		Referência também reprovada (0,00); gerada literal/positiva (funny).
+A-28	A1		Grupo certo; "lazy" no lugar de promiscuidade/ausência paterna.
+A-29	A4		Referência também fraca (0,11); o post implica preguiça, nenhuma das duas acerta.
+A-30	A9	sim	Grupo errado e leitura literal (overeating); a métrica pontua só "people ... are".
+A-31	A9	sim	Repete o post (women and tissues are similar) sem extrair a implicação (descartáveis).
+A-32	A4		Referência também fraca (0,33); gerada troca até o grupo (rednecks → black folks).
+A-33	A9	sim	Frase incoerente derivada das palavras da piada (busted).
+A-34	A4		Referência também fraca (0,22).
+A-35	A4		Referência também fraca (0,33).
+A-36	A4		Referência também reprovada (0,11); gerada positiva (smarter), padrão A3.
+A-37	A1		Grupo certo; "slaves" no lugar de "sub-human".
+A-38	A1		Grupo certo; o post fala de medo, a gerada diz "dangerous" (inverte quem ameaça).
+A-39	A4		Referência também reprovada (0,00).
+A-40	A1		Grupo certo; gerada escala para "not worthy of life", que o post não implica.
+A-41	A3		Distorce a comparação do post (women as insane as men).
+A-42	A4		Referência também fraca (0,33); gerada ecoa o post (dirty ≈ trash).
+A-43	A2		Sobreposição só do molde "this post ..."; a gerada atribui um insulto racial inexistente.
+A-44	A3		Grupo certo, sentido invertido (blacks should be more tolerant).
+A-45	A9	sim	Leitura literal (hide their food stamps); perde a implicação (preguiça, não trabalham).
+A-46	A4	sim	Referência também reprovada (0,00); gerada literal (eat pizza).
+A-47	A1		Grupo certo; "not be made famous" no lugar de "follow orders".
+A-48	A2		Sobreposição do molde "is a"; a gerada inverte o alvo do insulto.
+A-49	A3		Grupo certo, sentido invertido: o post elogia a aparência, a gerada diz "ugly".
+A-50	A9	sim	Leitura literal (eat pizza); perde a alusão aos fornos do Holocausto.
+B-01	B2		Referência genérica (personal attack); gerada nomeia corretamente o abuso infantil.
+B-02	B2		Idem B-01.
+B-03	B2		Referência genérica; gerada nomeia a objetificação.
+B-04	B1		Mesma ideia (judeus causam guerras ≈ troublemakers) com outras palavras.
+B-05	B1		Mesma ideia (violência contra mulheres); outra referência do SBIC também cobre (0,57).
+B-06	B4		O post tem duas leituras (sem sábios, sem virgem); a gerada pega a outra e nenhuma referência cobre.
+B-07	B2		Referência genérica; gerada repete o post, mas é plausível.
+B-08	B3		Leitura válida (políticos estupradores) coberta por outra referência (0,67).
+B-09	B2		Referência genérica (trivializes harm); gerada nomeia a violência associada ao país.
+B-10	B2		Referência genérica; gerada identifica o desprezo por pessoas com transtorno mental.
+B-11	B2		Referência genérica; gerada identifica a supremacia branca.
+B-12	B2		Referência genérica; gerada identifica a objetificação.
+B-13	B1		Mesma ideia (islã/muçulmanos são ruins) com outro nome para o grupo.
+B-14	B2		Referência genérica; gerada plausível sobre o país.
+B-15	B4	sim	Leitura quase literal (blacks are the minority), aceita pelos humanos; nenhuma referência cobre.
+B-16	B2		Referência genérica; gerada longa, mas captura a piada.
+B-17	B2		Referência genérica; gerada identifica o estereótipo (promiscuidade).
+B-18	B4		Leitura alternativa (gays pedófilos), mais específica que a referência vaga.
+B-19	B2		Aqui a GERADA é genérica (personal attack) e foi aceita; a referência é específica.
+B-20	B2		Referência genérica; gerada identifica a objetificação.
+B-21	B1		Mesma ideia (padres/católicos pedófilos).
+B-22	B4		Gerada mais fiel ao post do que a referência; nenhuma referência cobre.
+B-23	B2		Referência genérica; gerada identifica a inferiorização das mulheres.
+B-24	B3		Coberta por outra referência do SBIC (ROUGE-L múltiplo = 1,00).
+B-25	B2		Referência genérica; gerada nomeia o abuso.
+B-26	B3		Leitura válida (inferioridade) parcialmente coberta por outra referência (0,50).
+B-27	B4		Leitura alternativa (inferioridade); a referência trata do insulto em si.
+B-28	B2	sim	Referência malformada e sem grupo ("not having neccesities"); gerada literal.
+B-29	B2		Referência genérica.
+B-30	B2		Referência genérica.
+B-31	B2		Referência genérica.
+B-32	B2		Referência genérica.
+B-33	B2		Referência genérica.
+B-34	B2		Aqui a GERADA é genérica (trivializes harm) e foi aceita.
+B-35	B3		Coberta por outra referência (0,67); a referência do FEB é malformada.
+B-36	B2		Referência genérica; gerada identifica o preconceito contra pessoas com deficiência.
+B-37	B2	sim	Referência genérica; gerada repete o post.
+B-38	B9	sim	Gerada literal sem implicação (rednecks celebrate halloween), mesmo assim aceita (0,67): possível leniência dos anotadores.
+B-39	B4		Leitura alternativa (negros são ruins); a referência descreve a influência da mídia.
+B-40	B3		Parcialmente coberta por outra referência (0,50).
+B-41	B2		Referência genérica.
+B-42	B2		Referência genérica.
+B-43	B2		Referência genérica.
+B-44	B3		Coberta em parte por outra referência (0,50), embora a gerada troque o alvo (liberais → judeus).
+B-45	B4		Leitura alternativa (autistas burros); a referência capta a violência.
+B-46	B9	sim	Gerada copia o post (the klan is the greatest...) e foi aceita (0,67): possível leniência.
+B-47	B1		Mesma ideia (deficientes inferiores) com outras palavras.
+B-48	B1		Mesma ideia (mulheres devem obedecer), com a violência explícita.
+B-49	B1		Idem B-48.
+B-50	B2		Referência genérica; gerada identifica a crítica ao governo.

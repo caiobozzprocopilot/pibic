@@ -90,8 +90,29 @@ Amostra de 100 divergências em `results/sp3_anotacao.xlsx` (gerada por `src/amo
 - **Direção B (métrica baixa, humano alto):** dominada por **referências genéricas** (27 de 50), como "this post is a personal attack".
 - **Referências genéricas no conjunto todo:** 200 dos 720 itens ofensivos (28%), com ROUGE-L médio 0,09 contra 0,24 nos demais.
 
+### SP3 — segunda anotação (Claude, 27/09/2026)
+
+O Claude anotou os 100 casos como **segundo anotador** (colunas R–T de `results/sp3_anotacao_cega.xlsx`; justificativa por item em `results/sp3_anotacao_claude.tsv`). A anotação final, humana, é a do Caio (coluna P), ainda pendente. Como o Claude escreveu a heurística, a anotação dele não é às cegas.
+
+| Direção | Categoria | Heurística | Claude |
+|---|---|---|---|
+| A | A1 Grupo certo, estereótipo errado | 26 | 14 |
+| A | A2 Sobreposição só de molde | 3 | 3 |
+| A | A3 Sentido invertido ou positivo | 2 | 7 |
+| A | A4 Referência também implausível | 18 | 17 |
+| A | A9 Outro | 1 | 9 |
+| B | B1 Paráfrase | 11 | 7 |
+| B | B2 Explicação genérica | 27 | 28 |
+| B | B3 Alternativa coberta | 6 | 6 |
+| B | B4 Alternativa não coberta | 6 | 7 |
+| B | B9 Outro | 0 | 2 |
+
+- Concordância heurística × Claude: 80% (κ = 0,76).
+- **Padrão emergente, "leitura literal":** em 18 dos 100 casos a gerada repete as palavras da piada sem extrair a implicação (ex.: *jews are speeding bullets*, *jewish folks eat pizza*). É a maior parte dos A9 e candidata a categoria nova (A5). Quase só nos T5: 17 dos 77 itens T5 da amostra, contra 1 dos 23 do GPT-3.
+- **B2 é robusto:** as referências genéricas explicam 28 dos 50 casos em que a métrica reprova o que os humanos aprovam (P10).
+
 ## Pendências técnicas
 
 - **BERTScore:** calculado (commit 3aea59d, local no Windows, RTX 3060, bert-score 0.3.12). **MoverScore:** pendente.
-- SP3: anotar `results/sp3_anotacao_cega.xlsx` (A-01..A-15 e B-01..B-15 às cegas, colunas M–O ocultas).
+- SP3: falta a anotação do Caio (coluna P de `results/sp3_anotacao_cega.xlsx`; A-01..A-15 e B-01..B-15 às cegas).
 - Perguntas para o Orientador: P8 (controle do nº de refs), P9 (viés da sugestão automática), P10 (o que fazer com referências genéricas).

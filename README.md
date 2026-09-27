@@ -45,6 +45,7 @@ src/
   referencias_multiplas.py  OE2: todas as implicações do SBIC como referências (Colab/local)
   correlacoes.py            τ-b, ρ, IC bootstrap agrupado por post, Δτ pareado, por modelo, divergências
   amostra_sp3.py            SP3: 100 divergências + categoria sugerida -> results/sp3_anotacao.xlsx
+  analise_sp3.py            SP3: distribuição e concordância (heurística × Claude × Caio, cego × não cego)
 notebooks/
   colab_embeddings.ipynb    roteiro completo para o Colab
 data/processed/             tabela de itens (gerada pelos scripts)
@@ -117,12 +118,34 @@ Cada post do SBIC tem várias implicações escritas por anotadores diferentes; 
 - Mesmo assim, a correlação continua **fraca** (τ < 0,25): mais referências ajudam, mas não resolvem.
 - Por modelo, o ganho aparece nos T5 (ex.: ROUGE-L no T5-3B 0,171 → 0,262); no GPT-3 o τ cai um pouco (0,331 → 0,293).
 
+## SP3 — segunda anotação (Claude, 27/09/2026)
+
+O Claude anotou os 100 casos como **segundo anotador** (colunas R–T de `results/sp3_anotacao_cega.xlsx`; justificativa por item em `results/sp3_anotacao_claude.tsv`). A anotação final, humana, é a do Caio (coluna P), ainda pendente. Como o Claude escreveu a heurística, a anotação dele não é às cegas.
+
+| Direção | Categoria | Heurística | Claude |
+|---|---|---|---|
+| A | A1 Grupo certo, estereótipo errado | 26 | 14 |
+| A | A2 Sobreposição só de molde | 3 | 3 |
+| A | A3 Sentido invertido ou positivo | 2 | 7 |
+| A | A4 Referência também implausível | 18 | 17 |
+| A | A9 Outro | 1 | 9 |
+| B | B1 Paráfrase | 11 | 7 |
+| B | B2 Explicação genérica | 27 | 28 |
+| B | B3 Alternativa coberta | 6 | 6 |
+| B | B4 Alternativa não coberta | 6 | 7 |
+| B | B9 Outro | 0 | 2 |
+
+- Concordância heurística × Claude: 80% (κ = 0,76).
+- **Padrão emergente, "leitura literal":** em 18 dos 100 casos a gerada repete as palavras da piada sem extrair a implicação (ex.: *jews are speeding bullets*, *jewish folks eat pizza*). É a maior parte dos A9 e candidata a categoria nova (A5). Quase só nos T5: 17 dos 77 itens T5 da amostra, contra 1 dos 23 do GPT-3.
+- **B2 é robusto:** as referências genéricas explicam 28 dos 50 casos em que a métrica reprova o que os humanos aprovam (P10).
+
 ## Pendências
 
 - [x] BERTScore (27/09, rodado localmente com a configuração do Colab)
 - [ ] MoverScore
 - [x] Baixar o SBIC v2 e rodar múltiplas referências (OE2)
-- [ ] Tipologia de divergência (SP3): anotar os 100 casos de `results/sp3_anotacao_cega.xlsx` (os 30 primeiros às cegas)
+- [x] SP3: segunda anotação (Claude)
+- [ ] SP3: anotação do Caio na coluna P de `results/sp3_anotacao_cega.xlsx` (os 30 primeiros às cegas); depois `python src/analise_sp3.py`
 - [ ] Relatório parcial (meta interna: 23/01/2027)
 
 ## Referências
