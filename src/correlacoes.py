@@ -74,6 +74,28 @@ def tabela(df: pd.DataFrame, colunas: list[str], reamostras) -> pd.DataFrame:
     return pd.DataFrame(linhas), taus_boot
 
 
+# Família principal de comparações (P4): as 6 métricas de referência única, texto sem prefixo
+# (variante principal, P2) -> 15 pares com correção de Holm. Os demais pares são exploratórios.
+FAMILIA_PRINCIPAL = [f"{m}_semprefixo" for m in ["bleu", "rouge1", "rouge2", "rougeL", "meteor", "bertscore"]]
+
+
+def p_bootstrap(d: np.ndarray) -> float:
+    """p bilateral do bootstrap: 2 × a menor fração de réplicas de um lado do zero."""
+    d = d[~np.isnan(d)]
+    return float(min(1.0, 2 * min((d <= 0).mean(), (d >= 0).mean())))
+
+
+def holm(p: pd.Series) -> pd.Series:
+    """Correção de Holm-Bonferroni (step-down), com monotonicidade."""
+    ordem = p.sort_values().index
+    m = len(p)
+    ajust, acum = {}, 0.0
+    for k, i in enumerate(ordem):
+        acum = max(acum, min(1.0, (m - k) * p[i]))
+        ajust[i] = acum
+    return pd.Series(ajust).reindex(p.index)
+
+
 def delta_tau(df: pd.DataFrame, taus_boot: dict[str, np.ndarray]) -> pd.DataFrame:
     y = df.plausibilidade.to_numpy()
     linhas = []
@@ -87,10 +109,18 @@ def delta_tau(df: pd.DataFrame, taus_boot: dict[str, np.ndarray]) -> pd.DataFram
                 "delta_tau": tau(df[a], y) - tau(df[b], y),
                 "ic95_inf": lo,
                 "ic95_sup": hi,
-                "significativo": not (lo <= 0 <= hi),
+                "p_boot": p_bootstrap(d),
+                "familia_principal": a in FAMILIA_PRINCIPAL and b in FAMILIA_PRINCIPAL,
             }
         )
-    return pd.DataFrame(linhas)
+    out = pd.DataFrame(linhas)
+    fam = out.familia_principal
+    out["p_holm"] = np.nan
+    if fam.any():
+        out.loc[fam, "p_holm"] = holm(out.loc[fam, "p_boot"])
+    out["significativo_holm"] = out.p_holm < 0.05
+    out["significativo_ic95_exploratorio"] = ~((out.ic95_inf <= 0) & (0 <= out.ic95_sup))
+    return out
 
 
 def main() -> None:

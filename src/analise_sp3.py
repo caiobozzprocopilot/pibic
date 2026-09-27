@@ -6,8 +6,9 @@ Lê results/sp3_anotacao_cega_final.xlsx (aba "Anotação"):
                                   sem validação humana (decisão do Caio; P9 descartada)
 - Q  "Justificativa (Claude)"
 - R  "Leitura literal?"         -> padrão emergente (candidato à categoria A5)
-Se no futuro um humano anotar, acrescente a coluna "Categoria (humano)" e o script
-calcula a concordância com ela automaticamente.
+Validação humana independente: results/sp3_validacao_humana.xlsx (40 itens às cegas,
+gerado por src/amostra_validacao_sp3.py). Se a coluna "Categoria (humano)" estiver
+preenchida, o script calcula a concordância e o κ Claude × humano nesses itens.
 
 Calcula distribuição por categoria e concordância (% e kappa de Cohen) entre
 heurística e anotação final, por direção.
@@ -44,8 +45,15 @@ def ler() -> pd.DataFrame:
     df["direcao"] = df["ID"].str[0]
     df = df.rename(columns={"Sugerida": "heuristica", "CATEGORIA FINAL": "claude", "CATEGORIA FINAL (Claude)": "claude",
                             "Categoria (humano)": "humano"})
-    if "humano" not in df:
-        df["humano"] = None
+    df = df.drop(columns=["humano"], errors="ignore")
+    val = RESULTADOS / "sp3_validacao_humana.xlsx"
+    df["humano"] = None
+    if val.exists():
+        wv = load_workbook(val, data_only=True)["Anotação"]
+        lv = [[c.value for c in r] for r in wv.iter_rows()]
+        v = pd.DataFrame(lv[1:], columns=lv[0])[["ID", "Categoria (humano)"]].dropna()
+        df = df.drop(columns=["humano"]).merge(
+            v.rename(columns={"Categoria (humano)": "humano"}), on="ID", how="left")
     return df
 
 
@@ -66,6 +74,7 @@ def main() -> None:
         for b in anotadores[i + 1:]:
             for nome, sub in [("todos", df), ("direcao_A", df[df.direcao == "A"]),
                               ("direcao_B", df[df.direcao == "B"])]:
+                # pares com o humano só existem nos itens da validação (os demais ficam NaN)
                 s = sub[sub[a].notna() & sub[b].notna()]
                 linhas.append({"par": f"{a} x {b}", "subconjunto": nome, "n": len(s),
                                "concordancia": (s[a] == s[b]).mean() if len(s) else float("nan"),
@@ -80,7 +89,8 @@ def main() -> None:
     print(conc.to_string(index=False))
     lit = (df["Leitura literal?"] == "sim").sum()
     print(f"\nLeitura literal: {lit} de {len(df)} itens")
-    print("Aviso: anotação final feita pelo Claude, sem validação humana.")
+    n_h = df["humano"].notna().sum()
+    print(f"Itens com anotação humana independente: {n_h}" + ("" if n_h else " (validação pendente)"))
 
 
 if __name__ == "__main__":

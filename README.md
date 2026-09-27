@@ -45,7 +45,10 @@ src/
   referencias_multiplas.py  OE2: todas as implicações do SBIC como referências (Colab/local)
   correlacoes.py            τ-b, ρ, IC bootstrap agrupado por post, Δτ pareado, por modelo, divergências
   amostra_sp3.py            SP3: 100 divergências + categoria sugerida -> results/sp3_anotacao.xlsx
-  analise_sp3.py            SP3: distribuição por categoria e concordância heurística × anotação final
+  analise_sp3.py            SP3: distribuição por categoria; concordância heurística × Claude × humano
+  amostra_validacao_sp3.py  SP3: 40 casos às cegas para a validação humana independente
+  referencias_genericas.py  P10: regra de referência genérica e τ estratificado
+  curva_k.py                P8: τ em função do nº de referências (k = 1, 2, 3, 5), precisa do SBIC
 notebooks/
   colab_embeddings.ipynb    roteiro completo para o Colab
 data/processed/             tabela de itens (gerada pelos scripts)
@@ -68,7 +71,8 @@ Correlação por instância nos 720 itens ofensivos. Kendall τ-b, IC 95% por bo
 
 - Todas as métricas de n-gramas têm correlação **fraca** (τ < 0,2), porém acima de zero e da linha de base de comprimento.
 - Sem o prefixo "this post implies that", **311 dos 720 itens (43%) têm ROUGE-L = 0**: a métrica não consegue ordenar quase metade dos itens (plaus. média 0,24; 7 deles com nota máxima dos humanos).
-- Entre as métricas, a única diferença significativa (Δτ pareado) é o **ROUGE-2 sem prefixo, abaixo** de ROUGE-1, ROUGE-L e METEOR (Δτ ≈ −0,05).
+- **Comparações entre métricas (Holm):** na família principal (15 pares entre BLEU, ROUGE-1/2/L, METEOR e BERTScore, sem prefixo) **nenhuma diferença é significativa** após a correção de Holm (menor p ajustado = 0,51). O ROUGE-2 fica pontualmente abaixo das demais (Δτ ≈ −0,05, p bruto ≈ 0,04), mas isso não sobrevive à correção. Os demais pares (com texto completo, multirreferência) são exploratórios.
+- **Variante principal:** texto sem prefixo, por razão conceitual: o molde "this post implies that" é idêntico em todos os itens e infla a sobreposição sem carregar informação. O texto completo é análise de sensibilidade.
 - Sem as 16 cópias exatas, τ cai para ~0,13–0,16: parte da correlação vem de poucos casos triviais.
 
 **Por modelo (τ sem prefixo, n = 180 cada):**
@@ -93,7 +97,7 @@ roberta-large, F1, `rescale_with_baseline=True` (o reescalonamento não altera �
 | ROUGE-L (ref. única) | 0,173 | 0,189 | [0,124; 0,250] | 0,242 |
 | ROUGE-L (múltiplas refs) | — | 0,228 | [0,168; 0,292] | 0,299 |
 
-- **O BERTScore também fica na faixa fraca (τ ≈ 0,20).** No texto completo, supera BLEU e ROUGE-2 (Δτ ≈ +0,04, significativo); sem prefixo, só o ROUGE-2 (+0,065). **Não difere significativamente** de ROUGE-1, ROUGE-L e METEOR, nem das n-gramas com múltiplas referências.
+- **O BERTScore também fica na faixa fraca (τ ≈ 0,20).** Na família principal (sem prefixo, com Holm) **não difere significativamente de nenhuma métrica de n-gramas**. (Exploratório: no texto completo, IC 95% do Δτ contra BLEU e ROUGE-2 exclui zero.) **Não difere significativamente** de ROUGE-1, ROUGE-L e METEOR, nem das n-gramas com múltiplas referências.
 - **O prefixo não afeta o BERTScore** (0,199 × 0,201; Δτ = −0,002, n.s.): as embeddings já "descontam" o molde que infla as n-gramas.
 - **Onde as n-gramas zeram, o BERTScore também falha:** nos 311 itens com ROUGE-L = 0, τ = 0,05. Nos 409 com ROUGE-L > 0, τ = 0,18.
 - Correlação entre BERTScore e ROUGE-L sem prefixo: τ = 0,59. As duas famílias medem quase a mesma coisa.
@@ -117,10 +121,26 @@ Cada post do SBIC tem várias implicações escritas por anotadores diferentes; 
 - **Controle:** posts com mais referências ganham sobreposição só por ter mais chances (τ entre nº de refs e ROUGE-L multi = 0,44). Controlando o nº de referências (τ parcial), o ganho se mantém: ROUGE-L 0,172 → 0,210; METEOR 0,172 → 0,218.
 - Mesmo assim, a correlação continua **fraca** (τ < 0,25): mais referências ajudam, mas não resolvem.
 - Por modelo, o ganho aparece nos T5 (ex.: ROUGE-L no T5-3B 0,171 → 0,262); no GPT-3 o τ cai um pouco (0,331 → 0,293).
-Claude
+## Referências genéricas (P10, análise estratificada)
+
+Regra fixa, definida antes da análise: a referência é **genérica** quando é exatamente *"this post is a personal attack"* ou *"this post trivializes harm to victims"* (199 dos 720 itens; `src/referencias_genericas.py`). Nenhum item é excluído.
+
+| | Genéricas (n = 199) | Específicas (n = 521) |
+|---|---|---|
+| Plausibilidade da gerada | 0,26 | 0,37 |
+| Plausibilidade da referência | 0,55 | 0,69 |
+| ROUGE-L médio | 0,09 | 0,24 |
+| Itens com ROUGE-L = 0 | 78% | 30% |
+| τ ROUGE-L [IC 95%] | 0,148 [0,008; 0,281] | 0,150 [0,082; 0,218] |
+| τ BERTScore [IC 95%] | 0,085 [−0,020; 0,183] | 0,179 [0,111; 0,241] |
+
+- **Dentro de cada estrato, o τ das n-gramas cai para ≈ 0,15** (contra 0,19 no total). Parte da correlação geral vem da diferença *entre* estratos: itens com referência genérica têm, ao mesmo tempo, métrica baixa e plausibilidade baixa.
+- A diferença de τ entre estratos não é significativa para nenhuma métrica (IC 95% do Δτ inclui zero).
+- Conferência humana da regra pendente (`results/genericas_conferencia.csv`).
+
 ## SP3 — tipologia (anotação 27/09/2026)
 
-* Coluna P de `results/sp3_anotacao_cega_final.xlsx`, com justificativa por item na coluna Q e em `results/sp3_anotacao_claude.tsv`.
+**Quem anotou:** os 100 casos foram anotados pelo Claude (modelo de linguagem), que também escreveu a heurística da coluna M. Não houve, até aqui, anotação humana independente. A validação humana às cegas de 40 casos (`results/sp3_validacao_humana.xlsx`) está pendente; até ela ser feita, a tipologia é **anotação por LLM sem validação** e só pode ser relatada assim. Coluna P de `results/sp3_anotacao_cega_final.xlsx`, com justificativa por item na coluna Q e em `results/sp3_anotacao_claude.tsv`.
 
 | Direção | Categoria | Heurística | Anotação final (Claude) |
 |---|---|---|---|
@@ -136,7 +156,7 @@ Claude
 | B | B9 Outro | 0 | 2 |
 
 - Concordância heurística × anotação final: 80% (κ = 0,76); direção A 74% (κ = 0,64), direção B 86% (κ = 0,78). A heurística erra sobretudo ao marcar A1 em casos de leitura literal (A9) e de sentido invertido (A3).
-- **Padrão emergente, "leitura literal":** em 18 dos 100 casos a gerada repete as palavras da piada sem extrair a implicação (ex.: *jews are speeding bullets*, *jewish folks eat pizza*). É a maior parte dos A9 e candidata a categoria nova (A5). Quase só nos T5: 17 dos 77 itens T5 da amostra, contra 1 dos 23 do GPT-3.
+- **Padrão emergente, "leitura literal":** em 18 dos 100 casos a gerada repete as palavras da piada sem extrair a implicação (ex.: *jews are speeding bullets*, *jewish folks eat pizza*). É a maior parte dos A9 e candidata a categoria nova (A5), que **só entra no livro de códigos se aparecer também na anotação humana independente** (P11). Contraste descritivo: 17 dos 77 itens T5 × 1 dos 23 do GPT-3 (Fisher bilateral p = 0,065, não significativo).
 - **B2 é robusto:** as referências genéricas explicam 28 dos 50 casos em que a métrica reprova o que os humanos aprovam (P10).
 
 ## Pendências
@@ -144,7 +164,10 @@ Claude
 - [x] BERTScore (27/09, rodado localmente com a configuração do Colab)
 - [ ] MoverScore
 - [x] Baixar o SBIC v2 e rodar múltiplas referências (OE2)
-- [x] SP3: anotação dos 100 casos
+- [x] SP3: anotação dos 100 casos (Claude)
+- [ ] SP3: validação humana às cegas de 40 casos → κ Claude × humano
+- [ ] P10: conferência humana da regra de referência genérica
+- [ ] P8: curva com k fixo (`python src/referencias_multiplas.py && python src/curva_k.py`, precisa do SBIC)
 - [ ] Relatório parcial (meta interna: 23/01/2027)
 
 ## Referências

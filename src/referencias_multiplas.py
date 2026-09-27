@@ -12,6 +12,7 @@ Download: https://maartensap.com/social-bias-frames/SBIC.v2.tgz  (bloqueado no a
 da Coordenação; rodar no Colab ou localmente).
 
 Saída: results/metricas_multiref.csv  (colunas *_multiref_semprefixo + n_refs)
+       results/referencias_sbic_por_item.jsonl  (referências de cada item, para src/curva_k.py)
 Depois: python src/correlacoes.py  (o arquivo é incorporado automaticamente)
 
 Uso:  python src/referencias_multiplas.py
@@ -59,7 +60,7 @@ def main() -> None:
     sem_match = of.refs_sbic.isna().sum()
     print(f"Itens ofensivos sem post correspondente no SBIC: {sem_match} de {len(of)}")
 
-    linhas = []
+    linhas, refs_por_item = [], []
     for _, r in of.iterrows():
         ref_feb = limpar(r.referencia, True)
         refs = [limpar(x, True) for x in (r.refs_sbic if isinstance(r.refs_sbic, list) else [])]
@@ -67,6 +68,7 @@ def main() -> None:
         g = limpar(r.gerada, True)
         tg = tokens(g)
         rouges = [_rouge.score(x, g) for x in refs]
+        refs_por_item.append({"modelo": r.modelo, "ques_id": int(r.ques_id), "ref_feb": ref_feb, "refs": refs})
         linhas.append(
             {
                 "modelo": r.modelo,
@@ -81,6 +83,9 @@ def main() -> None:
         )
     out = pd.DataFrame(linhas)
     out.to_csv(RESULTADOS / "metricas_multiref.csv", index=False)
+    # lista de referências por item, usada pela curva com k fixo (src/curva_k.py, P8)
+    pd.DataFrame(refs_por_item).to_json(RESULTADOS / "referencias_sbic_por_item.jsonl",
+                                         orient="records", lines=True, force_ascii=False)
     print(out.n_refs.describe().to_string())
     print(f"-> {RESULTADOS / 'metricas_multiref.csv'}")
 

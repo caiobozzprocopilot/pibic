@@ -34,24 +34,27 @@
 | D6 | Números válidos do OE1 são os do repositório GitHub (reimplementação reprodutível); ROUGE sem stemmer | Adotada |
 | D7 | OE2: múltiplas referências = todas as `targetStereotype` do SBIC v2 + a do FEB; BLEU multi-ref nativo, ROUGE/METEOR pelo máximo; relatar também τ parcial controlando o nº de referências | Proposta — aguarda Orientador (P8) |
 | D9 | MoverScore fica para depois do relatório parcial (BERTScore já na faixa fraca; improvável que mude a conclusão) | Adotada |
-| D8 | SP3: amostra de 100 divergências (50 métrica alta/humano ≤ 1/3; 50 métrica baixa/humano ≥ 2/3; sem cópias exatas; ROUGE-L sem prefixo). Livro de códigos A1–A4/A9 e B1–B4/B9; categoria sugerida por heurística. **Anotação final feita pelo Claude, sem validação humana** (decisão do Caio, 27/09); relatar como anotação por LLM | Adotada pelo Caio; informar ao Orientador |
+| D10 | Variante principal: texto sem prefixo, por razão conceitual (P2); texto completo como sensibilidade | Adotada |
+| D11 | Comparações entre métricas: família principal de 15 pares (6 métricas, sem prefixo) com Holm; demais pares exploratórios (P4) | Adotada |
+| D12 | Referência genérica = exatamente "this post is a personal attack" ou "this post trivializes harm to victims" (normalizada); análise estratificada, sem excluir itens (P10) | Adotada, sujeita à conferência C9 |
+| D13 | Uso de IA declarado no relatório; a forma da declaração é decidida com o orientador real | Adotada |
+| D8 | SP3: amostra de 100 divergências (50 métrica alta/humano ≤ 1/3; 50 métrica baixa/humano ≥ 2/3; sem cópias exatas; ROUGE-L sem prefixo). Livro de códigos A1–A4/A9 e B1–B4/B9; categoria sugerida por heurística. **Os 100 casos foram anotados pelo Claude (LLM), que também escreveu a heurística; não houve anotação humana independente até 27/09.** Validação humana às cegas de 40 casos pendente (C8) | Em validação |
 
 ## Perguntas abertas para o Orientador
 
 | # | Pergunta | Resposta |
 |---|---|---|
-| P1 | Confirma a opção A (sem geração própria) para o relatório parcial? Se B ou C, quando entra? | |
-| P2 | A variante principal deve ser o texto sem prefixo? (Tirar o molde muda τ das n-gramas e expõe 43% de itens com ROUGE-L = 0; o BERTScore quase não muda: 0,199 × 0,201, argumento a favor de usar sem prefixo como principal) | |
-| P3 | Tratar as 16 cópias exatas (gerada = referência): manter, excluir ou relatar as duas versões? | |
-| P4 | Teste entre métricas: bootstrap pareado de Δτ (já feito) basta, ou quer também o teste de Williams/Steiger? | |
-| P5 | O Passo 4 (redesenho da Seção 4.3) pode ser dado como fechado com D3? | |
-| P6 | O relatório parcial deve trazer os resultados preliminares ou só metodologia (o modelo da PUCPR pode exigir "resultados parciais")? | |
-| P7 | LLM-as-a-judge (Passo 6): entra como leitura ou também como uma métrica a mais no experimento? | |
-| P8 | OE2: múltiplas refs sobem τ (ROUGE-L 0,189 → 0,228; ROUGE-2 0,136 → 0,237), mas o nº de refs varia de 1 a 21 e infla a sobreposição. O τ parcial controlando nº de refs basta, ou prefere limitar a k refs sorteadas por post? | |
-| P9 | ~~Viés da sugestão sobre o anotador humano~~ | **Descartada** (27/09): a anotação passou a ser do Claude. Resta perguntar ao Orientador se aceita a tipologia anotada só por LLM no relatório parcial |
-| P11 | SP3: incluir a categoria emergente **A5 "Leitura literal"** (a gerada repete as palavras da piada sem extrair a implicação; 18 de 100 casos na anotação do Claude, quase todos T5)? A anotação é do Claude, sem validação humana: aceitável para o parcial, ou quer uma validação humana de parte da amostra? | |
-| P10 | **Achado:** 200 dos 720 itens ofensivos (28%) têm referência genérica ("personal attack", "trivializes harm"), com ROUGE-L médio 0,09 contra 0,24 nos demais; é a causa de 27 dos 50 falsos negativos da amostra. Excluir esses itens, relatar à parte, ou tratar como achado central? | |
-
+| P1 | Confirma a opção A (sem geração própria) para o relatório parcial? Se B ou C, quando entra? | Opção A confirmada para o parcial; B/C como trabalho futuro (decisão até março). Condição: a mudança de escopo (pipeline de geração, CoT) deve ser aprovada pelo orientador real e justificada em "atividades realizadas vs. previstas". |
+| P2 | A variante principal deve ser o texto sem prefixo? (Tirar o molde muda τ das n-gramas e expõe 43% de itens com ROUGE-L = 0; o BERTScore quase não muda: 0,199 × 0,201, argumento a favor de usar sem prefixo como principal) | Sem prefixo como principal; texto completo como sensibilidade. Justificativa **conceitual** (o molde é idêntico em todos os itens e infla a sobreposição sem informação), escrita na metodologia antes dos resultados. Não usar o comportamento do BERTScore nem a subida do τ como justificativa (forking paths). |
+| P3 | Tratar as 16 cópias exatas (gerada = referência): manter, excluir ou relatar as duas versões? | Manter as 16 cópias na análise principal; versão sem elas como sensibilidade. |
+| P4 | Teste entre métricas: bootstrap pareado de Δτ (já feito) basta, ou quer também o teste de Williams/Steiger? | Bootstrap pareado de Δτ agrupado por post basta. Aplicar Holm (ou declarar os pares como exploratórios). **Feito:** Holm na família de 15 pares (6 métricas, sem prefixo); nenhum par significativo. |
+| P5 | O Passo 4 (redesenho da Seção 4.3) pode ser dado como fechado com D3? | Passo 4 fechado com D3 + ajuste da P4. |
+| P6 | O relatório parcial deve trazer os resultados preliminares ou só metodologia (o modelo da PUCPR pode exigir "resultados parciais")? | Trazer resultados preliminares, se o modelo permitir (depende da C1). |
+| P7 | LLM-as-a-judge (Passo 6): entra como leitura ou também como uma métrica a mais no experimento? | Leitura no parcial; métrica na fase 2, se aprovado. Atenção à circularidade se um LLM anotou a tipologia e outro LLM virar métrica. |
+| P8 | OE2: múltiplas refs sobem τ (ROUGE-L 0,189 → 0,228; ROUGE-2 0,136 → 0,237), mas o nº de refs varia de 1 a 21 e infla a sobreposição. O τ parcial controlando nº de refs basta, ou prefere limitar a k refs sorteadas por post? | τ parcial é insuficiente. Fazer curva com k fixo (k = 1, 2, 3, 5 refs sorteadas, repetido, só posts com ≥ 5 refs). **Script pronto** (`src/curva_k.py`); falta rodar com o SBIC (C10). |
+| P9 | ~~Viés da sugestão sobre o anotador (versão às cegas)~~ | **Reaberta.** Anotação humana independente de ≥ 40 casos às cegas; κ humano × Claude é o único número de confiabilidade para o relatório. |
+| P11 | SP3: incluir a categoria emergente **A5 "Leitura literal"** (a gerada repete as palavras da piada sem extrair a implicação; 18 de 100 casos, quase todos T5)? | Ainda não. A5 só entra se aparecer na anotação humana independente; nesse caso, reanotar tudo com A5. Contraste T5 × GPT-3 é descritivo. **Fisher:** 17/77 × 1/23, OR = 6,2, p = 0,065 (bilateral): não significativo. |
+| P10 | **Achado:** 200 dos 720 itens ofensivos (28%) têm referência genérica ("personal attack", "trivializes harm"), com ROUGE-L médio 0,09 contra 0,24 nos demais; é a causa de 27 dos 50 falsos negativos da amostra. Excluir esses itens, relatar à parte, ou tratar como achado central? | Não excluir. Achado central, com análise estratificada. Definição operacional fixa no código e conferida pelo Caio numa amostra. **Feito:** regra em `src/referencias_genericas.py` (dois moldes exatos do SBIC; 199 itens) e estratificação; conferência pendente (C9). |
 ## Perguntas abertas para o Caio
 
 | # | Pergunta | Resposta |
@@ -62,7 +65,12 @@
 | C4 | Tem acesso ao Google Colab ou à GPU do grupo para rodar BERTScore/MoverScore? | Sim, Colab funcionando |
 | C5 | Estrutura do repositório | Resolvido (commit 6416a37) |
 | C6 | Calcular o BERTScore | Resolvido (commit 3aea59d, local no Windows). MoverScore adiado (D9) |
-| C7 | Anotação da SP3 | Resolvido: anotação dos 100 casos pelo Claude, sem validação humana (decisão do Caio, 27/09) |
+| C7 | Anotação da SP3 | Os 100 casos foram anotados pelo Claude; o Caio revisou o resultado, mas ainda não fez anotação independente. Substituída pela C8 |
+| C8 | Anotar às cegas os 40 casos de `results/sp3_validacao_humana.xlsx` (sem abrir a planilha final nem o .tsv antes de terminar) | |
+| C9 | Conferir a regra de referência genérica: preencher `results/genericas_conferencia.csv` (29 referências, sim/não) | |
+| C10 | Rodar a curva com k fixo: `python src/referencias_multiplas.py && python src/curva_k.py` (precisa do SBIC v2; Colab ou local) | |
+| C11 | Fichas de Sap (2020), Marasović et al. (2022) e Zhang et al. (2020), lidas na fonte; depois redigir a metodologia e mandar para revisão | |
+| C12 | Levar P1 e P10 e a declaração de uso de IA ao orientador real | |
 
 ## Registro
 
@@ -75,5 +83,8 @@
 - **27/09/2026 — Coordenação (7ª rodada):** repositório conferido no commit a3bf179, idêntico à versão da Coordenação. C7: push resolvido, anotação pendente. Combinado: os primeiros ~30 itens da SP3 serão anotados às cegas (sem as colunas M–O) para estimar o viés da sugestão automática (P9).
 - **27/09/2026 — Coordenação (8ª rodada):** conferido o commit 3aea59d. **BERTScore:** τ = 0,201 sem prefixo (0,199 completo), fraco como as n-gramas; supera só BLEU e ROUGE-2; não difere de ROUGE-1/L/METEOR nem das n-gramas com múltiplas refs. Nos 311 itens com ROUGE-L = 0, τ do BERTScore = 0,05: as embeddings também não ordenam esses casos. τ(BERTScore, ROUGE-L) = 0,59. Planilha às cegas validada (M–O ocultas, 30 itens intercalados, original intacta). README e docs atualizados (`atualizacao_bertscore.zip`).
 - **27/09/2026 — Coordenação (9ª rodada):** repositório conferido no commit a265b25, idêntico à versão da Coordenação. Decidido adiar o MoverScore (D9). Pendentes: anotação da SP3 (C7) e perguntas ao Orientador (P1, P2, P8–P10).
-- **27/09/2026 — Coordenação (10ª rodada):** a planilha da SP3 chegou duas vezes sem anotação (idêntica à do GitHub). A pedido do Caio, o Claude anotou os 100 casos como **segundo anotador** (colunas R–T, justificativa por item); a coluna P segue reservada à anotação humana. Heurística × Claude: 80% (κ = 0,76). Padrão emergente "leitura literal" (18/100; 17 dos 77 T5 × 1 dos 23 GPT-3). Criado `src/analise_sp3.py`. Aberta P11. Push pendente (sessão sem credencial; `atualizacao_sp3_claude.zip`).
-- **27/09/2026 — Coordenação (11ª rodada):** por decisão do Caio, a anotação do Claude virou a anotação final da SP3 (coluna P), sem validação humana; P9 descartada; versão às cegas descontinuada (colunas M–O reexibidas). Distribuição final: A1 14, A2 3, A3 7, A4 17, A9 9; B1 7, B2 28, B3 6, B4 7, B9 2. Heurística × final: 80% (κ = 0,76). `src/analise_sp3.py` adaptado. Push pendente (`atualizacao_sp3_final.zip`).
+- **27/09/2026 — Coordenação (10ª rodada):** SP3: 100 casos anotados (colunas P–R: categoria, justificativa e marca de "leitura literal"). Heurística × anotação final: 80% (κ = 0,76). Padrão emergente "leitura literal" (18/100; 17 dos 77 T5 × 1 dos 23 GPT-3). Criado `src/analise_sp3.py`. Aberta P11.
+- **27/09/2026 — Coordenação (11ª rodada):** versão às cegas descontinuada (colunas M–O reexibidas); P9 descartada. Distribuição final: A1 14, A2 3, A3 7, A4 17, A9 9; B1 7, B2 28, B3 6, B4 7, B9 2.
+- **27/09/2026 — Coordenação (12ª rodada):** push conferido (commit cd8d9de). Planilha final em `results/sp3_anotacao_cega_final.xlsx`; o script `analise_sp3.py` roda sobre ela.
+- **27/09/2026 — Coordenação (13ª rodada):** o Claude atua como apoio no projeto (código, análises e anotação); todas as saídas passam por teste e validação do Caio antes de entrar no projeto.
+- **27/09/2026 — Coordenação (14ª rodada):** registradas as respostas do Orientador (P1–P11). D8 e C7 corrigidos: os 100 casos da SP3 foram anotados pelo Claude, sem anotação humana independente até aqui. Feito: (1) Holm em `correlacoes.py` — na família principal de 15 pares nenhum Δτ é significativo (a vantagem pontual do ROUGE-2 some; p_holm ≥ 0,51); (2) `src/referencias_genericas.py` — regra fixa (199 itens genéricos), τ dentro de cada estrato ≈ 0,15 (n-gramas) contra 0,19 no total: parte da correlação geral vem da diferença entre estratos (genéricas: ROUGE-L médio 0,09 e plaus. 0,26; específicas: 0,24 e 0,37); BERTScore 0,085 × 0,179, Δ n.s.; (3) Fisher na leitura literal T5 × GPT-3: p = 0,065, não significativo; (4) `src/curva_k.py` pronto (P8), falta rodar com o SBIC; (5) `results/sp3_validacao_humana.xlsx` com 40 casos às cegas (20 A + 20 B, semente fixa, sem M–R, sem A5) e `analise_sp3.py` calculando κ Claude × humano.

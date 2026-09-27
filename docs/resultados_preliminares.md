@@ -1,6 +1,7 @@
 # Resultados preliminares — OE1 (n-gramas e BERTScore), OE2 (múltiplas referências) e prévia da SP3
 
-> Cópia do documento `claude/resultados_preliminares.md` do projeto PIBIC no Claude (27/09/2026, após o BERTScore). A versão viva fica no projeto.
+> Cópia do documento `claude/resultados_preliminares.md` do projeto PIBIC no Claude (27/09/2026). A versão viva fica no projeto.
+
 
 **Versão de referência: este repositório** (reimplementação de 25/09/2026, substitui a primeira rodada). Reprodução:
 
@@ -34,7 +35,8 @@ Com e sem o molde "this post implies that". Sem o prefixo, **311 dos 720 itens (
 | Comprimento | −0,003 | [−0,067; 0,061] | 0,016 | [−0,048; 0,081] | 0,021 |
 
 - Correlação **fraca** (τ < 0,2) em todas, acima de zero e da linha de base.
-- Δτ pareado: única diferença significativa é **ROUGE-2 sem prefixo abaixo** de ROUGE-1, ROUGE-L e METEOR (Δτ ≈ −0,05).
+- **Holm (D11):** na família principal de 15 pares (BLEU, ROUGE-1/2/L, METEOR, BERTScore; sem prefixo) nenhum Δτ é significativo (menor p ajustado = 0,51). O ROUGE-2 fica pontualmente abaixo (Δτ ≈ −0,05, p bruto ≈ 0,04), sem sobreviver à correção.
+- **Variante principal (D10):** sem prefixo, por razão conceitual (molde idêntico em todos os itens, sem informação); texto completo como sensibilidade.
 - Sem as 16 cópias exatas: τ ≈ 0,13–0,16.
 
 ### Por modelo (τ sem prefixo, n = 180; ICs em results/correlacoes_por_modelo.csv)
@@ -57,7 +59,7 @@ roberta-large, F1, `rescale_with_baseline=True` (o reescalonamento não altera �
 | ROUGE-L (ref. única) | 0,173 | 0,189 | [0,124; 0,250] | 0,242 |
 | ROUGE-L (múltiplas refs) | — | 0,228 | [0,168; 0,292] | 0,299 |
 
-- **O BERTScore também fica na faixa fraca (τ ≈ 0,20).** No texto completo, supera BLEU e ROUGE-2 (Δτ ≈ +0,04, significativo); sem prefixo, só o ROUGE-2 (+0,065). **Não difere significativamente** de ROUGE-1, ROUGE-L e METEOR, nem das n-gramas com múltiplas referências.
+- **O BERTScore também fica na faixa fraca (τ ≈ 0,20).** Na família principal, com Holm, não difere de nenhuma métrica de n-gramas (exploratório: no texto completo, o IC do Δτ contra BLEU e ROUGE-2 exclui zero). **Não difere significativamente** de ROUGE-1, ROUGE-L e METEOR, nem das n-gramas com múltiplas referências.
 - **O prefixo não afeta o BERTScore** (0,199 × 0,201; Δτ = −0,002, n.s.): as embeddings já "descontam" o molde que infla as n-gramas.
 - **Onde as n-gramas zeram, o BERTScore também falha:** nos 311 itens com ROUGE-L = 0, τ = 0,05. Nos 409 com ROUGE-L > 0, τ = 0,18.
 - Correlação entre BERTScore e ROUGE-L sem prefixo: τ = 0,59. As duas famílias medem quase a mesma coisa.
@@ -90,9 +92,22 @@ Amostra de 100 divergências em `results/sp3_anotacao.xlsx` (gerada por `src/amo
 - **Direção B (métrica baixa, humano alto):** dominada por **referências genéricas** (27 de 50), como "this post is a personal attack".
 - **Referências genéricas no conjunto todo:** 200 dos 720 itens ofensivos (28%), com ROUGE-L médio 0,09 contra 0,24 nos demais.
 
-### SP3 — tipologia (anotação do Claude, 27/09/2026)
+### Referências genéricas (P10, D12)
 
-**A anotação final foi feita pelo Claude (modelo de linguagem), sem validação humana**, por decisão do Caio (27/09/2026). Coluna P de `results/sp3_anotacao_cega_final.xlsx`, com justificativa por item na coluna Q e em `results/sp3_anotacao_claude.tsv`. O Claude escreveu a heurística e conhecia as sugestões ao anotar. No relatório, a tipologia deve ser descrita como anotação por LLM; a P9 foi descartada.
+Regra fixa: referência genérica = exatamente "this post is a personal attack" ou "this post trivializes harm to victims" (199 de 720 itens). Nenhum item excluído.
+
+| | Genéricas (199) | Específicas (521) |
+|---|---|---|
+| Plaus. gerada / referência | 0,26 / 0,55 | 0,37 / 0,69 |
+| ROUGE-L médio; % ROUGE-L = 0 | 0,09; 78% | 0,24; 30% |
+| τ ROUGE-L [IC 95%] | 0,148 [0,008; 0,281] | 0,150 [0,082; 0,218] |
+| τ BERTScore [IC 95%] | 0,085 [−0,020; 0,183] | 0,179 [0,111; 0,241] |
+
+- Dentro de cada estrato o τ das n-gramas é ≈ 0,15 (0,19 no total): parte da correlação geral vem da diferença entre estratos. Δτ entre estratos n.s. para todas as métricas. Conferência humana da regra pendente (C9).
+
+### SP3 — tipologia (27/09/2026)
+
+**Os 100 casos foram anotados pelo Claude (LLM), que também escreveu a heurística; não houve anotação humana independente até aqui.** Validação às cegas de 40 casos pendente (C8); até lá, relatar como anotação por LLM sem validação. Coluna P de `results/sp3_anotacao_cega_final.xlsx`, justificativas na coluna Q e em `results/sp3_anotacao_claude.tsv`.
 
 | Direção | Categoria | Heurística | Anotação final (Claude) |
 |---|---|---|---|
@@ -108,11 +123,11 @@ Amostra de 100 divergências em `results/sp3_anotacao.xlsx` (gerada por `src/amo
 | B | B9 Outro | 0 | 2 |
 
 - Concordância heurística × anotação final: 80% (κ = 0,76); direção A 74% (κ = 0,64), direção B 86% (κ = 0,78). A heurística erra sobretudo ao marcar A1 em casos de leitura literal (A9) e de sentido invertido (A3).
-- **Padrão emergente, "leitura literal":** em 18 dos 100 casos a gerada repete as palavras da piada sem extrair a implicação (ex.: *jews are speeding bullets*, *jewish folks eat pizza*). É a maior parte dos A9 e candidata a categoria nova (A5). Quase só nos T5: 17 dos 77 itens T5 da amostra, contra 1 dos 23 do GPT-3.
+- **Padrão emergente, "leitura literal":** em 18 dos 100 casos a gerada repete as palavras da piada sem extrair a implicação (ex.: *jews are speeding bullets*, *jewish folks eat pizza*). É a maior parte dos A9 e candidata a A5, que só entra se aparecer na anotação humana independente (P11). Contraste descritivo T5 × GPT-3: 17/77 × 1/23, Fisher p = 0,065 (n.s.).
 - **B2 é robusto:** as referências genéricas explicam 28 dos 50 casos em que a métrica reprova o que os humanos aprovam (P10).
 
 ## Pendências técnicas
 
 - **BERTScore:** calculado (commit 3aea59d, local no Windows, RTX 3060, bert-score 0.3.12). **MoverScore:** pendente.
-- SP3 concluída com anotação do Claude (sem validação humana). Decidir com o Orientador a categoria A5 (P11).
+- SP3: validação humana às cegas de 40 casos (C8). P10: conferência da regra (C9). P8: rodar `src/curva_k.py` com o SBIC (C10).
 - Perguntas para o Orientador: P8 (controle do nº de refs), P9 (viés da sugestão automática), P10 (o que fazer com referências genéricas).
